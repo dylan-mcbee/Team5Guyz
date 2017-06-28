@@ -1,7 +1,5 @@
 package com.cinema.beans;
 
-import java.util.ArrayList;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -20,46 +18,44 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CINEMA_USER")
 public class User implements Serializable {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userSeq")
 	@SequenceGenerator(allocationSize = 1, name = "userSeq", sequenceName = "USER_SEQ")
 	@Column(name = "USER_ID")
 	private int id;
-
+	
 	@Column(name = "EMAIL")
 	private String email;
-
+	
 	@Column(name = "FIRST_NAME")
 	private String firstName;
-
+	
 	@Column(name = "LAST_NAME")
 	private String lastName;
-
+	
 	@Column(name = "PASSWORD")
 	private String password;
-
+	
 	@Column(name = "REWARD_STATUS")
 	@Enumerated(EnumType.ORDINAL)
 	private RewardStatus rewardStatus;
-
+	
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
-
+	
 	@Column(name = "POINTS")
 	private int points;
-
-	@OneToMany(mappedBy = "receipt", fetch = FetchType.EAGER)
-	private List<Receipt> receipts;
-
-	public User() {
-
+	
+	//@OneToMany(mappedBy = "receipt", fetch = FetchType.EAGER)
+//	private List<Receipt> receipts;
+	
+	public User(){
+		
 	}
 
 	public User(String email, int id, String firstName, String lastName, String password, RewardStatus rewardStatus,
-
 			String phoneNumber, int points) {
-
 		super();
 		this.email = email;
 		this.id = id;
@@ -67,28 +63,22 @@ public class User implements Serializable {
 		this.lastName = lastName;
 		this.password = password;
 		this.rewardStatus = rewardStatus;
-
 		this.phoneNumber = phoneNumber;
-
 		this.points = points;
-		this.receipts = receipts;
+//		this.receipts = receipts;
 	}
 
 	public User(String email, String firstName, String lastName, String password, RewardStatus rewardStatus,
-
 			String phoneNumber, int points) {
-
 		super();
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
 		this.rewardStatus = rewardStatus;
-
 		this.phoneNumber = phoneNumber;
-
 		this.points = points;
-		this.receipts = receipts;
+//		this.receipts = receipts;
 	}
 
 	public String getEmail() {
@@ -145,7 +135,6 @@ public class User implements Serializable {
 
 	public void setphoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
-
 	}
 
 	public int getPoints() {
@@ -156,22 +145,20 @@ public class User implements Serializable {
 		this.points = points;
 	}
 
-	public List<Receipt> getReceipts() {
-		return receipts;
-	}
+//	public List<Receipt> getReceipts() {
+//		return receipts;
+//	}
+//
+//	public void setReceipts(List<Receipt> receipts) {
+//		this.receipts = receipts;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "User [email=" + email + ", id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
+//				+ ", password=" + password + ", rewardStatus=" + rewardStatus + ", phoneNumber=" + phoneNumber
+//				+ ", points=" + points + ", receipts=" + receipts + "]";
+//	}
 
-	public void setReceipts(List<Receipt> receipts) {
-
-		this.receipts = receipts;
-	}
-
-	@Override
-	public String toString() {
-		return "User [email=" + email + ", id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
-
-				+ ", password=" + password + ", rewardStatus=" + rewardStatus + ", phoneNumber=" + phoneNumber
-
-				+ ", points=" + points + ", receipts=" + receipts + "]";
-	}
 
 }

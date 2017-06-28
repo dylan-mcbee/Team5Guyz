@@ -14,23 +14,18 @@ public class Room implements Serializable {
 	@Id
 	@Column(name = "ROOM_NUMBER")
 	private int roomNumber;
-
+	
 	@Column(name = "CAPACITY")
 	private int capacity;
-
-	@Column(name = "SEATS_LEFT")
-
-	private int seatsLeft;
-
-	public Room() {
-
+	
+	public Room(){
+		
 	}
 
-	public Room(int roomNumber, int capacity, int seatsLeft) {
+	public Room(int roomNumber, int capacity) {
 		super();
 		this.roomNumber = roomNumber;
 		this.capacity = capacity;
-		this.seatsLeft = seatsLeft;
 	}
 
 	public int getRoomNumber() {
@@ -49,17 +44,9 @@ public class Room implements Serializable {
 		this.capacity = capacity;
 	}
 
-	public int getSeatsLeft() {
-		return seatsLeft;
-	}
-
-	public void setSeatsLeft(int seatsLeft) {
-		this.seatsLeft = seatsLeft;
-	}
-
 	@Override
 	public String toString() {
-		return "Room [roomNumber=" + roomNumber + ", capacity=" + capacity + ", seatsLeft=" + seatsLeft + "]";
+		return "Room [roomNumber=" + roomNumber + ", capacity=" + capacity + "]";
 	}
-
+	
 }

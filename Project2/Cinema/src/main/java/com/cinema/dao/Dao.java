@@ -1,14 +1,14 @@
-package com.revature.dao;
+package com.cinema.dao;
 
 import java.util.List;
 
 
-import com.revature.beans.Concession;
-import com.revature.beans.Movie;
-import com.revature.beans.Receipt;
-import com.revature.beans.RewardStatus;
-import com.revature.beans.Room;
-import com.revature.beans.User;
+import com.cinema.beans.Concession;
+import com.cinema.beans.Movie;
+import com.cinema.beans.Receipt;
+import com.cinema.beans.RewardStatus;
+import com.cinema.beans.Room;
+import com.cinema.beans.User;
 
 public interface Dao {
 

@@ -1,54 +1,64 @@
 package com.cinema.beans;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 import java.io.Serializable;
+import java.util.List;
 
-import java.util.Set;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "MOVIE")
+@Table(name="MOVIE")
 public class Movie implements Serializable {
 
 	@Id
 	@Column(name = "MOVIE_ID")
 	private int id;
-
+	
 	@Column(name = "MOVIE_TITLE")
 	private String title;
-
+	
 	@Column(name = "MOVIE_LENGTH")
-	private LocalDate length;
-
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "MOVIE_DATES", joinColumns = @JoinColumn(name = "MOVIE_ID"), inverseJoinColumns = @JoinColumn(name = "MOVIE_DATE"))
-	private Set<LocalDate> movieDates;
-
-	@JoinTable(name = "MOVIE_TIMES", joinColumns = @JoinColumn(name = "MOVIE_ID"), inverseJoinColumns = @JoinColumn(name = "MOVIE_TIME"))
-	private Set<LocalDate> showTimes;
-
-	public Movie() {
-
+	private int length;
+	
+	@Column(name = "TRAILER_KEY")
+	private String trailerKey;
+	
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ROOM_NUMBER")
+	private Room room;
+	
+//	@ElementCollection
+//	private Set<int> movieints = new HashSet<int>();
+//	
+//	@ElementCollection
+//	private Set<int> showTimes = new HashSet<int>();
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "MOVIE_TIMES", 
+		joinColumns = { @JoinColumn(name = "MOVIE_ID") }, 
+		inverseJoinColumns = { @JoinColumn(name = "SHOWTIME_ID") })
+	private List<Showtime> showtimes;
+	
+	public Movie(){
+		
 	}
 
-	public Movie(int id, String title, LocalDate length, Set<LocalDate> movieDates, Set<LocalDate> showTimes) {
-
+	public Movie(int id, String title, int length, String trailerKey, Room room, List<Showtime> showtimes) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.length = length;
-		this.movieDates = movieDates;
-		this.showTimes = showTimes;
+		this.trailerKey = trailerKey;
+		this.room = room;
+		this.showtimes = showtimes;
 	}
 
 	public int getId() {
@@ -67,35 +77,41 @@ public class Movie implements Serializable {
 		this.title = title;
 	}
 
-	public LocalDate getLength() {
+	public int getLength() {
 		return length;
 	}
 
-	public void setLength(LocalDate length) {
+	public void setLength(int length) {
 		this.length = length;
 	}
 
-	public Set<LocalDate> getMovieDates() {
-		return movieDates;
+	public String getTrailerKey() {
+		return trailerKey;
 	}
 
-	public void setMovieDates(Set<LocalDate> movieDates) {
-		this.movieDates = movieDates;
+	public void setTrailerKey(String trailerKey) {
+		this.trailerKey = trailerKey;
 	}
 
-	public Set<LocalDate> getShowTimes() {
-		return showTimes;
+	public Room getRoom() {
+		return room;
 	}
 
-	public void setShowTimes(Set<LocalDate> showTimes) {
+	public void setRoom(Room room) {
+		this.room = room;
+	}
 
-		this.showTimes = showTimes;
+	public List<Showtime> getShowtimes() {
+		return showtimes;
+	}
+
+	public void setShowtimes(List<Showtime> showtimes) {
+		this.showtimes = showtimes;
 	}
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", length=" + length + ", movieDates=" + movieDates
-				+ ", showTimes=" + showTimes + "]";
+		return "Movie [id=" + id + ", title=" + title + ", length=" + length + ", trailerKey=" + trailerKey + ", room="
+				+ room + ", showtimes=" + showtimes + "]";
 	}
-
 }

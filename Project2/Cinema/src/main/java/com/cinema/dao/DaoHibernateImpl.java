@@ -17,6 +17,7 @@ import com.cinema.beans.Movie;
 import com.cinema.beans.Receipt;
 import com.cinema.beans.RewardStatus;
 import com.cinema.beans.Room;
+import com.cinema.beans.Showtime;
 import com.cinema.beans.User;
 
 @Transactional
@@ -34,7 +35,6 @@ public class DaoHibernateImpl implements Dao {
 	public void createUser(User user) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(user.getReceipts());
 		s.save(user);
 	
 	}
@@ -48,7 +48,6 @@ public class DaoHibernateImpl implements Dao {
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(user.getReceipts());
 		s.update(user);
 	}
 	
@@ -93,8 +92,6 @@ public class DaoHibernateImpl implements Dao {
 	public void createMovie(Movie mvoie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(mvoie.getMovieDates());
-		s.saveOrUpdate(mvoie.getShowTimes());
 		s.save(mvoie);
 
 	}
@@ -106,8 +103,6 @@ public class DaoHibernateImpl implements Dao {
 	public void updateMovie(Movie mvoie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(mvoie.getMovieDates());
-		s.saveOrUpdate(mvoie.getShowTimes());
 		s.update(mvoie);
 	}
 	
@@ -287,5 +282,41 @@ public class DaoHibernateImpl implements Dao {
 		rooms = s.createQuery("from Room").list();
 		return rooms;
 	}
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#createShowtime(com.revature.beans.Showtime)
+	 */
+	public void createShowtime(Showtime show){
+		Session s = sessionFactory.getCurrentSession();
+		s.save(show);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#updateShowtime(com.revature.beans.Showtime)
+	 */
+	public void updateShowtime(Showtime show){
+		Session s = sessionFactory.getCurrentSession();
+		s.update(show);
+	}
 	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessionByName(java.lang.String)
+	 */
+	public Showtime getShowtimeByShowtimeId(int id){
+		Session s = sessionFactory.getCurrentSession();
+		Showtime temp = new Showtime();
+		Criteria cri = s.createCriteria(Showtime.class).add(Restrictions.like("id", id));
+		temp = (Showtime) cri.list().get(0);
+		return temp;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessions()
+	 */
+	public List<Showtime> getShowtimes(){
+		Session s = sessionFactory.getCurrentSession();
+		List<Showtime> shows = new ArrayList<Showtime>();
+		shows = s.createQuery("from Showtime").list();
+		return shows;
+	}
+
 }

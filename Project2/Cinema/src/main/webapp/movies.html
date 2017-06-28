@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/3d.css" rel="stylesheet">
+<link href="css/movie.css" rel="stylesheet">
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+<!-- JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/3d.js"></script>
+
+<script
+	src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+<title>5G Theater</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">5G Theater</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">Home</a></li>
+				<li class="active"><a href="#">Movies <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">Concessions</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+			<div id="navbar" class="navbar-collapse collapse">
+				<form class="navbar-form navbar-right">
+					<div class="form-group">
+						<input type="text" placeholder="Email" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-success">Sign in</button>
+					<a>Not a Member?</a>
+				</form>
+			</div>
+			<!--/.navbar-collapse -->
+		</div>
+	</nav>
+	
+	<div class="banner">
+        <section id="dg-container" class="dg-container">
+            <div class="dg-wrapper">
+                <a href="index.html">
+                    <img src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg">
+                </a>
+                <a href="#">
+                    <img src="http://www.impawards.com/2010/posters/tron_legacy_ver11_xlg.jpg">
+                </a>
+                <a href="#">
+                    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjc5MDE0NjkxOF5BMl5BanBnXkFtZTcwNzA0NTkyMw@@._V1_UY1200_CR90,0,630,1200_AL_.jpg">
+                </a>
+                <a href="#">
+                    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_UY1200_CR69,0,630,1200_AL_.jpg">
+                </a>
+                <a href="#" >
+                    <img src="http://www.joblo.com/posters/images/full/secret_life_of_walter_mitty_ver2_xlg.jpg">
+                </a>
+            </div>
+            <ol class="button" id="lightButton" style="top: 250px;">
+                <li index="0">
+                <li index="1">
+                <li index="2">
+                <li index="3">
+                <li index="4">
+            </ol>
+            <nav>
+                <span class="dg-prev"></span>
+                <span class="dg-next"></span>
+            </nav>
+        </section>
+    </div>
+
+	<div class="card-movie-wrapper card-movie-wrapper--centered" style="top: 800px;">
+
+		<div class="card-movie-carousel">
+
+			<div
+				class="card-movie card-movie--light card-movie--looper card-movie--active" id="card-movie--looper">
+
+				<div class="card-movie__content">
+
+					<div class="card-movie__title" style="color: white">Wonder Woman</div>
+
+					<div class="card-movie__details">
+
+						<span class="card-movie__details-item">2012</span> <span
+							class="card-movie__details-item">119 mins</span>
+
+						<ul class="card-movie__details-item card-movie__details-list">
+							<li>Action</li>
+							<li>Crime</li>
+							<li>Sci-fi</li>
+						</ul>
+
+					</div>
+					<!-- /.card-movie__details -->
+
+					<div class="card-movie__description">
+
+						<p>In 2074, when the mob wants to get rid of someone, the
+							target is sent into the past, where a hired gun awaits - someone
+							like Joe.</p>
+
+					</div>
+					<!-- /.card-movie__description -->
+
+				</div>
+				<!-- /.card-movie__content -->
+
+				<div class="card-movie__rating">7.5</div>
+
+				<div class="card-movie__player" data-trailer="VSB4wGIdDwo"></div>
+				<!-- /.card-movie__player -->
+
+			</div>
+			<!-- /.card-movie card-movie--looper -->
+
+			<div class="card-movie card-movie--dark card-movie--tron" id="card-movie--tron" >
+
+				<div class="card-movie__content">
+
+					<div class="card-movie__title">Tron: Legacy</div>
+
+					<div class="card-movie__details">
+
+						<span class="card-movie__details-item">2010</span> <span
+							class="card-movie__details-item">125 mins</span>
+
+						<ul class="card-movie__details-item card-movie__details-list">
+							<li>Action</li>
+							<li>Adventure</li>
+							<li>Fantasy</li>
+							<li>Sci-fi</li>
+						</ul>
+
+					</div>
+					<!-- /.card-movie__details -->
+
+					<div class="card-movie__description">
+
+						<p>The son of a virtual world designer goes looking for his
+							father and ends up inside the digital world that his father
+							designed. He meets his father's corrupted creation and a unique
+							ally who was born inside the digital world.</p>
+
+					</div>
+					<!-- /.card-movie__description -->
+
+				</div>
+				<!-- /.card-movie__content -->
+
+				<div class="card-movie__rating">6.8</div>
+
+				<div class="card-movie__player" data-trailer="L9szn1QQfas"></div>
+				<!-- /.card-movie__player -->
+
+			</div>
+			<!-- /.card-movie card-movie--tron -->
+
+			<div class="card-movie card-movie--light card-movie--garden-state">
+
+				<div class="card-movie__content">
+
+					<div class="card-movie__title">Garden State</div>
+
+					<div class="card-movie__details">
+
+						<span class="card-movie__details-item">2004</span> <span
+							class="card-movie__details-item">102 mins</span>
+
+						<ul class="card-movie__details-item card-movie__details-list">
+							<li>Comedy</li>
+							<li>Drama</li>
+							<li>Romance</li>
+						</ul>
+
+					</div>
+					<!-- /.card-movie__details -->
+
+					<div class="card-movie__description">
+
+						<p>A quietly troubled young man returns home for his mother's
+							funeral after being estranged from his family for a decade.</p>
+
+					</div>
+					<!-- /.card-movie__description -->
+
+				</div>
+				<!-- /.card-movie__content -->
+
+				<div class="card-movie__rating">7.6</div>
+
+				<div class="card-movie__player" data-trailer="u82n0e1mgmQ"></div>
+				<!-- /.card-movie__player -->
+
+			</div>
+			<!-- /.card-movie card-movie--garden-state -->
+
+			<div class="card-movie card-movie--light card-movie--interstellar">
+
+				<div class="card-movie__content">
+
+					<div class="card-movie__title">Interstellar</div>
+
+					<div class="card-movie__details">
+
+						<span class="card-movie__details-item">2014</span> <span
+							class="card-movie__details-item">169 mins</span>
+
+						<ul class="card-movie__details-item card-movie__details-list">
+							<li>Adventure</li>
+							<li>Drama</li>
+							<li>Sci-fi</li>
+						</ul>
+
+					</div>
+					<!-- /.card-movie__details -->
+
+					<div class="card-movie__description">
+
+						<p>With our time on Earth coming to an end, a team of
+							explorers undertakes the most important mission in human history;
+							traveling beyond this galaxy to discover whether mankind has a
+							future among the stars.</p>
+
+					</div>
+					<!-- /.card-movie__description -->
+
+				</div>
+				<!-- /.card-movie__content -->
+
+				<div class="card-movie__rating">8.7</div>
+
+				<div class="card-movie__player" data-trailer="3WzHXI5HizQ"></div>
+				<!-- /.card-movie__player -->
+
+			</div>
+			<!-- /.card-movie card-movie--interstellar -->
+
+			<div class="card-movie card-movie--light card-movie--walter-mitty">
+
+				<div class="card-movie__content">
+
+					<div class="card-movie__title">Walter Mitty</div>
+
+					<div class="card-movie__details">
+
+						<span class="card-movie__details-item">2013</span> <span
+							class="card-movie__details-item">114 mins</span>
+
+						<ul class="card-movie__details-item card-movie__details-list">
+							<li>Adventure</li>
+							<li>Comedy</li>
+							<li>Drama</li>
+						</ul>
+
+					</div>
+					<!-- /.card-movie__details -->
+
+					<div class="card-movie__description">
+
+						<p>When his job along with that of his co-worker are
+							threatened, Walter takes action in the real world embarking on a
+							global journey that turns into an adventure more extraordinary
+							than anything he could have ever imagined.</p>
+
+					</div>
+					<!-- /.card-movie__description -->
+
+				</div>
+				<!-- /.card-movie__content -->
+
+				<div class="card-movie__rating">7.4</div>
+
+				<div class="card-movie__player" data-trailer="QD6cy4PBQPI"></div>
+				<!-- /.card-movie__player -->
+
+			</div>
+			<!-- /.card-movie card-movie--walter-mitty -->
+
+		</div>
+		<!-- /.card-movie-carousel -->
+
+		<div class="card-movie-navigation">
+
+			<ul class="card-movie-navigation__list" data-navigation>
+				<li class="is-active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<!-- /.card-movie-navigation__list -->
+
+			<button type="button" data-play></button>
+
+		</div>
+		<!-- /.card-movie-navigation -->
+
+	</div>
+	<!-- /.card-movie-wrapper -->
+
+	<script>
+//global vars
+var players = [],
+    current = 0;
+    
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// YouTube iFrame API Ready
+function onYouTubeIframeAPIReady() {
+
+    $('[data-trailer]').each(function() {
+
+        var player,
+        id = $(this).data('trailer');
+
+        $(this).html('<iframe id="player_' + id + '" src="https://www.youtube.com/embed/' + id + '?enablejsapi=1&autohide=1&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>');
+
+        player = new YT.Player('player_' + id, {
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+
+        players.push(player);
+
+    });
+
+}
+
+// YouTube On Player State Change
+function onPlayerStateChange(event) {
+
+    var player = players[current];
+
+    switch(event.data) {
+
+        case YT.PlayerState.ENDED:
+            player.stopVideo();
+            player.seekTo(0);
+			$('.card-movie--playing').removeClass('card-movie--playing');
+			$('[data-play]').removeClass('is-playing');
+;        break;
+
+    }
+
+}
+
+$(function() {
+
+    $('[data-play]').on('click', function() {
+
+        var $card = $('.card-movie--active'),
+            player = players[$card.index()];
+
+        if ($card.hasClass('card-movie--playing')) {
+            $(this).toggleClass('is-playing');
+            player.pauseVideo();
+        } else {
+            $(this).toggleClass('is-playing');
+            player.playVideo();
+        }
+
+        $card.toggleClass('card-movie--playing');
+
+    });
+
+    $('[data-navigation] li').on('click', function() {
+
+        // remove current stuff         
+        players[current].pauseVideo();
+        $('.card-movie:eq(' + current + ')').removeClass('card-movie--playing card-movie--active');
+        $('[data-play]').removeClass('is-playing');
+         // assign new current
+        current = $(this).index();
+        $(this).addClass('is-active').siblings().removeClass('is-active');
+        $('.card-movie:eq(' + current + ')').addClass('card-movie--active');
+
+    });
+
+});
+</script>
+</body>
+</html>

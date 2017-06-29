@@ -46,8 +46,6 @@ public class Showtime implements Serializable {
 		this.date = date;
 	}
 
-	
-	
 	public int getid() {
 		return id;
 	}

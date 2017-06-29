@@ -8,6 +8,7 @@ import com.cinema.beans.Movie;
 import com.cinema.beans.Receipt;
 import com.cinema.beans.RewardStatus;
 import com.cinema.beans.Room;
+import com.cinema.beans.Showtime;
 import com.cinema.beans.User;
 
 public interface Dao {
@@ -126,5 +127,24 @@ public interface Dao {
 	 */
 	public List<Room> getRooms();
 
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#createShowtime(com.revature.beans.Showtime)
+	 */
+	void createShowtime(Showtime show);
+
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#updateShowtime(com.revature.beans.Showtime)
+	 */
+	void updateShowtime(Showtime show);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessionByName(java.lang.String)
+	 */
+	public Showtime getShowtimeByShowtimeId(int id);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessions()
+	 */
+	public List<Showtime> getShowtimes();
 
 }

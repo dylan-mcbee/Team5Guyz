@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,9 +36,7 @@ public class DaoHibernateImpl implements Dao {
 		s.save(user);
 	
 	}
-	
 
-	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#updateUser(com.revature.beans.User)
 	 */
@@ -132,11 +128,11 @@ public class DaoHibernateImpl implements Dao {
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovieByMovietitle(int)
 	 */
-	public List<Movie> getMovieByMovieTitle(String title){
+	public Movie getMovieByMovieTitle(String title){
 		Session s = sessionFactory.getCurrentSession();
-		List<Movie> temp = new ArrayList<Movie>();
+		Movie temp = new Movie();
 		Criteria cri = s.createCriteria(Movie.class).add(Restrictions.like("title", title));
-		temp = (List<Movie>) cri.list();
+		temp = (Movie) cri.list().get(0);
 		return temp;
 	}
 
@@ -180,7 +176,7 @@ public class DaoHibernateImpl implements Dao {
 	public List<Receipt> getReceiptsByUserId(int id){
 		Session s = sessionFactory.getCurrentSession();
 		List<Receipt> receipts = new ArrayList<Receipt>();
-		Criteria cri = s.createCriteria(Receipt.class).add(Restrictions.like("userId", id));
+		Criteria cri = s.createCriteria(Receipt.class).add(Restrictions.like("user", new User(id)));
 		receipts = (List<Receipt>) cri.list();
 		return receipts;
 	}

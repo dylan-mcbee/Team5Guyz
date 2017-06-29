@@ -47,6 +47,11 @@ public interface Dao {
 	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
 	 */
 	void updateMovie(Movie mvoie);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#deleteMovie(com.revature.beans.Movie)
+	 */
+	void deleteMovie(Movie mvoie);
 
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovies(com.revature.beans.Movie)

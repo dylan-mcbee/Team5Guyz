@@ -25,7 +25,7 @@ public class User implements Serializable {
 	@Column(name = "USER_ID")
 	private int id;
 	
-	@Column(name = "EMAIL")
+	@Column(name = "EMAIL" , unique = true)
 	private String email;
 	
 	@Column(name = "FIRST_NAME")
@@ -53,6 +53,21 @@ public class User implements Serializable {
 	public User(){
 		
 	}
+
+
+
+	public User(int id) {
+		super();
+		this.id = id;
+	}
+
+
+	public User(String email) {
+		super();
+		this.email = email;
+	}
+
+
 
 	public User(String email, int id, String firstName, String lastName, String password, RewardStatus rewardStatus,
 			String phoneNumber, int points) {
@@ -153,12 +168,12 @@ public class User implements Serializable {
 //		this.receipts = receipts;
 //	}
 //
-//	@Override
-//	public String toString() {
-//		return "User [email=" + email + ", id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
-//				+ ", password=" + password + ", rewardStatus=" + rewardStatus + ", phoneNumber=" + phoneNumber
-//				+ ", points=" + points + ", receipts=" + receipts + "]";
-//	}
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", password=" + password + ", rewardStatus=" + rewardStatus + ", phoneNumber=" + phoneNumber
+				+ ", points=" + points + "]\n";
+	}
 
 
 }

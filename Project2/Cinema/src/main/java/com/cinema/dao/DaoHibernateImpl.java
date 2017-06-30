@@ -90,12 +90,12 @@ public class DaoHibernateImpl implements Dao {
 	 * @see com.revature.dao.Dao#createMovie(com.revature.beans.Movie)
 	 */
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
-	public void createMovie(Movie mvoie) {
+	public void createMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(mvoie.getMovieDates());
-		s.saveOrUpdate(mvoie.getShowTimes());
-		s.save(mvoie);
+		s.saveOrUpdate(movie.getMovieDates());
+		s.saveOrUpdate(movie.getShowTimes());
+		s.save(movie);
 
 	}
 	

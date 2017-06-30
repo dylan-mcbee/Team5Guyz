@@ -90,7 +90,6 @@ public class DaoHibernateImpl implements Dao {
 		Session s = sessionFactory.getCurrentSession();
 		s.saveOrUpdate(movie.getShowtimes());
 		s.save(movie);
-
 	}
 	
 	/* (non-Javadoc)

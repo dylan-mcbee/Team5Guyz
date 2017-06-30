@@ -39,8 +39,6 @@ public class DaoHibernateImpl implements Dao {
 	
 	}
 	
-
-	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#updateUser(com.revature.beans.User)
 	 */
@@ -50,8 +48,6 @@ public class DaoHibernateImpl implements Dao {
 		Session s = sessionFactory.getCurrentSession();
 		s.update(user);
 	}
-	
-
 
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getUsers()

@@ -8,6 +8,7 @@ import com.cinema.beans.Movie;
 import com.cinema.beans.Receipt;
 import com.cinema.beans.RewardStatus;
 import com.cinema.beans.Room;
+import com.cinema.beans.Showtime;
 import com.cinema.beans.User;
 
 public interface Dao {
@@ -46,6 +47,11 @@ public interface Dao {
 	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
 	 */
 	void updateMovie(Movie mvoie);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#deleteMovie(com.revature.beans.Movie)
+	 */
+	void deleteMovie(Movie mvoie);
 
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovies(com.revature.beans.Movie)
@@ -60,7 +66,7 @@ public interface Dao {
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovieByMovieTitle(com.revature.beans.Movie)
 	 */
-	List<Movie> getMovieByMovieTitle(String title);
+	Movie getMovieByMovieTitle(String title);
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#createReceipt(com.revature.beans.Receipt)
 	 */
@@ -80,6 +86,7 @@ public interface Dao {
 	 * @see com.revature.dao.Dao#getReceiptsByUserId(com.revature.beans.Receipt)
 	 */
 	List<Receipt> getReceiptsByUserId(int id);
+	
 	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getReceipts()
@@ -126,5 +133,24 @@ public interface Dao {
 	 */
 	public List<Room> getRooms();
 
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#createShowtime(com.revature.beans.Showtime)
+	 */
+	void createShowtime(Showtime show);
+
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#updateShowtime(com.revature.beans.Showtime)
+	 */
+	void updateShowtime(Showtime show);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessionByName(java.lang.String)
+	 */
+	public Showtime getShowtimeByShowtimeId(int id);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessions()
+	 */
+	public List<Showtime> getShowtimes();
 
 }

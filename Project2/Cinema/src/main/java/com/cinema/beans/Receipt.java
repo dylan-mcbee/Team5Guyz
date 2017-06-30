@@ -1,13 +1,11 @@
 package com.cinema.beans;
 
-
-
-import java.time.LocalDate;
-
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -15,45 +13,51 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.cinema.converter.LocalDateAttributeConverter;
+import com.cinema.converter.LocalDateTimeAttributeConverter;
+
 @Entity
 @Table(name = "RECEIPT")
 public class Receipt implements Serializable {
-
+	
 	@Id
 	@Column(name = "CON_NUMBER")
 	private String confirmationNumber;
-
+	
+	@Convert(converter = LocalDateAttributeConverter.class)
 	@Column(name = "PURCHASE_DATE")
 	private LocalDate purchaseDate;
-
+	
+	@Convert(converter = LocalDateAttributeConverter.class)
 	@Column(name = "SHOW_DATE")
 	private LocalDate showDate;
-
+	
 	@Column(name = "PRICE")
 	private double price;
-
+	
 	@Column(name = "MOVIE_TITLE")
 	private String movieTitle;
-
+	
+	@Convert(converter = LocalDateTimeAttributeConverter.class)
 	@Column(name = "MOVIE_TIME")
-	private LocalDate movieTime;
-
+	private LocalDateTime movieTime;
+	
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
-
+	
 	@Column(name = "NUM_TICKETS")
 	private int numOfTickets;
-
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="USER_ID", referencedColumnName="USER_ID")
 	private User user;
-
-	public Receipt() {
-
+	
+	public Receipt(){
+		
 	}
 
-	public Receipt(String confirmationNumber, LocalDate purchaseDate, LocalDate showDate, double price,	String movieTitle, LocalDate movieTime, String phoneNumber, User user) {
-
+	public Receipt(String confirmationNumber, LocalDate purchaseDate, LocalDate showDate, double price,
+			String movieTitle, LocalDateTime movieTime, String phoneNumber, User user) {
 		super();
 		this.confirmationNumber = confirmationNumber;
 		this.purchaseDate = purchaseDate;
@@ -63,7 +67,6 @@ public class Receipt implements Serializable {
 		this.movieTime = movieTime;
 		this.phoneNumber = phoneNumber;
 		this.user = user;
-
 	}
 
 	public String getConfirmationNumber() {
@@ -106,11 +109,11 @@ public class Receipt implements Serializable {
 		this.movieTitle = movieTitle;
 	}
 
-	public LocalDate getMovieTime() {
+	public LocalDateTime getMovieTime() {
 		return movieTime;
 	}
 
-	public void setMovieTime(LocalDate movieTime) {
+	public void setMovieTime(LocalDateTime movieTime) {
 		this.movieTime = movieTime;
 	}
 
@@ -122,16 +125,12 @@ public class Receipt implements Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 
-
-
-
 	public User getUser() {
 		return user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
-
 	}
 
 	@Override
@@ -139,7 +138,6 @@ public class Receipt implements Serializable {
 		return "Receipt [confirmationNumber=" + confirmationNumber + ", purchaseDate=" + purchaseDate + ", showDate="
 				+ showDate + ", price=" + price + ", movieTitle=" + movieTitle + ", movieTime=" + movieTime
 				+ ", phoneNumber=" + phoneNumber + ", userId=" + user + "]";
-
 	}
 
 }

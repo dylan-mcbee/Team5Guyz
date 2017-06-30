@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +15,7 @@ import com.cinema.beans.Movie;
 import com.cinema.beans.Receipt;
 import com.cinema.beans.RewardStatus;
 import com.cinema.beans.Room;
+import com.cinema.beans.Showtime;
 import com.cinema.beans.User;
 
 @Transactional
@@ -34,13 +33,10 @@ public class DaoHibernateImpl implements Dao {
 	public void createUser(User user) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(user.getReceipts());
 		s.save(user);
 	
 	}
-	
 
-	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#updateUser(com.revature.beans.User)
 	 */
@@ -48,7 +44,6 @@ public class DaoHibernateImpl implements Dao {
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(user.getReceipts());
 		s.update(user);
 	}
 	
@@ -93,9 +88,14 @@ public class DaoHibernateImpl implements Dao {
 	public void createMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
+<<<<<<< HEAD
 		s.saveOrUpdate(movie.getMovieDates());
 		s.saveOrUpdate(movie.getShowTimes());
 		s.save(movie);
+=======
+		s.saveOrUpdate(mvoie.getShowtimes());
+		s.save(mvoie);
+>>>>>>> master
 
 	}
 	
@@ -106,12 +106,19 @@ public class DaoHibernateImpl implements Dao {
 	public void updateMovie(Movie mvoie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(mvoie.getMovieDates());
-		s.saveOrUpdate(mvoie.getShowTimes());
+		s.saveOrUpdate(mvoie.getShowtimes());
 		s.update(mvoie);
 	}
 	
-
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
+	 */
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
+	public void deleteMovie(Movie mvoie){
+		Session s = sessionFactory.getCurrentSession();
+		s.delete(mvoie);
+	}
+	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovies()
 	 */
@@ -137,11 +144,11 @@ public class DaoHibernateImpl implements Dao {
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovieByMovietitle(int)
 	 */
-	public List<Movie> getMovieByMovieTitle(String title){
+	public Movie getMovieByMovieTitle(String title){
 		Session s = sessionFactory.getCurrentSession();
-		List<Movie> temp = new ArrayList<Movie>();
+		Movie temp = new Movie();
 		Criteria cri = s.createCriteria(Movie.class).add(Restrictions.like("title", title));
-		temp = (List<Movie>) cri.list();
+		temp = (Movie) cri.list().get(0);
 		return temp;
 	}
 
@@ -185,7 +192,7 @@ public class DaoHibernateImpl implements Dao {
 	public List<Receipt> getReceiptsByUserId(int id){
 		Session s = sessionFactory.getCurrentSession();
 		List<Receipt> receipts = new ArrayList<Receipt>();
-		Criteria cri = s.createCriteria(Receipt.class).add(Restrictions.like("userId", id));
+		Criteria cri = s.createCriteria(Receipt.class).add(Restrictions.like("user", new User(id)));
 		receipts = (List<Receipt>) cri.list();
 		return receipts;
 	}
@@ -287,5 +294,41 @@ public class DaoHibernateImpl implements Dao {
 		rooms = s.createQuery("from Room").list();
 		return rooms;
 	}
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#createShowtime(com.revature.beans.Showtime)
+	 */
+	public void createShowtime(Showtime show){
+		Session s = sessionFactory.getCurrentSession();
+		s.save(show);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#updateShowtime(com.revature.beans.Showtime)
+	 */
+	public void updateShowtime(Showtime show){
+		Session s = sessionFactory.getCurrentSession();
+		s.update(show);
+	}
 	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessionByName(java.lang.String)
+	 */
+	public Showtime getShowtimeByShowtimeId(int id){
+		Session s = sessionFactory.getCurrentSession();
+		Showtime temp = new Showtime();
+		Criteria cri = s.createCriteria(Showtime.class).add(Restrictions.like("id", id));
+		temp = (Showtime) cri.list().get(0);
+		return temp;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#getConcessions()
+	 */
+	public List<Showtime> getShowtimes(){
+		Session s = sessionFactory.getCurrentSession();
+		List<Showtime> shows = new ArrayList<Showtime>();
+		shows = s.createQuery("from Showtime").list();
+		return shows;
+	}
+
 }

@@ -1,6 +1,5 @@
 package com.cinema.beans;
 
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -17,7 +16,6 @@ public class Concession implements Serializable {
 	private String name;
 	
 	@Column(name="PRICE")
-
 	private double price;
 	
 	public Concession(){
@@ -48,7 +46,7 @@ public class Concession implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Concession [name=" + name + ", price=" + price + "]";
+		return "Concession [name=" + name + ", price=" + price + "]\n";
 	}
 	
 }

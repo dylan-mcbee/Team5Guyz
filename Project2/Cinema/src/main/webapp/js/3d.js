@@ -62,7 +62,7 @@ $(function () {
             }
 
             var _self = this;
-            for (var i = 0, len = this.button.length; i < len; i++) {     // 点击小圆点
+            for (var i = 0, len = this.button.length; i < len; i++) {     
                 this.button[i].addEventListener('click', function() {
                     var toIndex = parseInt(this.getAttribute('index'));
                     var toMove = toIndex - _self.indexB;
@@ -101,7 +101,7 @@ $(function () {
             }
         },
 
-        // 自适应宽度
+        
         _updateWidth: function () {
             if (this.support3d) {
                 if (document.body.clientWidth < 1000) {

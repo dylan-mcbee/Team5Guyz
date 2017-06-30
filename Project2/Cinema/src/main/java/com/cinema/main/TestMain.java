@@ -44,7 +44,7 @@ public class TestMain {
 //		r2= dao.getRoomByRoomNum(2);
 //		dao.createRoom(r);
 //		dao.createRoom(r2);
-		Movie m = new Movie();
+//		Movie m = new Movie();
 	
 //		List<Movie> m = dao.getMovies();
 //		Movie m = dao.getMovieByMovieId(1);
@@ -72,8 +72,6 @@ public class TestMain {
 //		dao.updateShowtime(st);
 //		System.out.println(st.toString());
 
-	
-		
 //		Showtime st = new Showtime( LocalDateTime.now(), LocalDate.now(), r.getCapacity());
 		
 //		m = new Movie(1, "machine", 35, "sd.fsdfsdfs", sts);
@@ -89,9 +87,7 @@ public class TestMain {
 //		u.setFirstName("lee");
 //		u.setRewardStatus(RewardStatus.BRONZE);
 //		dao.updateUser(u);
-
 //		u = dao.getUsers();
-		
 //		u = dao.getUserByEmail("liqunzheng@live.cn");
 //		System.out.println(u.toString());
 //		System.out.println(st.toString());
@@ -102,7 +98,6 @@ public class TestMain {
 //		Receipt re = dao.getReceiptsByConfNum("XEDWEDSVXCE");
 //		re.setPrice(43.4);
 //		dao.updateReceipt(re);
-		
 //		Receipt re = dao.getReceiptsByConfNum("XEWFDF");
 //		Receipt re = dao.getReceiptsByUserId(1);
 //		List<Receipt> re = dao.getReceipts();

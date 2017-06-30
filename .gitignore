@@ -15,6 +15,7 @@
 **/.settings/
 **/.classpath
 **/.recommenders/**
+**/.DS_Store
 /Servers
 #IDEA
 **/.idea/

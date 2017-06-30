@@ -24,6 +24,15 @@ public class Service {
 		dao.updateUser(user);
 		System.out.println(user.getFirstName()+ " "+ user.getLastName()+" updated");
 	}
+	
+	public User login(String email, String password){
+		User newUser = dao.getUserByEmail(email);
+		if(newUser.getPassword().equals(password)){
+			return newUser;
+		}
+		System.out.println("Login Failed");
+		return null;
+	}
 
 	public List <User> getUsers(){
 		return dao.getUsers();

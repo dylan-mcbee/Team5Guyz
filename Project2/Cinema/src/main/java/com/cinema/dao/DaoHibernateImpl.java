@@ -88,14 +88,8 @@ public class DaoHibernateImpl implements Dao {
 	public void createMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-<<<<<<< HEAD
-		s.saveOrUpdate(movie.getMovieDates());
-		s.saveOrUpdate(movie.getShowTimes());
+		s.saveOrUpdate(movie.getShowtimes());
 		s.save(movie);
-=======
-		s.saveOrUpdate(mvoie.getShowtimes());
-		s.save(mvoie);
->>>>>>> master
 
 	}
 	
@@ -103,20 +97,20 @@ public class DaoHibernateImpl implements Dao {
 	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
 	 */
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
-	public void updateMovie(Movie mvoie) {
+	public void updateMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(mvoie.getShowtimes());
-		s.update(mvoie);
+		s.saveOrUpdate(movie.getShowtimes());
+		s.update(movie);
 	}
 	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
 	 */
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
-	public void deleteMovie(Movie mvoie){
+	public void deleteMovie(Movie movie){
 		Session s = sessionFactory.getCurrentSession();
-		s.delete(mvoie);
+		s.delete(movie);
 	}
 	
 	/* (non-Javadoc)

@@ -47,7 +47,7 @@ public class Service {
 		return dao.getMovieByMovieId(id);
 	}
 
-	public List<Movie> getMovieByMovieTitle(String title){
+	public Movie getMovieByMovieTitle(String title){
 		return dao.getMovieByMovieTitle(title);
 	}
 

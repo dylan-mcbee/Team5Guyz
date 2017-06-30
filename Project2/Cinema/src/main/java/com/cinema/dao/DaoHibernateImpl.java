@@ -88,9 +88,8 @@ public class DaoHibernateImpl implements Dao {
 	public void createMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(movie.getShowtimes());
+		s.saveOrUpdate(movie.getShowTimes());
 		s.save(movie);
-
 	}
 	
 	/* (non-Javadoc)

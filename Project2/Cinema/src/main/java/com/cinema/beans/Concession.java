@@ -46,7 +46,7 @@ public class Concession implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Concession [name=" + name + ", price=" + price + "]";
+		return "Concession [name=" + name + ", price=" + price + "]\n";
 	}
 	
 }

@@ -22,7 +22,7 @@ public class Movie implements Serializable {
 	@Column(name = "MOVIE_ID")
 	private int id;
 	
-	@Column(name = "MOVIE_TITLE")
+	@Column(name = "MOVIE_TITLE", unique = true)
 	private String title;
 	
 	@Column(name = "MOVIE_LENGTH")
@@ -31,9 +31,6 @@ public class Movie implements Serializable {
 	@Column(name = "TRAILER_KEY")
 	private String trailerKey;
 	
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ROOM_NUMBER")
-	private Room room;
 	
 //	@ElementCollection
 //	private Set<int> movieints = new HashSet<int>();
@@ -41,7 +38,7 @@ public class Movie implements Serializable {
 //	@ElementCollection
 //	private Set<int> showTimes = new HashSet<int>();
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "MOVIE_TIMES", 
 		joinColumns = { @JoinColumn(name = "MOVIE_ID") }, 
 		inverseJoinColumns = { @JoinColumn(name = "SHOWTIME_ID") })
@@ -50,16 +47,16 @@ public class Movie implements Serializable {
 	public Movie(){
 		
 	}
-
-	public Movie(int id, String title, int length, String trailerKey, Room room, List<Showtime> showtimes) {
+	
+	public Movie(int id, String title, int length, String trailerKey, List<Showtime> showtimes) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.length = length;
 		this.trailerKey = trailerKey;
-		this.room = room;
 		this.showtimes = showtimes;
 	}
+
 
 	public int getId() {
 		return id;
@@ -93,13 +90,6 @@ public class Movie implements Serializable {
 		this.trailerKey = trailerKey;
 	}
 
-	public Room getRoom() {
-		return room;
-	}
-
-	public void setRoom(Room room) {
-		this.room = room;
-	}
 
 	public List<Showtime> getShowtimes() {
 		return showtimes;
@@ -111,7 +101,7 @@ public class Movie implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", length=" + length + ", trailerKey=" + trailerKey + ", room="
-				+ room + ", showtimes=" + showtimes + "]";
+		return "Movie [id=" + id + ", title=" + title + ", length=" + length + ", trailerKey=" + trailerKey
+				 + ", showtimes=" + showtimes + "]\n";
 	}
 }

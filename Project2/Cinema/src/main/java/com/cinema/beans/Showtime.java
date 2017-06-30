@@ -7,9 +7,13 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -37,15 +41,27 @@ public class Showtime implements Serializable {
 	@Column(name = "SEATS_LEFT")
 	private int seatsLeft;
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ROOM_NUMBER")
+	private Room room;
+	
 	public Showtime() {}
 	
-	public Showtime(int id, LocalDateTime time, LocalDate date) {
+	public Showtime(int id, LocalDateTime time, LocalDate date, Room room) {
 		super();
 		this.id = id;
 		this.time = time;
 		this.date = date;
+		this.room = room;
 	}
 
+	public Showtime( LocalDateTime time, LocalDate date, int seatsLeft, Room room) {
+		super();
+		this.time = time;
+		this.date = date;
+		this.seatsLeft = seatsLeft;
+		this.room = room;
+	}
 	public int getid() {
 		return id;
 	}
@@ -77,10 +93,19 @@ public class Showtime implements Serializable {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+	
+	
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
 
 	@Override
 	public String toString() {
-		return "Showtime [id=" + id + ", time=" + time + ", date=" + date + ", seatsLeft=" + seatsLeft
-				+ "]";
+		return "Showtime [id=" + id + ", time=" + time + ", date=" + date + ", seatsLeft=" + seatsLeft + ", room="
+				+ room + "]\n";
 	}
 }

@@ -47,6 +47,11 @@ public interface Dao {
 	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
 	 */
 	void updateMovie(Movie mvoie);
+	
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#deleteMovie(com.revature.beans.Movie)
+	 */
+	void deleteMovie(Movie mvoie);
 
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovies(com.revature.beans.Movie)
@@ -61,7 +66,7 @@ public interface Dao {
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovieByMovieTitle(com.revature.beans.Movie)
 	 */
-	List<Movie> getMovieByMovieTitle(String title);
+	Movie getMovieByMovieTitle(String title);
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#createReceipt(com.revature.beans.Receipt)
 	 */
@@ -81,6 +86,7 @@ public interface Dao {
 	 * @see com.revature.dao.Dao#getReceiptsByUserId(com.revature.beans.Receipt)
 	 */
 	List<Receipt> getReceiptsByUserId(int id);
+	
 	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getReceipts()

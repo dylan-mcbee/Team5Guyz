@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,7 +36,7 @@ public class DaoHibernateImpl implements Dao {
 		s.save(user);
 	
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#updateUser(com.revature.beans.User)
 	 */
@@ -48,6 +46,8 @@ public class DaoHibernateImpl implements Dao {
 		Session s = sessionFactory.getCurrentSession();
 		s.update(user);
 	}
+	
+
 
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getUsers()
@@ -85,10 +85,11 @@ public class DaoHibernateImpl implements Dao {
 	 * @see com.revature.dao.Dao#createMovie(com.revature.beans.Movie)
 	 */
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
-	public void createMovie(Movie mvoie) {
+	public void createMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.save(mvoie);
+		s.saveOrUpdate(movie.getShowtimes());
+		s.save(movie);
 
 	}
 	
@@ -96,13 +97,22 @@ public class DaoHibernateImpl implements Dao {
 	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
 	 */
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
-	public void updateMovie(Movie mvoie) {
+	public void updateMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.update(mvoie);
+		s.saveOrUpdate(movie.getShowtimes());
+		s.update(movie);
 	}
 	
-
+	/* (non-Javadoc)
+	 * @see com.revature.dao.Dao#updateMovie(com.revature.beans.Movie)
+	 */
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
+	public void deleteMovie(Movie movie){
+		Session s = sessionFactory.getCurrentSession();
+		s.delete(movie);
+	}
+	
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovies()
 	 */
@@ -128,11 +138,11 @@ public class DaoHibernateImpl implements Dao {
 	/* (non-Javadoc)
 	 * @see com.revature.dao.Dao#getMovieByMovietitle(int)
 	 */
-	public List<Movie> getMovieByMovieTitle(String title){
+	public Movie getMovieByMovieTitle(String title){
 		Session s = sessionFactory.getCurrentSession();
-		List<Movie> temp = new ArrayList<Movie>();
+		Movie temp = new Movie();
 		Criteria cri = s.createCriteria(Movie.class).add(Restrictions.like("title", title));
-		temp = (List<Movie>) cri.list();
+		temp = (Movie) cri.list().get(0);
 		return temp;
 	}
 
@@ -176,7 +186,7 @@ public class DaoHibernateImpl implements Dao {
 	public List<Receipt> getReceiptsByUserId(int id){
 		Session s = sessionFactory.getCurrentSession();
 		List<Receipt> receipts = new ArrayList<Receipt>();
-		Criteria cri = s.createCriteria(Receipt.class).add(Restrictions.like("userId", id));
+		Criteria cri = s.createCriteria(Receipt.class).add(Restrictions.like("user", new User(id)));
 		receipts = (List<Receipt>) cri.list();
 		return receipts;
 	}

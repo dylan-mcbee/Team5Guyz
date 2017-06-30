@@ -15,8 +15,8 @@
 	
 	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
-		<property name="username" value="ERSDB"></property>
+		<property name="url" value="#{systemEnvironment['CINEMA_DB_URL']}"></property>
+		<property name="username" value="CinemaTest"></property>
 		<property name="password" value="p4ssw0rd"></property>
 	</bean>
 	

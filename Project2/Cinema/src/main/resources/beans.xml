@@ -16,8 +16,8 @@
 	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url" value="#{systemEnvironment['CINEMA_DB_URL']}"></property>
-		<property name="username" value="CinemaTest"></property>
-		<property name="password" value="p4ssw0rd"></property>
+		<property name="username" value="#{systemEnvironment['CINEMA_DB_USERNAME']}"></property>
+		<property name="password" value="#{systemEnvironment['CINEMA_DB_PASSWORD']}"></property>
 	</bean>
 	
 	<bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

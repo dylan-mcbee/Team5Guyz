@@ -8,13 +8,11 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<title>5G Cinema</title>
+<title>5G Theater</title>
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-	<link href="css/3d.css" rel="stylesheet">
-	<link href="css/movie.css" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,32 +28,7 @@
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
-<script type="text/javascript" src="js/3d.js"></script>
 
-<style>
-#backW {
-	background-image:
-		url(https://s-media-cache-ak0.pinimg.com/originals/dc/05/51/dc0551bebd9cc8d85cd996e19e3e87e1.jpg);
-	background-size: contain;
-	background-size: cover;
-}
-
-#backG {
-	background-image:
-		url(https://s-media-cache-ak0.pinimg.com/originals/e2/3f/a6/e23fa65dcedeb00cc5f9ac4ca015699d.jpg);
-	background-size: contain;
-	background-size: cover;
-	background-size: 100% 100%;
-}
-
-.view {
-	background: no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-</style>
 </head>
 
 <body>
@@ -71,20 +44,12 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
+			<a class="navbar-brand" href="#"> <strong>5G Theater</strong>
 			</a>
 			<div class="collapse navbar-collapse" id="collapseEx2">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link" href="index.html">Home</a>
-					</li>
-					<li class="nav-item active"><a class="nav-link"
-						href="movies.html">Movies <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item"><a class="nav-link"
-						href="concessions.html">Concessions </a></li>
-					<li class="nav-item">
-                        <a class="nav-link" href="about.html">About </a>
-                    </li>
+					<li class="nav-item active"><a class="nav-link">Home <span
+							class="sr-only">(current)</span></a></li>
 				</ul>
 				<button class="btn btn-primary btn-rounded pull-right"
 					data-toggle="modal" data-target="#myModal">Login</button>
@@ -94,6 +59,8 @@
 	<!--/.Navbar-->
 
 	<!-- Large modal -->
+	<button class="btn btn-primary" data-toggle="modal"
+		data-target="#myModal">Login modal</button>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
@@ -102,7 +69,7 @@
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
 					<h4 class="modal-title" id="myModalLabel">
-						Login/Registration - <a href="index1.html">5G Theater</a>
+						Login/Registration - <a href="http://www.jquery2dotnet.com">jquery2dotnet.com</a>
 					</h4>
 				</div>
 				<div class="modal-body">
@@ -209,8 +176,8 @@
 								</div>
 								<div class="col-md-12">
 									<div class="btn-group btn-group-justified">
-										<a href="#"><i class="fa fa-facebook-square fa-5x"></i></a> <br>
-										<a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
+										<a href="#" class="btn btn-primary">Facebook</a> <a href="#"
+											class="btn btn-danger"> Google</a>
 									</div>
 								</div>
 							</div>
@@ -225,61 +192,10 @@
 	<div class="container"></div>
 	<!--/ Main container-->
 
-	<!--Mask-->
-	<div class="view hm-black-strong"
-		style="height: 600px; background: url('http://baltimoresportsandlife.com/wp-content/uploads/2016/07/Movies.jpg') no-repeat center center fixed; background-size: 100%;">
-		<div class="full-bg-img flex-center">
-			<ul>
-				<li>
-					<h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Premium
-						5G Cinema</h1>
-				</li>
-				<li>
-					<p class="wow fadeInDown">Enjoy our high definition projectors.
-						-5Guyz</p>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!--/.Mask-->
-
-
-	<div id="backW" style="height: 500px">
-		<div class="banner">
-			<section id="dg-container" class="dg-container">
-				<div class="dg-wrapper">
-					<a > <img
-						src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg">
-					</a> <a> <img
-						src="http://www.impawards.com/2010/posters/tron_legacy_ver11_xlg.jpg">
-					</a> <a> <img
-						src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjc5MDE0NjkxOF5BMl5BanBnXkFtZTcwNzA0NTkyMw@@._V1_UY1200_CR90,0,630,1200_AL_.jpg">
-					</a> <a> <img
-						src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_UY1200_CR69,0,630,1200_AL_.jpg">
-					</a> <a> <img
-						src="http://www.joblo.com/posters/images/full/secret_life_of_walter_mitty_ver2_xlg.jpg">
-					</a>
-				</div>
-				<ol class="button" id="lightButton" style="top: 200px;">
-					<li index="0">
-					<li index="1">
-					<li index="2">
-					<li index="3">
-					<li index="4">
-				</ol>
-				<nav>
-					<span class="dg-prev"></span> <span class="dg-next"></span>
-				</nav>
-			</section>
-		</div>
-	</div>
-
-	<div id="backG" style="height: 500px">aeda</div>
 
 
 	<!--Footer-->
-	<footer class="page-footer center-on-small-only mdb-color darken-4"
-		style="margin-top: 0">
+	<footer class="page-footer center-on-small-only mdb-color darken-4">
 
 		<!--Copyright-->
 		<div class="footer-copyright">

@@ -1,415 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="ISO-8859-1">
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>5G Cinema</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/movie.css" rel="stylesheet">
+
+<!-- Material Design Bootstrap -->
+<link href="css/mdb.min.css" rel="stylesheet">
+
+<!-- Template styles -->
+<link href="css/style.css" rel="stylesheet">
+
+<link href="css/user.css" rel="stylesheet">
 
 <!-- JQuery -->
-<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
-<!-- JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<style>
+#backW {
+	background-image:
+		url(https://s-media-cache-ak0.pinimg.com/originals/dc/05/51/dc0551bebd9cc8d85cd996e19e3e87e1.jpg);
+	background-size: contain;
+	background-size: cover;
+}
 
-<script
-	src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+#backG {
+	background-color: #161C27;
+	background-size: contain;
+	background-size: cover;
+	background-size: 100% 100%;
+}
 
-<title>5G Theater</title>
+.view {
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
 </head>
+
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+
+	<!--Navbar-->
+	<nav
+		class="navbar navbar-toggleable-md navbar-dark scrolling-navbar fixed-top">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">5G Theater</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#collapseEx2"
+				aria-controls="collapseEx2" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
+			</a>
+			<div class="collapse navbar-collapse" id="collapseEx2">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="index.html">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="movies.html">Movies</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="concessions.html">Concessions </a></li>
+					<li class="nav-item"><a class="nav-link" href="about.html">About
+					</a></li>
+				</ul>
+				<button class="btn btn-primary btn-rounded pull-right"
+					data-toggle="modal" data-target="#myModal">Login</button>
 			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-				<li><a href="movies.html">Movies</a></li>
-				<li><a href="#">Concessions</a></li>
-				<li><a href="#">About</a></li>
-			</ul>
-			<div id="navbar" class="navbar-collapse collapse">
-				<form class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" placeholder="Email" class="form-control">
-					</div>
-					<div class="form-group">
-						<input type="password" placeholder="Password" class="form-control">
-					</div>
-					<button type="submit" class="btn btn-success">Sign in</button>
-					<a>Not a Member?</a>
-				</form>
-			</div>
-			<!--/.navbar-collapse -->
 		</div>
 	</nav>
+	<!--/.Navbar-->
 
-	<div class="card-movie-wrapper card-movie-wrapper--centered">
-
-		<div class="card-movie-carousel">
-
-			<div
-				class="card-movie card-movie--light card-movie--looper card-movie--active">
-
-				<div class="card-movie__content">
-
-					<div class="card-movie__title" style="color: white">Wonder Woman</div>
-
-					<div class="card-movie__details">
-
-						<span class="card-movie__details-item">2012</span> <span
-							class="card-movie__details-item">119 mins</span>
-
-						<ul class="card-movie__details-item card-movie__details-list">
-							<li>Action</li>
-							<li>Crime</li>
-							<li>Sci-fi</li>
-						</ul>
-
-					</div>
-					<!-- /.card-movie__details -->
-
-					<div class="card-movie__description">
-
-						<p>In 2074, when the mob wants to get rid of someone, the
-							target is sent into the past, where a hired gun awaits - someone
-							like Joe.</p>
-
-					</div>
-					<!-- /.card-movie__description -->
-
+	<!-- Large modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">Ã—</button>
+					<h4 class="modal-title" id="myModalLabel">
+						Login/Registration - <a href="index1.html">5G Theater</a>
+					</h4>
 				</div>
-				<!-- /.card-movie__content -->
-
-				<div class="card-movie__rating">7.5</div>
-
-				<div class="card-movie__player" data-trailer="VSB4wGIdDwo"></div>
-				<!-- /.card-movie__player -->
-
-			</div>
-			<!-- /.card-movie card-movie--looper -->
-
-			<div class="card-movie card-movie--dark card-movie--tron">
-
-				<div class="card-movie__content">
-
-					<div class="card-movie__title">Tron: Legacy</div>
-
-					<div class="card-movie__details">
-
-						<span class="card-movie__details-item">2010</span> <span
-							class="card-movie__details-item">125 mins</span>
-
-						<ul class="card-movie__details-item card-movie__details-list">
-							<li>Action</li>
-							<li>Adventure</li>
-							<li>Fantasy</li>
-							<li>Sci-fi</li>
-						</ul>
-
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8"
+							style="border-right: 1px dotted #C2C2C2; padding-right: 30px;">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+								<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="Login">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email1"
+													placeholder="Email" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1"
+												class="col-sm-2 control-label"> Password</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control"
+													id="exampleInputPassword1" placeholder="Email" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button type="submit" class="btn btn-primary btn-sm">
+													Submit</button>
+												<a href="javascript:;">Forgot your password?</a>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane" id="Registration">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Name</label>
+											<div class="col-sm-10">
+												<div class="row">
+													<div class="col-md-3">
+														<select class="form-control">
+															<option>Mr.</option>
+															<option>Ms.</option>
+															<option>Mrs.</option>
+														</select>
+													</div>
+													<div class="col-md-9">
+														<input type="text" class="form-control" placeholder="Name" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email"
+													placeholder="Email" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="mobile" class="col-sm-2 control-label">
+												Mobile</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="mobile"
+													placeholder="Mobile" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="password" class="col-sm-2 control-label">
+												Password</label>
+											<div class="col-sm-10">
+												<input type="password" class="form-control" id="password"
+													placeholder="Password" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button type="button" class="btn btn-primary btn-sm">
+													Save & Continue</button>
+												<button type="button" class="btn btn-default btn-sm">
+													Cancel</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div id="OR" class="hidden-xs">OR</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row text-center sign-with">
+								<div class="col-md-12">
+									<h3>Sign in with</h3>
+								</div>
+								<div class="col-md-12">
+									<div class="btn-group btn-group-justified">
+										<a href="#"><i class="fa fa-facebook-square fa-5x"></i></a> <br>
+										<a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!-- /.card-movie__details -->
-
-					<div class="card-movie__description">
-
-						<p>The son of a virtual world designer goes looking for his
-							father and ends up inside the digital world that his father
-							designed. He meets his father's corrupted creation and a unique
-							ally who was born inside the digital world.</p>
-
-					</div>
-					<!-- /.card-movie__description -->
-
 				</div>
-				<!-- /.card-movie__content -->
-
-				<div class="card-movie__rating">6.8</div>
-
-				<div class="card-movie__player" data-trailer="L9szn1QQfas"></div>
-				<!-- /.card-movie__player -->
-
 			</div>
-			<!-- /.card-movie card-movie--tron -->
-
-			<div class="card-movie card-movie--light card-movie--garden-state">
-
-				<div class="card-movie__content">
-
-					<div class="card-movie__title">Garden State</div>
-
-					<div class="card-movie__details">
-
-						<span class="card-movie__details-item">2004</span> <span
-							class="card-movie__details-item">102 mins</span>
-
-						<ul class="card-movie__details-item card-movie__details-list">
-							<li>Comedy</li>
-							<li>Drama</li>
-							<li>Romance</li>
-						</ul>
-
-					</div>
-					<!-- /.card-movie__details -->
-
-					<div class="card-movie__description">
-
-						<p>A quietly troubled young man returns home for his mother's
-							funeral after being estranged from his family for a decade.</p>
-
-					</div>
-					<!-- /.card-movie__description -->
-
-				</div>
-				<!-- /.card-movie__content -->
-
-				<div class="card-movie__rating">7.6</div>
-
-				<div class="card-movie__player" data-trailer="u82n0e1mgmQ"></div>
-				<!-- /.card-movie__player -->
-
-			</div>
-			<!-- /.card-movie card-movie--garden-state -->
-
-			<div class="card-movie card-movie--light card-movie--interstellar">
-
-				<div class="card-movie__content">
-
-					<div class="card-movie__title">Interstellar</div>
-
-					<div class="card-movie__details">
-
-						<span class="card-movie__details-item">2014</span> <span
-							class="card-movie__details-item">169 mins</span>
-
-						<ul class="card-movie__details-item card-movie__details-list">
-							<li>Adventure</li>
-							<li>Drama</li>
-							<li>Sci-fi</li>
-						</ul>
-
-					</div>
-					<!-- /.card-movie__details -->
-
-					<div class="card-movie__description">
-
-						<p>With our time on Earth coming to an end, a team of
-							explorers undertakes the most important mission in human history;
-							traveling beyond this galaxy to discover whether mankind has a
-							future among the stars.</p>
-
-					</div>
-					<!-- /.card-movie__description -->
-
-				</div>
-				<!-- /.card-movie__content -->
-
-				<div class="card-movie__rating">8.7</div>
-
-				<div class="card-movie__player" data-trailer="3WzHXI5HizQ"></div>
-				<!-- /.card-movie__player -->
-
-			</div>
-			<!-- /.card-movie card-movie--interstellar -->
-
-			<div class="card-movie card-movie--light card-movie--walter-mitty">
-
-				<div class="card-movie__content">
-
-					<div class="card-movie__title">Walter Mitty</div>
-
-					<div class="card-movie__details">
-
-						<span class="card-movie__details-item">2013</span> <span
-							class="card-movie__details-item">114 mins</span>
-
-						<ul class="card-movie__details-item card-movie__details-list">
-							<li>Adventure</li>
-							<li>Comedy</li>
-							<li>Drama</li>
-						</ul>
-
-					</div>
-					<!-- /.card-movie__details -->
-
-					<div class="card-movie__description">
-
-						<p>When his job along with that of his co-worker are
-							threatened, Walter takes action in the real world embarking on a
-							global journey that turns into an adventure more extraordinary
-							than anything he could have ever imagined.</p>
-
-					</div>
-					<!-- /.card-movie__description -->
-
-				</div>
-				<!-- /.card-movie__content -->
-
-				<div class="card-movie__rating">7.4</div>
-
-				<div class="card-movie__player" data-trailer="QD6cy4PBQPI"></div>
-				<!-- /.card-movie__player -->
-
-			</div>
-			<!-- /.card-movie card-movie--walter-mitty -->
-
-			<div class="card-movie card-movie--dark card-movie--cloud-atlas">
-
-				<div class="card-movie__content">
-
-					<div class="card-movie__title">Cloud Atlas</div>
-
-					<div class="card-movie__details">
-
-						<span class="card-movie__details-item">2012</span> <span
-							class="card-movie__details-item">172 mins</span>
-
-						<ul class="card-movie__details-item card-movie__details-list">
-							<li>Drama</li>
-							<li>Sci-Fi</li>
-						</ul>
-
-					</div>
-					<!-- /.card-movie__details -->
-
-					<div class="card-movie__description">
-
-						<p>An exploration of how the actions of individual lives
-							impact one another in the past, present and future, as one soul
-							is shaped from a killer into a hero, and an act of kindness
-							ripples across centuries to inspire a revolution.</p>
-
-					</div>
-					<!-- /.card-movie__description -->
-
-				</div>
-				<!-- /.card-movie__content -->
-
-				<div class="card-movie__rating">7.5</div>
-
-				<div class="card-movie__player" data-trailer="hWnAqFyaQ5s"></div>
-				<!-- /.card-movie__player -->
-
-			</div>
-			<!-- /.card-movie card-movie--cloud-atlas -->
-
 		</div>
-		<!-- /.card-movie-carousel -->
-
-		<div class="card-movie-navigation">
-
-			<ul class="card-movie-navigation__list" data-navigation>
-				<li class="is-active"></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-			<!-- /.card-movie-navigation__list -->
-
-			<button type="button" data-play></button>
-
-		</div>
-		<!-- /.card-movie-navigation -->
-
 	</div>
-	<!-- /.card-movie-wrapper -->
 
+	<!-- Main container-->
+	<div class="container"></div>
+	<!--/ Main container-->
+
+	<!--Mask-->
+	<div class="view hm-black-strong"
+		style="height: 600px; background: url('https://www.parentmap.com/images/article/7947/movies-summer-iStock_000017330692_XXXLarge.jpg') no-repeat center center fixed; background-size: 100%;">
+		<div class="full-bg-img flex-center">
+			<ul>
+				<li>
+					<h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">5G
+						Cinema</h1>
+				</li>
+				<li>
+					<p class="wow fadeInDown">Everything is better at the movies.
+						-5Guyz</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--/.Mask-->
+
+
+	<div id="backW" style="height: 500px">
+		<div class="container">
+			<div class="row">
+				<div class="col">1 of 2</div>
+				<div class="col">1 of 2</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="backG" style="height: 500px">
+		<div class="container">
+			<div class="row">
+				<div class="col">1 of 2</div>
+				<div class="col">1 of 2</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only mdb-color darken-4"
+		style="margin-top: 0">
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				&copy; 2017 5Guyz Cinema, LLC. &middot; <a href="#">Privacy</a>
+
+			</div>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+
+	<!-- SCRIPTS -->
+
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/tether.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+	<!-- Animations init-->
 	<script>
-//global vars
-var players = [],
-    current = 0;
-    
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        new WOW().init();
 
-// YouTube iFrame API Ready
-function onYouTubeIframeAPIReady() {
-
-    $('[data-trailer]').each(function() {
-
-        var player,
-        id = $(this).data('trailer');
-
-        $(this).html('<iframe id="player_' + id + '" src="https://www.youtube.com/embed/' + id + '?enablejsapi=1&autohide=1&showinfo=0&theme=light" frameborder="0" allowfullscreen></iframe>');
-
-        player = new YT.Player('player_' + id, {
-            events: {
-                'onStateChange': onPlayerStateChange
+        /* #####################################################################
+        #
+        #   Project       : Modal Login with jQuery Effects
+        #   Author        : Rodrigo Amarante (rodrigockamarante)
+        #   Version       : 1.0
+        #   Created       : 07/29/2015
+        #   Last Change   : 08/04/2015
+        #
+        ##################################################################### */
+        
+        $(function() {
+            
+            var $formLogin = $('#login-form');
+            var $formLost = $('#lost-form');
+            var $formRegister = $('#register-form');
+            var $divForms = $('#div-forms');
+            var $modalAnimateTime = 300;
+            var $msgAnimateTime = 150;
+            var $msgShowTime = 2000;
+            
+            $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
+            $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
+            $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
+            $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
+            $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
+            $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
+            
+            
+            function modalAnimate ($oldForm, $newForm) {
+                var $oldH = $oldForm.height();
+                var $newH = $newForm.height();
+                $divForms.css("height",$oldH);
+                $oldForm.fadeToggle($modalAnimateTime, function(){
+                    $divForms.animate({height: $newH}, $modalAnimateTime, function(){
+                        $newForm.fadeToggle($modalAnimateTime);
+                    });
+                });
+            }
+            
+            function msgFade ($msgId, $msgText) {
+                $msgId.fadeOut($msgAnimateTime, function() {
+                    $(this).text($msgText).fadeIn($msgAnimateTime);
+                });
+            }
+            
+            function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
+                var $msgOld = $divTag.text();
+                msgFade($textTag, $msgText);
+                $divTag.addClass($divClass);
+                $iconTag.removeClass("glyphicon-chevron-right");
+                $iconTag.addClass($iconClass + " " + $divClass);
+                setTimeout(function() {
+                    msgFade($textTag, $msgOld);
+                    $divTag.removeClass($divClass);
+                    $iconTag.addClass("glyphicon-chevron-right");
+                    $iconTag.removeClass($iconClass + " " + $divClass);
+          		}, $msgShowTime);
             }
         });
+        
+    </script>
 
-        players.push(player);
 
-    });
-
-}
-
-// YouTube On Player State Change
-function onPlayerStateChange(event) {
-
-    var player = players[current];
-
-    switch(event.data) {
-
-        case YT.PlayerState.ENDED:
-            player.stopVideo();
-            player.seekTo(0);
-			$('.card-movie--playing').removeClass('card-movie--playing');
-			$('[data-play]').removeClass('is-playing');
-;        break;
-
-    }
-
-}
-
-$(function() {
-
-    $('[data-play]').on('click', function() {
-
-        var $card = $('.card-movie--active'),
-            player = players[$card.index()];
-
-        if ($card.hasClass('card-movie--playing')) {
-            $(this).toggleClass('is-playing');
-            player.pauseVideo();
-        } else {
-            $(this).toggleClass('is-playing');
-            player.playVideo();
-        }
-
-        $card.toggleClass('card-movie--playing');
-
-    });
-
-    $('[data-navigation] li').on('click', function() {
-
-        // remove current stuff         
-        players[current].pauseVideo();
-        $('.card-movie:eq(' + current + ')').removeClass('card-movie--playing card-movie--active');
-        $('[data-play]').removeClass('is-playing');
-         // assign new current
-        current = $(this).index();
-        $(this).addClass('is-active').siblings().removeClass('is-active');
-        $('.card-movie:eq(' + current + ')').addClass('card-movie--active');
-
-    });
-
-});
-</script>
 </body>
+
 </html>

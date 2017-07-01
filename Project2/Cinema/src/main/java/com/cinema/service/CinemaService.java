@@ -2,14 +2,16 @@ package com.cinema.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.cinema.beans.Concession;
 import com.cinema.beans.Movie;
 import com.cinema.beans.Receipt;
 import com.cinema.beans.User;
 import com.cinema.dao.Dao;
 import com.cinema.dao.DaoHibernateImpl;
-
-public class Service {
+@Service("cinemaService")
+public class CinemaService {
 
 	Dao dao = new DaoHibernateImpl();
 
@@ -22,7 +24,7 @@ public class Service {
 			return dao.getUserByEmail(user.getEmail());
 		}
 		System.out.println("Login Failed");
-		return null;
+		return new User();
 		
 	}
 	

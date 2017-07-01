@@ -28,8 +28,9 @@ import javax.activation.*;
 
 public class TestMain {
 	public static void main(String[] args) {
-//		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-//		Dao dao = (Dao) ac.getBean("myDao");
+		
+		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		Dao dao = (Dao) ac.getBean("myDao");
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -86,9 +87,9 @@ public class TestMain {
 //		m = dao.getMovieByMovieTitle("time");
 //		System.out.println(m.toString());
 //		List<User> u = new ArrayList<User>();
-//		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
-//				"6452221234", 74);
-//		dao.createUser(u);
+		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
+				"6452221234", 74);
+		dao.createUser(u);
 //		u = dao.getUserByUserId(2);
 //		u.setFirstName("lee");
 //		u.setRewardStatus(RewardStatus.BRONZE);

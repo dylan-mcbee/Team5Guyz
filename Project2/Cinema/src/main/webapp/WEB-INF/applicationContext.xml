@@ -21,9 +21,9 @@
     <!-- Data source bean -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-        <property name="url" value="jdbc:oracle:thin:@myfirstrds.cia4kpus284g.us-east-1.rds.amazonaws.com:1521:xe" />
-        <property name="username" value="cinema" />
-        <property name="password" value="p4ssw0rd" />
+        <property name="url" value="#{systemEnvironment['CINEMA_DB_URL']}" />
+        <property name="username" value="#{systemEnvironment['CINEMA_DB_USERNAME']}" />
+        <property name="password" value="#{systemEnvironment['CINEMA_DB_PASSWORD']}" />
     </bean>
     
     <!-- Session factory (Needs a package to scan entities) -->

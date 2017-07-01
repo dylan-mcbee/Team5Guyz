@@ -13,7 +13,6 @@
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-<link href="css/movie.css" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,13 +28,6 @@
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
-<!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
-	
 <style>
 #backW {
 	background-image:
@@ -45,8 +37,7 @@
 }
 
 #backG {
-	background-image:
-		url(https://s-media-cache-ak0.pinimg.com/originals/e2/3f/a6/e23fa65dcedeb00cc5f9ac4ca015699d.jpg);
+	background-color: #161C27;
 	background-size: contain;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -79,10 +70,10 @@
 			</a>
 			<div class="collapse navbar-collapse" id="collapseEx2">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link" href="index.html">Home</a>
-					</li>
 					<li class="nav-item active"><a class="nav-link"
-						href="movies.html">Movies <span class="sr-only">(current)</span></a>
+						href="index.html">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="movies.html">Movies</a>
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="concessions.html">Concessions </a></li>
@@ -230,15 +221,15 @@
 
 	<!--Mask-->
 	<div class="view hm-black-strong"
-		style="height: 600px; background: url('http://baltimoresportsandlife.com/wp-content/uploads/2016/07/Movies.jpg') no-repeat center center fixed; background-size: 100%;">
+		style="height: 600px; background: url('https://www.parentmap.com/images/article/7947/movies-summer-iStock_000017330692_XXXLarge.jpg') no-repeat center center fixed; background-size: 100%;">
 		<div class="full-bg-img flex-center">
 			<ul>
 				<li>
-					<h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Premium
-						5G Cinema</h1>
+					<h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">5G
+						Cinema</h1>
 				</li>
 				<li>
-					<p class="wow fadeInDown">Enjoy our high definition projectors.
+					<p class="wow fadeInDown">Everything is better at the movies.
 						-5Guyz</p>
 				</li>
 			</ul>
@@ -248,21 +239,22 @@
 
 
 	<div id="backW" style="height: 500px">
-		<div class="carousel" style="height: 500px">
-		<a class="carousel-item" href="#one!"><img
-			src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg" ></a> <a
-			class="carousel-item" href="#two!"><img
-			src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a> <a
-			class="carousel-item" href="#three!"><img
-			src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a> <a
-			class="carousel-item" href="#four!"><img 
-			src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a> <a
-			class="carousel-item" href="#five!"><img 
-			src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
-	</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">1 of 2</div>
+				<div class="col">1 of 2</div>
+			</div>
+		</div>
 	</div>
 
-	<div id="backG" style="height: 500px">aeda</div>
+	<div id="backG" style="height: 500px">
+		<div class="container">
+			<div class="row">
+				<div class="col">1 of 2</div>
+				<div class="col">1 of 2</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!--Footer-->
@@ -294,16 +286,8 @@
 	<script type="text/javascript" src="js/mdb.min.js"></script>
 
 
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript"
-		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-	
-	
+	<!-- Animations init-->
 	<script>
-	$(document).ready(function(){
-	    $('.carousel').carousel();
-	  });
         new WOW().init();
 
         /* #####################################################################
@@ -365,7 +349,6 @@
           		}, $msgShowTime);
             }
         });
-
         
     </script>
 

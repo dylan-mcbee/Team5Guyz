@@ -13,7 +13,8 @@
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-<link href="css/movie.css" rel="stylesheet">
+	<link href="css/3d.css" rel="stylesheet">
+	<link href="css/movie.css" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,13 +30,8 @@
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
-<!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
-	
+<script type="text/javascript" src="js/3d.js"></script>
+
 <style>
 #backW {
 	background-image:
@@ -86,8 +82,9 @@
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="concessions.html">Concessions </a></li>
-					<li class="nav-item"><a class="nav-link" href="about.html">About
-					</a></li>
+					<li class="nav-item">
+                        <a class="nav-link" href="about.html">About </a>
+                    </li>
 				</ul>
 				<button class="btn btn-primary btn-rounded pull-right"
 					data-toggle="modal" data-target="#myModal">Login</button>
@@ -248,18 +245,33 @@
 
 
 	<div id="backW" style="height: 500px">
-		<div class="carousel" style="height: 500px">
-		<a class="carousel-item" href="#one!"><img
-			src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg" ></a> <a
-			class="carousel-item" href="#two!"><img
-			src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a> <a
-			class="carousel-item" href="#three!"><img
-			src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a> <a
-			class="carousel-item" href="#four!"><img 
-			src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a> <a
-			class="carousel-item" href="#five!"><img 
-			src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
-	</div>
+		<div class="banner">
+			<section id="dg-container" class="dg-container">
+				<div class="dg-wrapper">
+					<a > <img
+						src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg">
+					</a> <a> <img
+						src="http://www.impawards.com/2010/posters/tron_legacy_ver11_xlg.jpg">
+					</a> <a> <img
+						src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjc5MDE0NjkxOF5BMl5BanBnXkFtZTcwNzA0NTkyMw@@._V1_UY1200_CR90,0,630,1200_AL_.jpg">
+					</a> <a> <img
+						src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_UY1200_CR69,0,630,1200_AL_.jpg">
+					</a> <a> <img
+						src="http://www.joblo.com/posters/images/full/secret_life_of_walter_mitty_ver2_xlg.jpg">
+					</a>
+				</div>
+				<ol class="button" id="lightButton" style="top: 200px;">
+					<li index="0">
+					<li index="1">
+					<li index="2">
+					<li index="3">
+					<li index="4">
+				</ol>
+				<nav>
+					<span class="dg-prev"></span> <span class="dg-next"></span>
+				</nav>
+			</section>
+		</div>
 	</div>
 
 	<div id="backG" style="height: 500px">aeda</div>
@@ -294,16 +306,8 @@
 	<script type="text/javascript" src="js/mdb.min.js"></script>
 
 
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript"
-		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-	
-	
+	<!-- Animations init-->
 	<script>
-	$(document).ready(function(){
-	    $('.carousel').carousel();
-	  });
         new WOW().init();
 
         /* #####################################################################
@@ -365,7 +369,6 @@
           		}, $msgShowTime);
             }
         });
-
         
     </script>
 

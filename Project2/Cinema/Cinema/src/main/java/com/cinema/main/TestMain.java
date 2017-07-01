@@ -1,6 +1,30 @@
 package com.cinema.main;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cinema.beans.Concession;
+import com.cinema.beans.Movie;
+import com.cinema.beans.Receipt;
+import com.cinema.beans.RewardStatus;
+import com.cinema.beans.Room;
+import com.cinema.beans.Showtime;
+import com.cinema.beans.User;
+import com.cinema.dao.Dao;
+import com.cinema.dao.DaoHibernateImpl;
 import com.cinema.mail.Mail;
+
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
 
 public class TestMain {
 	public static void main(String[] args) {

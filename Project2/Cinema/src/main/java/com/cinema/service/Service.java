@@ -15,6 +15,18 @@ public class Service {
 
 
 
+	public User login(User user){
+		User u = dao.getUserByEmail(user.getEmail());
+		if(u.getPassword()==user.getPassword())
+		{
+			return dao.getUserByEmail(user.getEmail());
+		}
+		System.out.println("Login Failed");
+		return null;
+		
+	}
+	
+	
 	public void createUser(User user){
 		dao.createUser(user);
 		System.out.println(user.getFirstName() +" "+user.getLastName() +" has been created");

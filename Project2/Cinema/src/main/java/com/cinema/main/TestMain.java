@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
 
@@ -19,11 +20,16 @@ import com.cinema.beans.Showtime;
 import com.cinema.beans.User;
 import com.cinema.dao.Dao;
 import com.cinema.dao.DaoHibernateImpl;
+import com.cinema.mail.Mail;
+
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
 
 public class TestMain {
 	public static void main(String[] args) {
-		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-		Dao dao = (Dao) ac.getBean("myDao");
+//		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+//		Dao dao = (Dao) ac.getBean("myDao");
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -105,5 +111,7 @@ public class TestMain {
 //		System.out.println(re.toString());
 //		dao.deleteMovie(m);
 //		System.out.println(m.toString());
+		boolean result = Mail.sendMail("zhengliqun1@gmail.com", "title", "message");
+		System.out.println(result);
 	}
 }

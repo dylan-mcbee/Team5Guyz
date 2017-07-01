@@ -10,8 +10,11 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.comiler.target>1.8</maven.comiler.target>
     </properties>
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> 85a1d0a40b8035d94b7356d780aeb8fa8c51188e
 
     <dependencies>
         <!-- Spring 4 MVC -->

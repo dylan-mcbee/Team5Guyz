@@ -2,4 +2,4 @@
  * 
  */
 
-var app = angular.module('',[]);
+var app = angular.module('RESTLogin',[]);

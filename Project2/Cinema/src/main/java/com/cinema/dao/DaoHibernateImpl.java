@@ -7,6 +7,8 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,8 +20,10 @@ import com.cinema.beans.Room;
 import com.cinema.beans.Showtime;
 import com.cinema.beans.User;
 
+@Repository("cinemaRepository")
 @Transactional
 public class DaoHibernateImpl implements Dao {
+	@Autowired
 	private SessionFactory sessionFactory;
 
 

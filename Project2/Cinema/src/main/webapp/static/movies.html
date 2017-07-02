@@ -13,7 +13,6 @@
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-<link href="css/movie.css" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +28,8 @@
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
-<!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
 	media="screen,projection" />
 	
 <!-- AngularJS -->
@@ -83,16 +79,17 @@
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link" href="index.html">Home</a>
 					</li>
-					<li class="nav-item active"><a class="nav-link"
-						href="movies.html">Movies <span class="sr-only">(current)</span></a>
-					</li>
+					<li class="nav-item active" style="height: 70px"><a
+						class="nav-link" href="movies.html">Movies <span
+							class="sr-only">(current)</span></a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="concessions.html">Concessions </a></li>
 					<li class="nav-item"><a class="nav-link" href="about.html">About
 					</a></li>
 				</ul>
 				<button class="btn btn-primary btn-rounded pull-right"
-					data-toggle="modal" data-target="#myModal">Login</button>
+					style="height: 40px; margin-top: 20px" data-toggle="modal"
+					data-target="#myModal">Login</button>
 			</div>
 		</div>
 	</nav>
@@ -262,14 +259,29 @@
 			class="carousel-item" href="#five!"><img ng-click="getMovie(324552)"
 			src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
 	</div>
-	</div>
 
 	<div id="backG" style="height: 500px">
+		<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn btn-primary" href="#modal1">View
+			All Movies</a>
+
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal bottom-sheet">
+			<div class="modal-content">
+				<h4>All Current Movies</h4>
+				<p>A bunch of text</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#!"
+					class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+			</div>
+		</div>
+		
 		<div style="display:none" class="container1" >
 			 <movie-info info="movie"></movie-info>
 		</div>
-	</div>
 
+	</div>
 
 	<!--Footer-->
 	<footer class="page-footer center-on-small-only mdb-color darken-4"
@@ -301,8 +313,6 @@
 
 
 	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript"
-		src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	
 	<!-- AngularJS -->
@@ -324,6 +334,10 @@
 	<script>
 	$(document).ready(function(){
 	    $('.carousel').carousel();
+	  });
+	$(document).ready(function(){
+	    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+	    $('.modal').modal();
 	  });
         new WOW().init();
 

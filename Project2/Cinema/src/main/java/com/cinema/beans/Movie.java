@@ -31,12 +31,8 @@ public class Movie implements Serializable {
 	@Column(name = "TRAILER_KEY")
 	private String trailerKey;
 	
-	
-//	@ElementCollection
-//	private Set<int> movieints = new HashSet<int>();
-//	
-//	@ElementCollection
-//	private Set<int> showTimes = new HashSet<int>();
+	@Column(name = "IMAGE_URL")
+	private String imageUrl;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "MOVIE_TIMES", 
@@ -48,15 +44,15 @@ public class Movie implements Serializable {
 		
 	}
 	
-	public Movie(int id, String title, int length, String trailerKey, List<Showtime> showtimes) {
+	public Movie(int id, String title, int length, String trailerKey, List<Showtime> showtimes, String imageUrl) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.length = length;
 		this.trailerKey = trailerKey;
 		this.showtimes = showtimes;
+		this.imageUrl = imageUrl;
 	}
-
 
 	public int getId() {
 		return id;
@@ -99,9 +95,17 @@ public class Movie implements Serializable {
 		this.showtimes = showtimes;
 	}
 
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
 	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", title=" + title + ", length=" + length + ", trailerKey=" + trailerKey
-				 + ", showtimes=" + showtimes + "]\n";
+				+ ", imageUrl=" + imageUrl + ", showtimes=" + showtimes + "]";
 	}
 }

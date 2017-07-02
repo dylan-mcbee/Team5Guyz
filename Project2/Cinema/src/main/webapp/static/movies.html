@@ -31,7 +31,9 @@
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet" href="css/materialize.css"
 	media="screen,projection" />
-
+	
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <style>
 #backW {
 	background-image:
@@ -58,7 +60,7 @@
 </style>
 </head>
 
-<body>
+<body ng-app="movieApp" ng-controller="MovieController">
 
 
 	<!--Navbar-->
@@ -246,17 +248,16 @@
 
 	<div id="backW" style="height: 500px">
 		<div class="carousel" style="height: 500px">
-			<a class="carousel-item" href="#backG"><img
-				src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg"></a>
-			<a class="carousel-item" href="#backG"><img
-				src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a>
-			<a class="carousel-item" href="#backG"><img
-				src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a>
-			<a class="carousel-item" href="#backG"><img
-				src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a>
-			<a class="carousel-item" href="#backG"><img
-				src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
-		</div>
+		<a class="carousel-item" href="#one!"><img ng-click="getMovie(297762)"
+			src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg" ></a> <a
+			class="carousel-item" href="#two!"><img ng-click="getMovie(303857)"
+			src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a> <a
+			class="carousel-item" href="#three!"><img ng-click="getMovie(126963)"
+			src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a> <a
+			class="carousel-item" href="#four!"><img ng-click="getMovie(75780)"
+			src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a> <a
+			class="carousel-item" href="#five!"><img ng-click="getMovie(324552)"
+			src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
 	</div>
 
 	<div id="backG" style="height: 500px">
@@ -279,6 +280,11 @@
 
 	</div>
 
+	<div id="backG" style="height: 500px">
+		<div style="display:none" class="container1" >
+			 <movie-info info="movie"></movie-info>
+		</div>
+	</div>
 
 	<!--Footer-->
 	<footer class="page-footer center-on-small-only mdb-color darken-4"
@@ -311,8 +317,23 @@
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-
-
+	
+	<!-- AngularJS -->
+	<!-- Module -->
+	<script src="js/angularjs/movieApp.js"></script>
+	
+	<!-- Controllers -->
+	<script src="js/angularjs/controller/MovieController.js"></script>
+	
+	<!-- Directives -->
+	<script src="js/angularjs/directive/movieInfo.js"></script>
+	
+	<!-- Services -->
+	<script src="js/angularjs/service/movieService.js"></script>
+	
+	<!-- Filters -->
+	<script src="js/angularjs/filter/trailerFilter.js"></script>
+	
 	<script>
 	$(document).ready(function(){
 	    $('.carousel').carousel();

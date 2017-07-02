@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
-    <!-- MVC annotation driven -->
+
     <!-- MVC annotation driven -->
     <mvc:annotation-driven
         content-negotiation-manager="contentNegotiationManager" />
@@ -17,19 +17,19 @@
     <tx:annotation-driven/>
     
     <!-- Spring package scanning -->
-    <context:component-scan base-package="com.revature" />
+    <context:component-scan base-package="com.cinema" />
     <!-- Data source bean -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-        <property name="url" value="#{systemEnvironment['CINEMA_DB_URL']}" />
-        <property name="username" value="#{systemEnvironment['CINEMA_DB_USERNAME']}" />
-        <property name="password" value="#{systemEnvironment['CINEMA_DB_PASSWORD']}" />
-    </bean>
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="#{systemEnvironment['CINEMA_DB_URL']}"></property>
+		<property name="username" value="#{systemEnvironment['CINEMA_DB_USERNAME']}"></property>
+		<property name="password" value="#{systemEnvironment['CINEMA_DB_PASSWORD']}"></property>
+	</bean>
     
     <!-- Session factory (Needs a package to scan entities) -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="com.revature.model"/>
+        <property name="packagesToScan" value="com.cinema.beans"/>
         <property name="hibernateProperties">  
             <props>  
                 <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>  
@@ -41,7 +41,7 @@
     
     <!-- Transaction Manager -->
     <bean id = "transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name = "sessionFactory" ref = "sessionFactory"></property>
+        <property name="sessionFactory" ref = "sessionFactory"></property>
     </bean>
     
     <!-- Setting the marshalling process -->

@@ -4,8 +4,11 @@ import com.cinema.mail.Mail;
 
 public class TestMain {
 	public static void main(String[] args) {
-//		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-//		Dao dao = (Dao) ac.getBean("myDao");
+		
+		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		Dao dao = (Dao) ac.getBean("myDao");
+		System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
+		
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -62,9 +65,9 @@ public class TestMain {
 //		m = dao.getMovieByMovieTitle("time");
 //		System.out.println(m.toString());
 //		List<User> u = new ArrayList<User>();
-//		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
-//				"6452221234", 74);
-//		dao.createUser(u);
+		//User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
+				//"6452221234", 74);
+		//dao.createUser(u);
 //		u = dao.getUserByUserId(2);
 //		u.setFirstName("lee");
 //		u.setRewardStatus(RewardStatus.BRONZE);
@@ -87,7 +90,7 @@ public class TestMain {
 //		System.out.println(re.toString());
 //		dao.deleteMovie(m);
 //		System.out.println(m.toString());
-		boolean result = Mail.sendMail("zhengliqun1@gmail.com", "title", "message");
-		System.out.println(result);
+		//boolean result = Mail.sendMail("zhengliqun1@gmail.com", "title", "message");
+		//System.out.println(result);
 	}
 }

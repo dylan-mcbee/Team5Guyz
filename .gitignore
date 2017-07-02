@@ -15,11 +15,17 @@
 **/.settings/
 **/.classpath
 **/.recommenders/**
+<<<<<<< HEAD
 **/.DS_Store
 /Servers
+=======
+Servers/
+>>>>>>> 8805d60bbfe8d0e09199d9738926012d8f379d57
 #IDEA
 **/.idea/
 **/*.iml
 #AngularJS
 **/.tern-project
+**/.DS_Store
 Add Comment
+

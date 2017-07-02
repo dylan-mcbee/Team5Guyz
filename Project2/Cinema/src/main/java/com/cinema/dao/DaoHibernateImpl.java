@@ -91,9 +91,12 @@ public class DaoHibernateImpl implements Dao {
 		s.saveOrUpdate(movie.getShowtimes());
 		s.save(movie);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> master
+=======
+>>>>>>> 8805d60bbfe8d0e09199d9738926012d8f379d57
 	}
 	
 	/* (non-Javadoc)

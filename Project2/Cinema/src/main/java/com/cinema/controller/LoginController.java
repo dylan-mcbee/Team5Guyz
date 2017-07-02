@@ -1,5 +1,6 @@
 package com.cinema.controller;
 
+<<<<<<< HEAD
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,19 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public User login(@RequestBody User user){
 		service.login(user.getEmail(), user.getPassword());
+=======
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class LoginController {
+	
+	
+	@RequestMapping("/login.view")
+	public @ResponseBody String getLoginView(){
+		return "login";
+>>>>>>> 8805d60bbfe8d0e09199d9738926012d8f379d57
 	}
 	
 

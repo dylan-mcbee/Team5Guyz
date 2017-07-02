@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+<<<<<<< HEAD
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -30,6 +31,38 @@
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan" value="com.cinema.beans"/>
+=======
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+    <!-- MVC annotation driven -->
+    <!-- MVC annotation driven -->
+    <mvc:annotation-driven
+        content-negotiation-manager="contentNegotiationManager" />
+    
+    <!-- Transaction annotation driven -->
+    <tx:annotation-driven/>
+    
+    <!-- Spring package scanning -->
+    <context:component-scan base-package="com.revature" />
+    <!-- Data source bean -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="#{systemEnvironment['CINEMA_DB_URL']}" />
+        <property name="username" value="#{systemEnvironment['CINEMA_DB_USERNAME']}" />
+        <property name="password" value="#{systemEnvironment['CINEMA_DB_PASSWORD']}" />
+    </bean>
+    
+    <!-- Session factory (Needs a package to scan entities) -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.revature.model"/>
+>>>>>>> 8805d60bbfe8d0e09199d9738926012d8f379d57
         <property name="hibernateProperties">  
             <props>  
                 <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>  
@@ -41,6 +74,25 @@
     
     <!-- Transaction Manager -->
     <bean id = "transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+<<<<<<< HEAD
     	<property name = "sessionFactory" ref = "sessionFactory"></property>
     </bean>
 </beans>
+=======
+        <property name = "sessionFactory" ref = "sessionFactory"></property>
+    </bean>
+    
+    <!-- Setting the marshalling process -->
+    <!-- REST Content Negotiator -->
+    <bean id="contentNegotiationManager"
+        class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="defaultContentType" value="application/json" />
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json" />
+                <entry key="xml" value="application/xml" />
+            </map>
+        </property>
+    </bean>
+</beans>
+>>>>>>> 8805d60bbfe8d0e09199d9738926012d8f379d57

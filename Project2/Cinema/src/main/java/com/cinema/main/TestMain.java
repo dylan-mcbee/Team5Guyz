@@ -1,6 +1,9 @@
 package com.cinema.main;
 
-import com.cinema.mail.Mail;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cinema.dao.Dao;
 
 public class TestMain {
 	public static void main(String[] args) {

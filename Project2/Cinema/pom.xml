@@ -10,11 +10,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.comiler.target>1.8</maven.comiler.target>
     </properties>
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> 85a1d0a40b8035d94b7356d780aeb8fa8c51188e
 
     <dependencies>
         <!-- Spring 4 MVC -->
@@ -50,6 +45,19 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.2.2</version>
         </dependency>
         
         <!-- Spring REST -->

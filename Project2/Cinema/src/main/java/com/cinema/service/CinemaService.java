@@ -2,6 +2,7 @@ package com.cinema.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cinema.beans.Concession;
@@ -9,22 +10,24 @@ import com.cinema.beans.Movie;
 import com.cinema.beans.Receipt;
 import com.cinema.beans.User;
 import com.cinema.dao.Dao;
-import com.cinema.dao.DaoHibernateImpl;
 @Service("cinemaService")
 public class CinemaService {
 
-	Dao dao = new DaoHibernateImpl();
-
+	//Dao dao = new DaoHibernateImpl();
+	@Autowired
+	private Dao dao;
 
 
 	public User login(User user){
-		User u = dao.getUserByEmail(user.getEmail());
-		if(u.getPassword()==user.getPassword())
-		{
-			return dao.getUserByEmail(user.getEmail());
-		}
-		System.out.println("Login Failed");
-		return new User();
+//		User u = dao.getUserByEmail(user.getEmail());
+//		if(u.getPassword()==user.getPassword())
+//		{
+//			return dao.getUserByEmail(user.getEmail());
+//		}
+//		System.out.println("Login Failed");
+//		return new User();
+		System.out.println("Email: " + user.getEmail());
+		return dao.getUserByEmail(user.getEmail());
 		
 	}
 	

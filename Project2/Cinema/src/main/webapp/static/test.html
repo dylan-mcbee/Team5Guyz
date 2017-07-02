@@ -1,16 +1,35 @@
-
-<!DOCTYPE html>
 <html lang="en">
-
+<script
+	src="chrome-extension://obkfjhifkbhimlocpddgamonjihinpak/script/safebrowse.js"></script>
 <head>
+<style type="text/css">
+@charset "UTF-8"; 
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak,
+	.x-ng-cloak, .ng-hide:not (.ng-hide-animate ){
+	display: none !important;
+}
+
+ng\:form {
+	display: block;
+}
+
+.ng-animate-shim {
+	visibility: hidden;
+}
+
+.ng-anchor {
+	position: absolute;
+}
+</style>
 
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<title>User profile form requirement</title>
+<title>5G Cinema</title>
+
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -19,33 +38,55 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+<link href="css/mdb.min.css" rel="stylesheet">
 
 <!-- Template styles -->
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/user.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<link href="css/user.css" rel="stylesheet">
 
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
-<!-- Custom CSS -->
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
+	media="screen,projection">
+
+<!-- AngularJS -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <style>
-body {
-	padding-top: 70px;
-	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+#backW {
+	background-image:
+		url(https://s-media-cache-ak0.pinimg.com/originals/dc/05/51/dc0551bebd9cc8d85cd996e19e3e87e1.jpg);
+	background-size: contain;
+	background-size: cover;
 }
 
-.othertop {
-	margin-top: 10px;
+#backG {
+	background-image:
+		url(https://s-media-cache-ak0.pinimg.com/originals/e2/3f/a6/e23fa65dcedeb00cc5f9ac4ca015699d.jpg);
+	background-size: contain;
+	background-size: cover;
+	background-size: 100% 100%;
+}
+
+.view {
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 </style>
 </head>
 
-<body>
-	
+<body ng-app="movieApp" ng-controller="MovieController" class="ng-scope">
+
+
 	<!--Navbar-->
 	<nav
-		class="navbar navbar-toggleable-md navbar-dark scrolling-navbar fixed-top">
+		class="navbar navbar-toggleable-md navbar-dark scrolling-navbar fixed-top top-nav-collapse">
 		<div class="container">
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#collapseEx2"
@@ -57,548 +98,412 @@ body {
 			</a>
 			<div class="collapse navbar-collapse" id="collapseEx2">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link" href="index.html">Home</a>
+					<li class="nav-item"><a
+						class="nav-link waves-effect waves-light" href="index.html">Home</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="movies.html">Movies</a>
-					</li>
-					<li class="nav-item"><a class="nav-link"
-						href="concessions.html">Concessions </a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="about.html">About <span class="sr-only">(current)</span></a>
-					</li>
+					<li class="nav-item active" style="height: 70px"><a
+						class="nav-link waves-effect waves-light" href="movies.html">Movies
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a
+						class="nav-link waves-effect waves-light" href="concessions.html">Concessions
+					</a></li>
+					<li class="nav-item"><a
+						class="nav-link waves-effect waves-light" href="about.html">About
+					</a></li>
 				</ul>
-				<a class="navbar-brand pull-right" href="#"> <strong>Hello
-						5Guyz</strong>
-				</a>
+				<button
+					class="btn btn-primary btn-rounded pull-right waves-effect waves-light"
+					style="height: 40px; margin-top: 20px" data-toggle="modal"
+					href="#myModal">Login</button>
 			</div>
 		</div>
 	</nav>
 	<!--/.Navbar-->
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 ">
-				<form class="form-horizontal">
-					<fieldset>
 
-						<!-- Form Name -->
-						<legend>User profile form requirement</legend>
-
-						<!-- Text input-->
-
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Name (Full name)">Name
-								(Full name)</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-user"> </i>
+	<!-- Large modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true"
+		style="display: none;">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel">
+						Login/Registration - <a href="index1.html">5G Theater</a>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8"
+							style="border-right: 1px dotted #C2C2C2; padding-right: 30px;">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+								<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="Login">
+									<form role="form" class="form-horizontal ng-pristine ng-valid">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email1"
+													placeholder="Email">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1"
+												class="col-sm-2 control-label"> Password</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control"
+													id="exampleInputPassword1" placeholder="Email">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button type="submit"
+													class="btn btn-primary btn-sm waves-effect waves-light">
+													Submit</button>
+												<a href="javascript:;">Forgot your password?</a>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane" id="Registration">
+									<form role="form" class="form-horizontal ng-pristine ng-valid">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Name</label>
+											<div class="col-sm-10">
+												<div class="row">
+													<div class="col-md-3">
+														<select class="form-control">
+															<option value="Mr.">Mr.</option>
+															<option value="Ms.">Ms.</option>
+															<option value="Mrs.">Mrs.</option>
+														</select>
+													</div>
+													<div class="col-md-9">
+														<input type="text" class="form-control" placeholder="Name">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email"
+													placeholder="Email">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="mobile" class="col-sm-2 control-label">
+												Mobile</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="mobile"
+													placeholder="Mobile">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="password" class="col-sm-2 control-label">
+												Password</label>
+											<div class="col-sm-10">
+												<input type="password" class="form-control" id="password"
+													placeholder="Password">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button type="button"
+													class="btn btn-primary btn-sm waves-effect waves-light">
+													Save &amp; Continue</button>
+												<button type="button"
+													class="btn btn-default btn-sm waves-effect waves-light">
+													Cancel</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div id="OR" class="hidden-xs">OR</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row text-center sign-with">
+								<div class="col-md-12">
+									<h3>Sign in with</h3>
+								</div>
+								<div class="col-md-12">
+									<div class="btn-group btn-group-justified">
+										<a href="#"><i class="fa fa-facebook-square fa-5x"></i></a> <br>
+										<a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
 									</div>
-									<input id="Name (Full name)" name="Name (Full name)"
-										type="text" placeholder="Name (Full name)"
-										class="form-control input-md">
-								</div>
-
-
-							</div>
-
-
-						</div>
-
-						<!-- File Button -->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Upload photo">Upload
-								photo</label>
-							<div class="col-md-4">
-								<input id="Upload photo" name="Upload photo" class="input-file"
-									type="file">
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Date Of Birth">Date
-								Of Birth</label>
-							<div class="col-md-4">
-
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-birthday-cake"></i>
-
-									</div>
-									<input id="Date Of Birth" name="Date Of Birth" type="text"
-										placeholder="Date Of Birth" class="form-control input-md">
-								</div>
-
-
-							</div>
-						</div>
-
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Father">Father's
-								name</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-male" style="font-size: 20px;"></i>
-
-									</div>
-									<input id="Father" name="Father" type="text"
-										placeholder="Father's name" class="form-control input-md">
-
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Mother">Mother's
-								Name</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-female" style="font-size: 20px;"></i>
-
-									</div>
-									<input id="Mother" name="Mother" type="text"
-										placeholder="Mother's Name" class="form-control input-md">
-
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Multiple Radios (inline) -->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Gender">Gender</label>
-							<div class="col-md-4">
-								<label class="radio-inline" for="Gender-0"> <input
-									type="radio" name="Gender" id="Gender-0" value="1"
-									checked="checked"> Male
-								</label> <label class="radio-inline" for="Gender-1"> <input
-									type="radio" name="Gender" id="Gender-1" value="2">
-									Female
-								</label> <label class="radio-inline" for="Gender-2"> <input
-									type="radio" name="Gender" id="Gender-2" value="3">
-									Other
-								</label>
-							</div>
-						</div>
-
-						<!-- Multiple Radios (inline) -->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="radios">Marital
-								Status:</label>
-							<div class="col-md-4">
-								<label class="radio-inline" for="radios-0"> <input
-									type="radio" name="radios" id="radios-0" value="1"
-									checked="checked"> Married
-								</label> <label class="radio-inline" for="radios-1"> <input
-									type="radio" name="radios" id="radios-1" value="2">
-									Unmarried
-								</label>
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<!-- <div class="form-group">
-  <label class="col-md-4 control-label" for="Temporary Address">Temporary Address</label>  
-  <div class="col-md-4">
-
-  <div class="input-group">
-       <div class="input-group-addon">
-     <i class="fa fa-home" style="font-size:20px;"></i>
-        
-       </div>
- <input id="Temporary Address" name="Temporary Address" type="text" placeholder="Temporary Address" class="form-control input-md">
-      </div>
- 
-    
-  </div>
-</div>
- -->
-
-
-						<div class="form-group">
-							<label class="col-md-4 control-label col-xs-12"
-								for="Permanent Address">Permanent Address</label>
-							<div class="col-md-2  col-xs-4">
-								<input id="Permanent Address" name="Permanent Address"
-									type="text" placeholder="District"
-									class="form-control input-md ">
-							</div>
-
-							<div class="col-md-2 col-xs-4">
-
-								<input id="Permanent Address" name="Permanent Address"
-									type="text" placeholder="Area" class="form-control input-md ">
-							</div>
-
-
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Permanent Address"></label>
-							<div class="col-md-2  col-xs-4">
-								<input id="Permanent Address" name="Permanent Address"
-									type="text" placeholder="Street" class="form-control input-md ">
-
-							</div>
-
-
-
-
-						</div>
-
-
-
-
-						<div class="form-group">
-							<label class="col-md-4 control-label col-xs-12"
-								for="Temporary Address">Temporary Address</label>
-							<div class="col-md-2  col-xs-4">
-								<input id="Temporary Address" name="Temporary Address"
-									type="text" placeholder="District"
-									class="form-control input-md ">
-							</div>
-
-							<div class="col-md-2 col-xs-4">
-
-								<input id="Temporary Address" name="Temporary Address"
-									type="text" placeholder="Area" class="form-control input-md ">
-							</div>
-
-
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Temporary Address"></label>
-							<div class="col-md-2  col-xs-4">
-								<input id="Temporary Address" name="Temporary Address"
-									type="text" placeholder="Street" class="form-control input-md ">
-
-							</div>
-
-
-
-
-						</div>
-
-
-
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Primary Occupation">Primary
-								Occupation</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-briefcase"></i>
-
-									</div>
-									<input id="Primary Occupation" name="Primary Occupation"
-										type="text" placeholder="Primary Occupation"
-										class="form-control input-md">
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label"
-								for="Secondary Occupation (if any)">Secondary Occupation
-								(if any)</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-briefcase"></i>
-
-									</div>
-									<input id="Secondary Occupation (if any)"
-										name="Secondary Occupation (if any)" type="text"
-										placeholder="Secondary Occupation (if any)"
-										class="form-control input-md">
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Skills">Skills</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-graduation-cap"></i>
-
-									</div>
-									<input id="Skills" name="Skills" type="text"
-										placeholder="Skills" class="form-control input-md">
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Phone number ">Phone
-								number </label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-phone"></i>
-
-									</div>
-									<input id="Phone number " name="Phone number " type="text"
-										placeholder="Primary Phone number "
-										class="form-control input-md">
-
-								</div>
-								<div class="input-group othertop">
-									<div class="input-group-addon">
-										<i class="fa fa-mobile fa-1x" style="font-size: 20px;"></i>
-
-									</div>
-									<input id="Phone number " name="Secondary Phone number "
-										type="text" placeholder=" Secondary Phone number "
-										class="form-control input-md">
-
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Email Address">Email
-								Address</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-envelope-o"></i>
-
-									</div>
-									<input id="Email Address" name="Email Address" type="text"
-										placeholder="Email Address" class="form-control input-md">
-
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Availability time">Availability
-								time</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-clock-o"></i>
-
-									</div>
-									<input id="Availability time" name="Availability time"
-										type="text" placeholder="Availability time"
-										class="form-control input-md">
-
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label"
-								for="Available Service Area">Available Service Area</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-street-view"></i>
-
-									</div>
-									<input id="Available Service Area"
-										name="Available Service Area" type="text"
-										placeholder="Available Service Area"
-										class="form-control input-md">
-
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Citizenship No.">Citizenship
-								No.</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-sticky-note-o"></i>
-
-									</div>
-									<input id="Citizenship No." name="Citizenship No." type="text"
-										placeholder="Citizenship No." class="form-control input-md">
-
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Multiple Checkboxes -->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Languages Known">Languages
-								Known</label>
-							<div class="col-md-4">
-								<div class="checkbox">
-									<label for="Languages Known-0"> <input type="checkbox"
-										name="Languages Known" id="Languages Known-0" value="1">
-										Nepali
-									</label>
-								</div>
-								<div class="checkbox">
-									<label for="Languages Known-1"> <input type="checkbox"
-										name="Languages Known" id="Languages Known-1" value="2">
-										Newari
-									</label>
-								</div>
-								<div class="checkbox">
-									<label for="Languages Known-2"> <input type="checkbox"
-										name="Languages Known" id="Languages Known-2" value="3">
-										English
-									</label>
-								</div>
-								<div class="checkbox">
-									<label for="Languages Known-3"> <input type="checkbox"
-										name="Languages Known" id="Languages Known-3" value="4">
-										Hindi
-									</label>
-								</div>
-
-								<div class="othertop">
-									<label for="Languages Known-4"> </label> <input type="input"
-										name="LanguagesKnown" id="Languages Known-4"
-										placeholder="Other Language">
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="License No.">License
-								No.</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-sticky-note-o"></i>
-
-									</div>
-									<input id="License No." name="License No." type="text"
-										placeholder="License No." class="form-control input-md">
-
-								</div>
-
-
-							</div>
-						</div>
-
-						<!-- Multiple Radios -->
-						<div class="form-group">
-							<label class="col-md-4 control-label" for="Owns Vehicle">Owns
-								Vehicle?</label>
-							<div class="col-md-4">
-								<div class="checkbox">
-									<label for="Owns Vehicle-0"> <input type="checkbox"
-										name="Owns Vehicle" id="Owns Vehicle-0" value="1"> 4
-										wheeler
-									</label>
-								</div>
-								<div class="checkbox">
-									<label for="Owns Vehicle-1"> <input type="checkbox"
-										name="Owns Vehicle" id="Owns Vehicle-1" value="2">
-										Bike
-									</label>
-								</div>
-								<div class="checkbox">
-									<label for="Owns Vehicle-2"> <input type="checkbox"
-										name="Owns Vehicle" id="Owns Vehicle-2" value="3">
-										Bicycle
-									</label>
 								</div>
 							</div>
 						</div>
-
-
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-md-4 control-label"
-								for="Working Experience (time period)">Working
-								Experience (time period)</label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-clock-o"></i>
-
-									</div>
-									<input id="Working Experience (time period)"
-										name="Working Experience" type="text"
-										placeholder="Enter time period " class="form-control input-md">
-
-
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Textarea -->
-						<div class="form-group">
-							<label class="col-md-4 control-label"
-								for="Overview (max 200 words)">Overview (max 200 words)</label>
-							<div class="col-md-4">
-								<textarea class="form-control" rows="10"
-									id="Overview (max 200 words)" name="Overview (max 200 words)">Overview</textarea>
-							</div>
-						</div>
-
-
-						<div class="form-group">
-							<label class="col-md-4 control-label"></label>
-							<div class="col-md-4">
-								<a href="#" class="btn btn-success"><span
-									class="glyphicon glyphicon-thumbs-up"></span> Submit</a> <a
-									href="#" class="btn btn-danger" value=""><span
-									class="glyphicon glyphicon-remove-sign"></span> Clear</a>
-
-							</div>
-						</div>
-
-					</fieldset>
-				</form>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-2 hidden-xs">
-				<img src="http://websamplenow.com/30/userprofile/images/avatar.jpg"
-					class="img-responsive img-thumbnail ">
-			</div>
-
-
 		</div>
 	</div>
-	<!-- jQuery Version 1.11.1 -->
-	<script src="js/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<!-- Main container-->
+	<div class="container"></div>
+	<!--/ Main container-->
 
+	<!--Mask-->
+	<div class="view hm-black-strong"
+		style="height: 600px; background: url('http://baltimoresportsandlife.com/wp-content/uploads/2016/07/Movies.jpg') no-repeat center center fixed; background-size: 100%;">
+		<div class="full-bg-img flex-center">
+			<ul>
+				<li>
+					<h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s"
+						style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Premium
+						5G Cinema</h1>
+				</li>
+				<li>
+					<p class="wow fadeInDown"
+						style="visibility: hidden; animation-name: none;">Enjoy our
+						high definition projectors. -5Guyz</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--/.Mask-->
+
+
+	<div id="backW" style="height: 500px">
+		<div class="carousel initialized" style="height: 500px">
+			<a class="carousel-item active" href="#one!"
+				style="z-index: 0; opacity: 1; display: block; transform: translateX(269.5px) translateY(25px) translateX(0px) translateX(0px) translateZ(0px);"><img
+				ng-click="getMovie(297762)"
+				src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg"></a>
+			<a class="carousel-item" href="#two!"
+				style="transform: translateX(269.5px) translateY(25px) translateX(300px) translateZ(-200px); z-index: -1; opacity: 0.6; display: block;"><img
+				ng-click="getMovie(303857)"
+				src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a>
+			<a class="carousel-item" href="#three!"
+				style="transform: translateX(269.5px) translateY(25px) translateX(600px) translateZ(-400px); z-index: -2; opacity: 0.2; display: block;"><img
+				ng-click="getMovie(126963)"
+				src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a>
+			<a class="carousel-item" href="#four!"
+				style="transform: translateX(269.5px) translateY(25px) translateX(-600px) translateZ(-400px); z-index: -2; opacity: 0.2; display: block;"><img
+				ng-click="getMovie(75780)"
+				src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a>
+			<a class="carousel-item" href="#five!"
+				style="transform: translateX(269.5px) translateY(25px) translateX(-300px) translateZ(-200px); z-index: -1; opacity: 0.6; display: block;"><img
+				ng-click="getMovie(324552)"
+				src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
+		</div>
+	</div>
+
+	<div id="backG" style="height: 500px">
+		<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn btn-primary" href="#modal1">View
+			All Movies</a>
+
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal bottom-sheet"
+			style="z-index: 1003; display: none; opacity: 0; bottom: -100%;">
+			<div class="modal-content">
+				<h4>All Current Movies</h4>
+				<p>A bunch of text</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#!"
+					class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+			</div>
+		</div>
+
+		<div style="" class="container1">
+			<movie-info info="movie" class="ng-isolate-scope"><!-- <h3 class="movieTitle">{{ info.title }}</h3>
+<img class="movieImg" alt="" ng-src="{{ info.poster }}" width=200; height=300;>
+<p class="releaseDate">{{ info.release_date }}</p>
+<p class="runtime">{{ info.runtime }}</p>
+<p class="genre">{{ info.genre }}</p>
+<p class="overview">{{ info.overview }}</p>
+<p class="rating">{{ info.rating }}</p>
+<p class="ratingCount">{{ info.vote_count }}</p>
+<iframe class="movieTrailer" allowfullscreen="allowfullscreen" width="420" height="315" ng-src="{{ info.trailer | trusted }}">
+</iframe> -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="movieImg" alt="" width="200;" height="300;"
+							ng-src="https://image.tmdb.org/t/p/w500/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg"
+							src="https://image.tmdb.org/t/p/w500/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg">
+					</div>
+					<div class="col-sm-3">
+						<h5 class="movieTitle ng-binding" style="color: white">Wonder
+							Woman</h5>
+						<p class="releaseDate ng-binding" style="color: white">Release:
+							2017-05-30</p>
+						<p class="runtime ng-binding" style="color: white">Runtime:
+							141</p>
+						<p class="genre ng-binding" style="color: white">Genre: Action</p>
+						<p class="rating ng-binding" style="color: white">Rating: 7</p>
+						<p class="ratingCount ng-binding" style="color: white">Vote#:
+							2148</p>
+					</div>
+					<div class="col-sm-6">
+						<p class="overview ng-binding" style="color: white">An Amazon
+							princess comes to the world of Man to become the greatest of the
+							female superheroes.</p>
+						<!-- Modal Trigger -->
+						<a class="waves-effect waves-light btn" href="#modal2" data-toggle="modal">Modal</a>
+
+						<!-- Modal Structure -->
+						<div id="modal2" class="modal bottom-sheet">
+							<div class="modal-content">
+								<iframe class="movieTrailer" allowfullscreen="allowfullscreen"
+									width="420" height="315"
+									ng-src="https://www.youtube.com/embed/5lGoQhFb4NM"
+									src="https://www.youtube.com/embed/5lGoQhFb4NM"> </iframe>
+							</div>
+							<div class="modal-footer">
+								<a href="#!"
+									class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</movie-info>
+		</div>
+
+	</div>
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only mdb-color darken-4"
+		style="margin-top: 0">
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				© 2017 5Guyz Cinema, LLC. · <a href="#">Privacy</a>
+
+			</div>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+
+	<!-- SCRIPTS -->
+
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/tether.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<!-- AngularJS -->
+	<!-- Module -->
+	<script src="js/angularjs/movieApp.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/angularjs/controller/MovieController.js"></script>
+
+	<!-- Directives -->
+	<script src="js/angularjs/directive/movieInfo.js"></script>
+
+	<!-- Services -->
+	<script src="js/angularjs/service/movieService.js"></script>
+
+	<!-- Filters -->
+	<script src="js/angularjs/filter/trailerFilter.js"></script>
+
+	<script>
+	$(document).ready(function(){
+	    $('.carousel').carousel();
+	  });
+	$(document).ready(function(){
+	    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+	    $('#modal2').modal();
+	    $('#modal1').modal();
+	  });
+        new WOW().init();
+
+        /* #####################################################################
+        #
+        #   Project       : Modal Login with jQuery Effects
+        #   Author        : Rodrigo Amarante (rodrigockamarante)
+        #   Version       : 1.0
+        #   Created       : 07/29/2015
+        #   Last Change   : 08/04/2015
+        #
+        ##################################################################### */
+        
+        $(function() {
+            
+            var $formLogin = $('#login-form');
+            var $formLost = $('#lost-form');
+            var $formRegister = $('#register-form');
+            var $divForms = $('#div-forms');
+            var $modalAnimateTime = 300;
+            var $msgAnimateTime = 150;
+            var $msgShowTime = 2000;
+            
+            $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
+            $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
+            $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
+            $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
+            $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
+            $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
+            
+            
+            function modalAnimate ($oldForm, $newForm) {
+                var $oldH = $oldForm.height();
+                var $newH = $newForm.height();
+                $divForms.css("height",$oldH);
+                $oldForm.fadeToggle($modalAnimateTime, function(){
+                    $divForms.animate({height: $newH}, $modalAnimateTime, function(){
+                        $newForm.fadeToggle($modalAnimateTime);
+                    });
+                });
+            }
+            
+            function msgFade ($msgId, $msgText) {
+                $msgId.fadeOut($msgAnimateTime, function() {
+                    $(this).text($msgText).fadeIn($msgAnimateTime);
+                });
+            }
+            
+            function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
+                var $msgOld = $divTag.text();
+                msgFade($textTag, $msgText);
+                $divTag.addClass($divClass);
+                $iconTag.removeClass("glyphicon-chevron-right");
+                $iconTag.addClass($iconClass + " " + $divClass);
+                setTimeout(function() {
+                    msgFade($textTag, $msgOld);
+                    $divTag.removeClass($divClass);
+                    $iconTag.addClass("glyphicon-chevron-right");
+                    $iconTag.removeClass($iconClass + " " + $divClass);
+          		}, $msgShowTime);
+            }
+        });
+  
+    </script>
+
+
+
+
+	<div class="hiddendiv common"></div>
 </body>
-
 </html>

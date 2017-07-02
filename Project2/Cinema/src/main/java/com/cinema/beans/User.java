@@ -47,6 +47,9 @@ public class User implements Serializable {
 	@Column(name = "POINTS")
 	private int points;
 	
+	@Column(name = "ADMIN")
+	private boolean isAdmin;
+	
 	//@OneToMany(mappedBy = "receipt", fetch = FetchType.EAGER)
 //	private List<Receipt> receipts;
 	
@@ -78,7 +81,7 @@ public class User implements Serializable {
 
 
 	public User(String email, int id, String firstName, String lastName, String password, RewardStatus rewardStatus,
-			String phoneNumber, int points) {
+			String phoneNumber, int points, boolean isAdmin) {
 		super();
 		this.email = email;
 		this.id = id;
@@ -88,11 +91,12 @@ public class User implements Serializable {
 		this.rewardStatus = rewardStatus;
 		this.phoneNumber = phoneNumber;
 		this.points = points;
+		this.isAdmin = isAdmin;
 //		this.receipts = receipts;
 	}
 
 	public User(String email, String firstName, String lastName, String password, RewardStatus rewardStatus,
-			String phoneNumber, int points) {
+			String phoneNumber, int points, boolean isAdmin) {
 		super();
 		this.email = email;
 		this.firstName = firstName;
@@ -101,6 +105,7 @@ public class User implements Serializable {
 		this.rewardStatus = rewardStatus;
 		this.phoneNumber = phoneNumber;
 		this.points = points;
+		this.isAdmin = isAdmin;
 //		this.receipts = receipts;
 	}
 
@@ -167,21 +172,21 @@ public class User implements Serializable {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+	
+	public boolean isAdmin() {
+		return isAdmin;
+	}
 
-//	public List<Receipt> getReceipts() {
-//		return receipts;
-//	}
-//
-//	public void setReceipts(List<Receipt> receipts) {
-//		this.receipts = receipts;
-//	}
-//
-	@Override
-	public String toString() {
-		return "User [email=" + email + ", id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", password=" + password + ", rewardStatus=" + rewardStatus + ", phoneNumber=" + phoneNumber
-				+ ", points=" + points + "]\n";
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", password=" + password + ", rewardStatus=" + rewardStatus + ", phoneNumber=" + phoneNumber
+				+ ", points=" + points + ", isAdmin=" + isAdmin + "]";
+	}
 }

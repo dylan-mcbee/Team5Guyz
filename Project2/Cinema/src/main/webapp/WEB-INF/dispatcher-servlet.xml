@@ -10,7 +10,7 @@
 			<value>WEB-INF/static/</value>
 		</property>
 		<property name="suffix">
-			<value>.flt</value>
+			<value>.html</value>
 		</property>
 	</bean>
 </beans>

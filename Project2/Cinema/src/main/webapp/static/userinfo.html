@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>5G Cinema</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Material Design Bootstrap -->
+<link href="css/mdb.min.css" rel="stylesheet">
+
+<!-- Template styles -->
+<link href="css/style.css" rel="stylesheet">
+
+<link href="css/user.css" rel="stylesheet">
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
+	media="screen,projection" />
+
+<style>
+.user-row {
+	margin-bottom: 14px;
+}
+
+.user-row:last-child {
+	margin-bottom: 0;
+}
+
+.dropdown-user {
+	margin: 13px 0;
+	padding: 5px;
+	height: 100%;
+}
+
+.dropdown-user:hover {
+	cursor: pointer;
+}
+
+.table-user-information>tbody>tr {
+	border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information>tbody>tr:first-child {
+	border-top: 0;
+}
+
+.table-user-information>tbody>tr>td {
+	border-top: 0;
+}
+
+.toppad {
+	margin-top: 20px;
+}
+
+body {
+	background-image:
+		url(http://www.goodlifepizza.com/images/bg_nav_page.jpg);
+	background-size: contain;
+	background-size: cover;
+}
+</style>
+</head>
+
+<body>
+
+
+	<!--Navbar-->
+	<nav
+		class="navbar navbar-toggleable-md navbar-dark scrolling-navbar fixed-top">
+		<div class="container">
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#collapseEx2"
+				aria-controls="collapseEx2" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
+			</a>
+			<div class="collapse navbar-collapse" id="collapseEx2">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="movies.html">Movies</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="concessions.html">Concessions </a></li>
+					<li class="nav-item active" style="height: 70px"><a
+						class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
+					</li>
+				</ul>
+				<a class="navbar-brand pull-right" href="#"> <strong>Hello
+						5Guyz</strong>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<!--/.Navbar-->
+
+	<!-- Main container-->
+	<div class="container" style="margin-top: 100px">
+		<div class="row">
+			<div class="col-md-10 ">
+				<!-- Form Name -->
+				<h2 style="color: white">User Info.</h2>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Name (Full name)" style="color: white;font-size: 150%;">Name:
+					</label>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Date Of Birth" style="color: white;font-size: 150%;">Email:
+					</label>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Phone" style="color: white;font-size: 150%;">Phone
+						number: </label>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Rewards" style="color: white;font-size: 150%;">Rewards
+						Status: </label>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Rewards" style="color: white;font-size: 150%;">Rewards
+						Points: </label>
+				</div>
+
+				<!-- Modal Trigger -->
+				<a class="waves-effect waves-light btn btn-danger" href="#modal1" >Update
+					Info.</a>
+
+				<!-- Modal Structure -->
+				<div id="modal1" class="modal modal-fixed-footer">
+					<div class="container">
+						<div class="">
+							<div class="form-area">
+								<form role="form">
+									<br style="clear: both">
+									<h3 style="margin-bottom: 25px; text-align: center;">Contact
+										Form</h3>
+									<div class="form-group">
+										<input type="text" class="form-control" id="name" name="fname"
+											placeholder="First Name" required>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="name" name="lname"
+											placeholder="Last Name" required>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="email"
+											name="email" placeholder="Email" required>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="pnumber"
+											name="email" placeholder="Phone Number" required>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="password"
+											name="mobile" placeholder="Enter Password" required>
+									</div>
+
+									<button type="button" id="submit" name="submit"
+										class="btn btn-primary pull-right">Submit Form</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-2 hidden-xs">
+				<img
+					src="https://au.junkfreejune.org/themes/base/production/images/default-profile.png"
+					style="height: 200px; width: 200px; left: 250px">
+			</div>
+
+		</div>
+	</div>
+	<!--/ Main container-->
+
+
+
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only mdb-color darken-4"
+		style="margin-top: 450px;">
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				&copy; 2017 5Guyz Cinema, LLC. &middot; <a href="#">Privacy</a>
+
+			</div>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+
+	<!-- SCRIPTS -->
+
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/tether.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<!-- Animations init-->
+	<script>
+	 $(document).ready(function(){
+		    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+		    $('.modal').modal();
+		  });
+    </script>
+</body>
+
+</html>

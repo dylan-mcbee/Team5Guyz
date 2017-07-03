@@ -44,7 +44,6 @@
 	background-size: contain;
 	background-size: cover;
 }
-
 #backG {
 	background-image:
 		url(https://s-media-cache-ak0.pinimg.com/originals/e2/3f/a6/e23fa65dcedeb00cc5f9ac4ca015699d.jpg);
@@ -52,7 +51,6 @@
 	background-size: cover;
 	background-size: 100% 100%;
 }
-
 .view {
 	background: no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -63,7 +61,7 @@
 </style>
 </head>
 
-<body ng-app="movieApp" ng-controller="MovieController">
+<body ng-app="movieApp" ng-controller="MovieDisplayController">
 
 
 	<!--Navbar-->
@@ -249,24 +247,11 @@
 	<!--/.Mask-->
 
 
-	<div id="backW" style="height: 500px">
+	<div id="backW" style="height: 500px" ng-controller="MovieController">
 		<div class="carousel" style="height: 500px">
-			<a class="carousel-item" href="#one!"><img
-				ng-click="getMovie(297762)"
-				src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg"></a>
-			<a class="carousel-item" href="#two!"><img
-				ng-click="getMovie(303857)"
-				src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a>
-			<a class="carousel-item" href="#three!"><img
-				ng-click="getMovie(126963)"
-				src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a>
-			<a class="carousel-item" href="#four!"><img
-				ng-click="getMovie(75780)"
-				src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a>
-			<a class="carousel-item" href="#five!"><img
-				ng-click="getMovie(324552)"
-				src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
-		</div>
+			<a ng-repeat="movie in movies" class="carousel-item">
+				<img ng-click="getMovie(movie.id)" src="{{ movie.imageUrl }}">
+			</a>
 	</div>
 
 	<div id="backG" style="height: 500px">
@@ -278,22 +263,10 @@
 		<div id="modal1" class="modal bottom-sheet">
 			<div class="modal-content">
 				<h4>Movies List</h4>
-				<div >
-					<a class="carousel-item" href="#one!"><img style="height: 300px; width: 200px" 
-						ng-click="getMovie(297762)"
-						src="http://www.joblo.com/posters/images/full/wonder_woman_poster_2.jpg"></a>
-					<a class="carousel-item" href="#two!"><img style="height: 300px; width: 200px"
-						ng-click="getMovie(303857)"
-						src="https://vignette2.wikia.nocookie.net/dbz-dokkanbattle/images/d/d6/IMG_20170410_080547.jpg/revision/latest?cb=20170410050748"></a>
-					<a class="carousel-item" href="#three!"><img style="height: 300px; width: 200px"
-						ng-click="getMovie(126963)"
-						src="https://vignette4.wikia.nocookie.net/dragonball/images/d/d4/Dragon_Ball_Z-_Dokkan_Battle_English_Screen.jpg/revision/latest?cb=20150802130904"></a>
-					<a class="carousel-item" href="#four!"><img style="height: 300px; width: 200px"
-						ng-click="getMovie(75780)"
-						src="http://www.impawards.com/2012/posters/jack_reacher_ver2_xlg.jpg"></a>
-					<a class="carousel-item" href="#five!"><img style="height: 300px; width: 200px"
-						ng-click="getMovie(324552)"
-						src="http://www.impawards.com/2017/posters/john_wick_chapter_two_ver4.jpg"></a>
+				<div>
+					<a ng-repeat="movie in movies" class="carousel-item">
+						<img style="height: 300px; width: 200px" ng-click="getMovie(movie.id)" src="{{ movie.imageUrl }}">
+					</a>
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -346,6 +319,7 @@
 
 	<!-- Controllers -->
 	<script src="js/angularjs/controller/MovieController.js"></script>
+	<script src="js/angularjs/controller/MovieDisplayController.js"></script>
 
 	<!-- Directives -->
 	<script src="js/angularjs/directive/movieInfo.js"></script>
@@ -365,7 +339,6 @@
 	    $('#modal1').modal();
 	  });
         new WOW().init();
-
         /* #####################################################################
         #
         #   Project       : Modal Login with jQuery Effects

@@ -98,6 +98,8 @@ public class CinemaService {
 		System.out.println("Receipt# "+receipt.getConfirmationNumber()+" :updated");
 	}
 
-
+	public List<Movie> getAllMovies() {
+		return dao.getMovies();
+	}
 
 }

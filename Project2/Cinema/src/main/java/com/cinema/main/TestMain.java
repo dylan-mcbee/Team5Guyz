@@ -1,14 +1,24 @@
 package com.cinema.main;
 
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cinema.beans.RewardStatus;
+import com.cinema.beans.User;
+import com.cinema.dao.Dao;
 import com.cinema.mail.Mail;
 
 public class TestMain {
 	public static void main(String[] args) {
 		
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-		Dao dao = (Dao) ac.getBean("myDao");
-		System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
-		
+		Dao dao = (Dao) ac.getBean("cinemaRepository");
+		//System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
+
+		User u = new User("Yose@test.com", "Samuel", "Yoohoo", "123", RewardStatus.BRONZE,"6452221234", 74, true);
+		//dao.createUser(u);
+		//User u = dao.getUserByEmail("Yose@test.com");
+		System.out.println(u.getEmail()+"Firstname "+u.getFirstName());
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -65,8 +75,6 @@ public class TestMain {
 //		m = dao.getMovieByMovieTitle("time");
 //		System.out.println(m.toString());
 //		List<User> u = new ArrayList<User>();
-		//User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
-				//"6452221234", 74);
 		//dao.createUser(u);
 //		u = dao.getUserByUserId(2);
 //		u.setFirstName("lee");

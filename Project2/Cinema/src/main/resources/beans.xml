@@ -41,7 +41,7 @@
 		<property name="sessionFactory" ref="mySessionFactory"></property>
 	</bean>
 
-	<bean id="myDao" class="com.cinema.dao.DaoHibernateImpl">
+	<bean id="cinemaRepository" class="com.cinema.dao.DaoHibernateImpl">
 		<property name="sessionFactory" ref="mySessionFactory"></property>
 	</bean>
 </beans>

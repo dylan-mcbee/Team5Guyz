@@ -51,9 +51,14 @@
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+<script>
+
+
+</script>
 </head>
 
-<body ng-app="RESTLogin", ng-controller="RESTctrl">
+<body ng-app="RESTLogin", ng-controller="RESTctrl" onload="checkCookie()">
 
 
 	<!--Navbar-->
@@ -80,7 +85,8 @@
 					<li class="nav-item"><a class="nav-link" href="static/about.html">About
 					</a></li>
 				</ul>
-				<button class="btn btn-primary btn-rounded pull-right"
+				<button  class="btn btn danger btn-rounded pull-right" onclick="myFunction()">Try it</button>
+				<button class="btn btn-primary btn-rounded pull-right" id=myDIV 
 					data-toggle="modal" data-target="#myModal">Login</button>
 			</div>
 		</div>
@@ -230,7 +236,8 @@
 				</li>
 				<li>
 					<p class="wow fadeInDown">Everything is better at the movies.
-						-5Guyz</p>
+						-5Guyzz</p>
+						<p>{{username}}</p>
 				</li>
 			</ul>
 		</div>
@@ -352,6 +359,35 @@
           		}, $msgShowTime);
             }
         });
+        
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function checkCookie() {
+            var username = getCookie("user");
+            console.log(username);
+            if(username !=""){
+            	<!-- -->
+            	alert("Hello" + username.email)
+            }
+            	
+            else{
+            	alert("not logged in")
+            }
+        }
+        
         
     </script>
 

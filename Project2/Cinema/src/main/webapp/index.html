@@ -10,6 +10,8 @@
 
 <title>5G Cinema</title>
 
+<link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png" sizes="16x16">
+
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/static/css/font-awesome.min.css">
@@ -27,6 +29,10 @@
 
 <!-- JQuery -->
 <script type="text/javascript" src="static/js/jquery-3.1.1.min.js"></script>
+
+<!-- Google Sign in API -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="577871229348-4655007e4a4mbdi6gavveem2jh0u23se.apps.googleusercontent.com">
 
 <style>
 #backW {
@@ -58,7 +64,11 @@
 </script>
 </head>
 
+<<<<<<< HEAD
 <body ng-app="RESTLogin", ng-controller="RESTctrl" onload="checkCookie()">
+=======
+<body ng-app="RESTLogin" ng-controller="RESTctrl">
+>>>>>>> d0c2dc606488e91d6eadf028f4b46ad6ab3a3d8f
 
 
 	<!--Navbar-->
@@ -73,12 +83,14 @@
 			</button>
 			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
 			</a>
-			<div class="collapse navbar-collapse" id="collapseEx2">
+			<div class="collapse navbar-collapse" id="collapseEx2" ng-controller="MovieViewController">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="index.html">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="static/movies.html">Movies</a>
+					<li class="nav-item"><a class="nav-link" href="static/movies.view">Movies</a>
+					<!-- <li class="nav-item nav-link" ng-click="getMoviesInfo()">Movies</a> -->
+					<!-- <li class="nav-item"><a ng-click="getMoviesInfo()" class="nav-link">Movies</a> -->
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="static/concessions.html">Concessions </a></li>
@@ -88,6 +100,10 @@
 				<button  class="btn btn danger btn-rounded pull-right" onclick="myFunction()">Try it</button>
 				<button class="btn btn-primary btn-rounded pull-right" id=myDIV 
 					data-toggle="modal" data-target="#myModal">Login</button>
+					<a class="waves-effect waves-light btn" href="#modal1">Login1</a>
+
+  <!-- Modal Structure -->
+  
 			</div>
 		</div>
 	</nav>
@@ -295,6 +311,7 @@
 	<script src="static/js/app.js"></script>
 	<script src="static/js/ajaxFactory.js"></script>
 	<script src="static/js/loginController.js"></script>
+	<script src="static/js/angularjs/controller/MovieViewController.js"></script>
 	
 
 	<!-- Animations init-->

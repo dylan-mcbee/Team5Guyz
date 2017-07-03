@@ -21,12 +21,12 @@ public class MasterController {
 		return "userinfo";//will go to userinfo.html
 	}
 	
-	
-	
-	
-	
-	
-	
+	@GetMapping
+	@RequestMapping("/static/movies.view")
+	public String getMovieView(){
+		System.out.println("MASTER MOVIE CONTROLLER");
+		return "../movies";//will go to movies.html
+	}
 }
 
 

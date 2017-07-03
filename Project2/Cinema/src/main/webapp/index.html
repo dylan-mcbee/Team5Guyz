@@ -64,11 +64,11 @@
 </script>
 </head>
 
-<<<<<<< HEAD
-<body ng-app="RESTLogin", ng-controller="RESTctrl" onload="checkCookie()">
-=======
-<body ng-app="RESTLogin" ng-controller="RESTctrl">
->>>>>>> d0c2dc606488e91d6eadf028f4b46ad6ab3a3d8f
+
+
+
+<body ng-app="RESTLogin" ng-controller="RESTctrl" onload="checkCookie()">
+
 
 
 	<!--Navbar-->
@@ -97,11 +97,10 @@
 					<li class="nav-item"><a class="nav-link" href="static/about.html">About
 					</a></li>
 				</ul>
-				<button  class="btn btn danger btn-rounded pull-right" onclick="myFunction()">Try it</button>
-				<button class="btn btn-primary btn-rounded pull-right" id=myDIV 
-					data-toggle="modal" data-target="#myModal">Login</button>
-					<a class="waves-effect waves-light btn" href="#modal1">Login1</a>
-
+				<button class="btn btn-primary btn-rounded pull-right" id=myDIV data-toggle="modal" data-target="#myModal">Login</button>
+					<a class="navbar-brand" id="welcome" style="display:none" > <strong>Welcome {{username}}</strong></a>
+					<button class="btn btn-danger btn-rounded pull-right" id="logout" style="display:none" ng-click="logout()" >Logout</button>
+				
   <!-- Modal Structure -->
   
 			</div>
@@ -393,17 +392,28 @@
             return "";
         }
         function checkCookie() {
-            var username = getCookie("user");
-            console.log(username);
-            if(username !=""){
+
+            if(getCookie("user") != ""){
+            	
+            	console.log("here");
+            	var login = document.getElementById('myDIV');
+            	var welcome = document.getElementById('welcome');
+            	var logout = document.getElementById('logout');
+
+                    login.style.display = 'none';
+            	
+            		welcome.style.display= 'block';
+            		logout.style.display = 'block';
             	<!-- -->
-            	alert("Hello" + username.email)
+            	
             }
             	
             else{
-            	alert("not logged in")
+            	
             }
         }
+        
+       
         
         
     </script>

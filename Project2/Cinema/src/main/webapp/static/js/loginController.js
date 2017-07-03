@@ -3,12 +3,24 @@
  */
 app.controller('RESTctrl', ['$scope', '$cookies', '$window','ajaxFactory' ,function($scope,$cookies,$window, ajaxFactory){
 	$scope.credential ={};
-	var info = JSON.parse($cookies.get('user'));
-	console.log(info.email)
-	$scope.username = info.email;
-	$scope.password = info.password;
-	console.log('test test');
-	console.log($scope.username);
+	if($cookies.get('user')!=null){
+		var info = JSON.parse($cookies.get('user'));
+		console.log(info.email)
+		$scope.username = info.firstName;
+		$scope.password = info.password;
+		console.log('test test');
+		console.log($scope.username);
+		
+	}
+	
+	
+	$scope.logout = function() {
+        $cookies.remove('user');
+        console.log('HEre');
+        $window.location.href = '/Cinema/index.html';
+        console.log('there');
+        
+    };
 	
 	$scope.login =() => {
 		console.log('Logged in User');
@@ -17,7 +29,7 @@ app.controller('RESTctrl', ['$scope', '$cookies', '$window','ajaxFactory' ,funct
 		.then((successResponse)=>{
 			$cookies.put('user', JSON.stringify(successResponse.data))
 			console.log(successResponse.data);			
-			//$window.location.href = '/Cinema/index.html';
+			$window.location.href = '/Cinema/index.html';
 		})
 	}
 }])

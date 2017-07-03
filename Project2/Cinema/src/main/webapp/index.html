@@ -53,7 +53,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 </head>
 
-<body ng-app="RESTLogin", ng-controller="RESTctrl">
+<body ng-app="RESTLogin" ng-controller="RESTctrl">
 
 
 	<!--Navbar-->
@@ -68,12 +68,15 @@
 			</button>
 			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
 			</a>
-			<div class="collapse navbar-collapse" id="collapseEx2">
+			<div class="collapse navbar-collapse" id="collapseEx2" ng-controller="MovieViewController">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="index.html">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="static/movies.html">Movies</a>
+					<!-- <li class="nav-item"><a class="nav-link" href="static/movies.html">Movies</a>
+					</li> -->
+					<!-- <li class="nav-item nav-link" ng-click="getMoviesInfo()">Movies</a> -->
+					<li class="nav-item"><a ng-click="getMoviesInfo()" class="nav-link">Movies</a>
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="static/concessions.html">Concessions </a></li>
@@ -288,6 +291,7 @@
 	<script src="static/js/app.js"></script>
 	<script src="static/js/ajaxFactory.js"></script>
 	<script src="static/js/loginController.js"></script>
+	<script src="static/js/angularjs/controller/MovieViewController.js"></script>
 	
 
 	<!-- Animations init-->

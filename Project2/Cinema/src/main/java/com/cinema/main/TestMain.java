@@ -1,14 +1,25 @@
 package com.cinema.main;
 
-import com.cinema.mail.Mail;
+import java.util.List;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cinema.beans.Movie;
+import com.cinema.dao.Dao;
 
 public class TestMain {
 	public static void main(String[] args) {
 		
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
-		Dao dao = (Dao) ac.getBean("myDao");
-		System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
-		
+		Dao dao = (Dao) ac.getBean("cinemaRepository");
+		//System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
+		List<Movie> movies = dao.getMovies();
+    	//movies.forEach(m -> System.out.println(m));
+		for(Movie movie : movies) {
+			System.out.println(movie);
+		}
+		//System.out.println("Movies: " + movies.get(0));
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -16,9 +27,9 @@ public class TestMain {
 //		con = dao.getConcessions();
 //		System.out.println(con.toString());
 //		User u = new User();
-//		Room r = new Room();
+	//	Room r = new Room();
 //		r = dao.getRoomByRoomNum(1);
-//		r.setCapacity(30);
+		//r.setCapacity(30);
 //		dao.updateRoom(r);
 //		System.out.println(r.toString());
 //		Room r = new Room(1, 30);
@@ -49,7 +60,7 @@ public class TestMain {
 //		st1 = dao.getShowtimeByShowtimeId(5);
 //		System.out.println(st1.toString());
 //		List<Showtime> sts = new ArrayList<Showtime>();
-//		sts.add(st);
+	//	sts.add(st);
 //		sts.add(st1);
 		
 //		Showtime st = dao.getShowtimeByShowtimeId(3);
@@ -59,14 +70,14 @@ public class TestMain {
 
 //		Showtime st = new Showtime( LocalDateTime.now(), LocalDate.now(), r.getCapacity());
 		
-//		m = new Movie(1, "machine", 35, "sd.fsdfsdfs", sts);
-//		dao.createMovie(m);
+//		Movie m = new Movie(297762, "Wonder Woman", 141, "junk", sts, "https://image.tmdb.org/t/p/w500/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg");
+	//	dao.createMovie(m);
 //		m.forEach(mov -> System.out.println("Movie: " + mov));
 //		m = dao.getMovieByMovieTitle("time");
 //		System.out.println(m.toString());
 //		List<User> u = new ArrayList<User>();
-		//User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
-				//"6452221234", 74);
+//		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
+				//"6452221234", 74, false);
 		//dao.createUser(u);
 //		u = dao.getUserByUserId(2);
 //		u.setFirstName("lee");

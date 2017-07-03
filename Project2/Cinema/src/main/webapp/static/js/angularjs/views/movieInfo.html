@@ -1,33 +1,94 @@
-<!-- <h3 class="movieTitle">{{ info.title }}</h3>
-<img class="movieImg" alt="" ng-src="{{ info.poster }}" width=200; height=300;>
-<p class="releaseDate">{{ info.release_date }}</p>
-<p class="runtime">{{ info.runtime }}</p>
-<p class="genre">{{ info.genre }}</p>
-<p class="overview">{{ info.overview }}</p>
-<p class="rating">{{ info.rating }}</p>
-<p class="ratingCount">{{ info.vote_count }}</p>
-<iframe class="movieTrailer" allowfullscreen="allowfullscreen" width="420" height="315" ng-src="{{ info.trailer | trusted }}">
-</iframe> -->
-
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h3 class="movieTitle" style="color:white">{{ info.title }}</h3>
-            <img class="movieImg" alt="" ng-src="{{ info.poster }}" width=200;
-                height=300;>
-        </div>
-        <div class="col">
-            <p class="releaseDate" style="color:white">Release Date: {{ info.release_date }}</p>
-            <p class="runtime" style="color:white">Runtime: {{ info.runtime }} mins</p>
-            <p class="genre" style="color:white">Genre: {{ info.genre }}</p>
-            <p class="overview" style="color:white">Overview: {{ info.overview }}</p>
-            <p class="rating" style="color:white">Rating: {{ info.rating }}</p>
-            <p class="ratingCount" style="color:white">Votes: {{ info.vote_count }}</p>
-        </div>
-        <div class="col">
-            <iframe class="movieTrailer" allowfullscreen="allowfullscreen"
-                width="420" height="315" ng-src="{{ info.trailer | trusted }}">
-            </iframe>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-sm-3">
+			<img class="movieImg" alt="" ng-src="{{ info.poster }}" width=200;
+				height=300;> <a
+				class="waves-effect waves-light btn btn-warning pulse"
+				style="margin: 0 auto; width: 200px" href="#ticket">Buy ticket</a>
+			<!-- Modal Structure -->
+			<div id="ticket" class="modal modal-fixed-footer"
+				style="background-color: black; height: 500px; width: 900px">
+				<div class="modal-content">
+					<div class="tab-content">
+						<div class="tab-pane active" id="Login">
+							<h4>{{ info.title }} Tickets</h4>
+							<form role="form" class="form-horizontal">
+								<div class="form-group">
+									<label for="email" class="col-sm-2 control-label">
+										Credit Card</label>
+									<div class="col-sm-10">
+										<input type="number" class="form-control" id="email1"
+											placeholder="Credit Card" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1"
+										class="col-sm-2 control-label"> Expiration Date</label>
+									<div class="col-sm-10">
+										<input type="date" class="form-control"
+											id="tickNum" placeholder="Ticket Total" />
+										<input type="password" class="form-control"
+											id="tickNum" placeholder="CVV" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1"
+										class="col-sm-2 control-label"> Ticket Total</label>
+									<div class="col-sm-10">
+										<input type="number" class="form-control"
+											id="tickNum" placeholder="Ticket Total" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary btn-sm">
+											Submit</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<h5 class="movieTitle" style="color: white">{{ info.title }}</h5>
+			<p class="releaseDate" style="color: white">Release: {{
+				info.release_date }}</p>
+			<p class="runtime" style="color: white">Runtime: {{ info.runtime
+				}} Min.</p>
+			<p class="genre" style="color: white">Genre: {{ info.genre }}</p>
+			<p class="rating" style="color: white">Rating: {{ info.rating }}
+				/ 10</p>
+			<p class="ratingCount" style="color: white">Vote#: {{
+				info.vote_count }}</p>
+		</div>
+		<div class="col-sm-6">
+			<p class="overview" style="color: white">{{ info.overview }}</p>
+			<!-- Modal Trigger -->
+			<a class="waves-effect waves-light btn" href="#modal2">View
+				Trailer</a>
+
+			<!-- Modal Structure -->
+			<div id="modal2" class="modal modal-fixed-footer"
+				style="background-color: black; height: 500px; width: 900px">
+				<div class="modal-content video-container"
+					style="background-color: black;">
+					<iframe class="movieTrailer" allowfullscreen="allowfullscreen"
+						width="100%" height="100%"
+						ng-src="{{ info.trailer + '?loop=1' | trusted }}"> </iframe>
+				</div>
+				<div class="modal-footer" style="background-color: grey;">
+					<a href="#!"
+						class="modal-action modal-close waves-effect waves-green btn-flat "
+						style="color: white">Close</a>
+				</div>
+			</div>
+			<script type="text/javascript">
+			$(document).ready(function(){
+			    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+			    $('#ticket').modal();
+			    $('#modal2').modal();
+			  });
+			</script>
+		</div>
+	</div>
 </div>

@@ -30,6 +30,10 @@
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
+<!-- Google Sign in API -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="577871229348-4655007e4a4mbdi6gavveem2jh0u23se.apps.googleusercontent.com">
+
 <style>
 #backW {
 	background-image:
@@ -84,6 +88,7 @@
 				</ul>
 				<button class="btn btn-primary btn-rounded pull-right"
 					data-toggle="modal" data-target="#myModal">Login</button>
+					
 			</div>
 		</div>
 	</nav>
@@ -204,9 +209,8 @@
 									<h3>Sign in with</h3>
 								</div>
 								<div class="col-md-12">
-									<div class="btn-group btn-group-justified">
-										<a href="#"><i class="fa fa-facebook-square fa-5x"></i></a> <br>
-										<a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
+									<div class="btn-group btn-group-justified text-center">
+										<div class="g-signin2" data-onsuccess="onSignIn"></div>
 									</div>
 								</div>
 							</div>
@@ -251,7 +255,9 @@
 	<div id="backG" style="height: 500px">
 		<div class="container">
 			<div class="row">
-				<div class="col">1 of 2</div>
+				<div class="col">
+					<div id="my-signin2">here</div>
+				</div>
 				<div class="col">1 of 2</div>
 			</div>
 		</div>
@@ -349,7 +355,16 @@
           		}, $msgShowTime);
             }
         });
-        
+        function onSignIn(googleUser) {
+        	  var profile = googleUser.getBasicProfile();
+        	  console.log('ID: ' + profile.getId());
+        	  console.log('Full Name: ' + profile.getName());
+        	  console.log('Given Name: ' + profile.getGivenName());
+        	  console.log('Family Name: ' + profile.getFamilyName());
+        	  console.log('Image URL: ' + profile.getImageUrl());
+        	  console.log('Email: ' + profile.getEmail());
+        	}
+    	
     </script>
 
 

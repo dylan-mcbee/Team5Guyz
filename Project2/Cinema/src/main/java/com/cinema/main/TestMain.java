@@ -1,14 +1,5 @@
 package com.cinema.main;
 
-<<<<<<< HEAD
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.cinema.beans.RewardStatus;
-import com.cinema.beans.User;
-import com.cinema.dao.Dao;
-import com.cinema.mail.Mail;
-=======
 import java.util.List;
 
 import org.springframework.context.support.AbstractApplicationContext;
@@ -16,7 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cinema.beans.Movie;
 import com.cinema.dao.Dao;
->>>>>>> 9d824d420b0fac122a49296497844e30c48ebfee
 
 public class TestMain {
 	public static void main(String[] args) {
@@ -24,20 +14,12 @@ public class TestMain {
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		Dao dao = (Dao) ac.getBean("cinemaRepository");
 		//System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
-<<<<<<< HEAD
-
-		User u = new User("Yose@test.com", "Samuel", "Yoohoo", "123", RewardStatus.BRONZE,"6452221234", 74, true);
-		//dao.createUser(u);
-		//User u = dao.getUserByEmail("Yose@test.com");
-		System.out.println(u.getEmail()+"Firstname "+u.getFirstName());
-=======
 		List<Movie> movies = dao.getMovies();
     	//movies.forEach(m -> System.out.println(m));
 		for(Movie movie : movies) {
 			System.out.println(movie);
 		}
 		//System.out.println("Movies: " + movies.get(0));
->>>>>>> 9d824d420b0fac122a49296497844e30c48ebfee
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -94,11 +76,8 @@ public class TestMain {
 //		m = dao.getMovieByMovieTitle("time");
 //		System.out.println(m.toString());
 //		List<User> u = new ArrayList<User>();
-<<<<<<< HEAD
-=======
 //		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
 				//"6452221234", 74, false);
->>>>>>> 9d824d420b0fac122a49296497844e30c48ebfee
 		//dao.createUser(u);
 //		u = dao.getUserByUserId(2);
 //		u.setFirstName("lee");

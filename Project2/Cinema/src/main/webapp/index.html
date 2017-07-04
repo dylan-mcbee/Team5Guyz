@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>5G Cinema</title>
+
+<link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png" sizes="16x16">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/static/css/font-awesome.min.css">
+
+<!-- Bootstrap core CSS -->
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Material Design Bootstrap -->
+<link href="static/css/mdb.min.css" rel="stylesheet">
+
+<!-- Template styles -->
+<link href="static/css/style.css" rel="stylesheet">
+
+<link href="static/css/user.css" rel="stylesheet">
+
+<!-- JQuery -->
+<script type="text/javascript" src="static/js/jquery-3.1.1.min.js"></script>
+
+<!-- Google Sign in API -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="577871229348-4655007e4a4mbdi6gavveem2jh0u23se.apps.googleusercontent.com">
+
+<style>
+#backW {
+	background-image:
+		url(https://s-media-cache-ak0.pinimg.com/originals/dc/05/51/dc0551bebd9cc8d85cd996e19e3e87e1.jpg);
+	background-size: contain;
+	background-size: cover;
+}
+#backG {
+	background-color: #161C27;
+	background-size: contain;
+	background-size: cover;
+	background-size: 100% 100%;
+}
+.view {
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+
+</head>
+
+
+
+
+<body ng-app="RESTLogin" ng-controller="RESTctrl" onload="checkCookie()">
+
+
+
+	<!--Navbar-->
+	<nav
+		class="navbar navbar-toggleable-md navbar-dark scrolling-navbar fixed-top">
+		<div class="container">
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#collapseEx2"
+				aria-controls="collapseEx2" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
+			</a>
+			<div class="collapse navbar-collapse" id="collapseEx2" ng-controller="MovieViewController">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="index.html">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="static/movies.view">Movies</a>
+					<!-- <li class="nav-item nav-link" ng-click="getMoviesInfo()">Movies</a> -->
+					<!-- <li class="nav-item"><a ng-click="getMoviesInfo()" class="nav-link">Movies</a> -->
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="static/concessions.html">Concessions </a></li>
+					<li class="nav-item"><a class="nav-link" href="static/about.html">About
+					</a></li>
+				</ul>
+				<button class="btn btn-primary btn-rounded pull-right" id=myDIV data-toggle="modal" data-target="#myModal">Login</button>
+					<a class="navbar-brand" id="welcome" style="display:none" > <strong>Welcome {{username}}</strong></a>
+					<button class="btn btn-danger btn-rounded pull-right" id="logout" style="display:none" ng-click="logout()" >Logout</button>
+				
+  <!-- Modal Structure -->
+  
+			</div>
+		</div>
+	</nav>
+	<!--/.Navbar-->
+
+	<!-- Large modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel">
+						Login/Registration - <a href="index1.html">5G Theater</a>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8"
+							style="border-right: 1px dotted #C2C2C2; padding-right: 30px;">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+								<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="Login">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input ng-model="credential.email" name="email" type="email" class="form-control" id="email1"
+													placeholder="Email" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1"
+												class="col-sm-2 control-label"> Password</label>
+											<div class="col-sm-10">
+												<input ng-model="credential.password" name="password" type="password" class="form-control"
+													id="exampleInputPassword1" placeholder="password" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button ng-click ="login()" class="btn btn-primary btn-sm">
+													Submit</button>
+												<a href="javascript:;">Forgot your password?</a>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-pane" id="Registration">
+									<form role="form" class="form-horizontal">
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Name</label>
+											<div class="col-sm-10">
+												<div class="row">
+													<div class="col-md-3">
+														<select class="form-control">
+															<option>Mr.</option>
+															<option>Ms.</option>
+															<option>Mrs.</option>
+														</select>
+													</div>
+													<div class="col-md-9">
+														<input type="text" class="form-control" placeholder="Name" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="email" class="col-sm-2 control-label">
+												Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="email"
+													placeholder="Email" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="mobile" class="col-sm-2 control-label">
+												Mobile</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" id="mobile"
+													placeholder="Mobile" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="password" class="col-sm-2 control-label">
+												Password</label>
+											<div class="col-sm-10">
+												<input type="password" class="form-control" id="password"
+													placeholder="Password" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-10">
+												<button  type="button" class="btn btn-primary btn-sm">
+													Save & Continue</button>
+												<button type="button" class="btn btn-default btn-sm">
+													Cancel</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div id="OR" class="hidden-xs">OR</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row text-center sign-with">
+								<div class="col-md-12">
+									<h3>Sign in with</h3>
+								</div>
+								<div class="col-md-12">
+									<div class="btn-group btn-group-justified">
+										<a href="#"><i class="fa fa-facebook-square fa-5x"></i></a> <br>
+										<a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main container-->
+	<div class="container"></div>
+	<!--/ Main container-->
+
+	<!--Mask-->
+	<div class="view hm-black-strong"
+		style="height: 600px; background: url('https://www.parentmap.com/images/article/7947/movies-summer-iStock_000017330692_XXXLarge.jpg') no-repeat center center fixed; background-size: 100%;">
+		<div class="full-bg-img flex-center">
+			<ul>
+				<li>
+					<h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">5G
+						Cinema</h1>
+				</li>
+				<li>
+					<p class="wow fadeInDown">Everything is better at the movies.
+						-5Guyzz</p>
+						<p>{{username}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--/.Mask-->
+
+
+	<div id="backW" style="height: 500px">
+		<div class="container">
+			<div class="row">
+				<div class="col">1 of 2</div>
+				<div class="col">1 of 2</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="backG" style="height: 500px">
+		<div class="container">
+			<div class="row">
+				<div class="col">1 of 2</div>
+				<div class="col">1 of 2</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only mdb-color darken-4"
+		style="margin-top: 0">
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				&copy; 2017 5Guyz Cinema, LLC. &middot; <a href="#">Privacy</a>
+
+			</div>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+
+	<!-- SCRIPTS -->
+
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="static/js/tether.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="static/js/mdb.min.js"></script>
+	
+	<script src="static/js/app.js"></script>
+	<script src="static/js/ajaxFactory.js"></script>
+	<script src="static/js/loginController.js"></script>
+	<script src="static/js/angularjs/controller/MovieViewController.js"></script>
+	
+
+	<!-- Animations init-->
+	<script>
+        new WOW().init();
+        /* #####################################################################
+        #
+        #   Project       : Modal Login with jQuery Effects
+        #   Author        : Rodrigo Amarante (rodrigockamarante)
+        #   Version       : 1.0
+        #   Created       : 07/29/2015
+        #   Last Change   : 08/04/2015
+        #
+        ##################################################################### */
+        
+        $(function() {
+            
+            var $formLogin = $('#login-form');
+            var $formLost = $('#lost-form');
+            var $formRegister = $('#register-form');
+            var $divForms = $('#div-forms');
+            var $modalAnimateTime = 300;
+            var $msgAnimateTime = 150;
+            var $msgShowTime = 2000;
+            
+            $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
+            $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
+            $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
+            $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
+            $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
+            $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
+            
+            
+            function modalAnimate ($oldForm, $newForm) {
+                var $oldH = $oldForm.height();
+                var $newH = $newForm.height();
+                $divForms.css("height",$oldH);
+                $oldForm.fadeToggle($modalAnimateTime, function(){
+                    $divForms.animate({height: $newH}, $modalAnimateTime, function(){
+                        $newForm.fadeToggle($modalAnimateTime);
+                    });
+                });
+            }
+            
+            function msgFade ($msgId, $msgText) {
+                $msgId.fadeOut($msgAnimateTime, function() {
+                    $(this).text($msgText).fadeIn($msgAnimateTime);
+                });
+            }
+            
+            function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
+                var $msgOld = $divTag.text();
+                msgFade($textTag, $msgText);
+                $divTag.addClass($divClass);
+                $iconTag.removeClass("glyphicon-chevron-right");
+                $iconTag.addClass($iconClass + " " + $divClass);
+                setTimeout(function() {
+                    msgFade($textTag, $msgOld);
+                    $divTag.removeClass($divClass);
+                    $iconTag.addClass("glyphicon-chevron-right");
+                    $iconTag.removeClass($iconClass + " " + $divClass);
+          		}, $msgShowTime);
+            }
+        });
+        
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function checkCookie() {
+
+            if(getCookie("user") != ""){
+            	
+            	console.log("here");
+            	var login = document.getElementById('myDIV');
+            	var welcome = document.getElementById('welcome');
+            	var logout = document.getElementById('logout');
+
+                    login.style.display = 'none';
+            	
+            		welcome.style.display= 'block';
+            		logout.style.display = 'block';
+            	<!-- -->
+            	
+            }
+            	
+            else{
+            	
+            }
+        }
+        
+       
+        
+        
+    </script>
+
+
+</body>
+
+</html>

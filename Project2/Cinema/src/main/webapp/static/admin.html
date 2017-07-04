@@ -77,6 +77,36 @@ body {
 	background-size: contain;
 	background-size: cover;
 }
+
+.movieItem {
+	position: relative;
+    border-radius: 25px;
+    background: cyan;
+    padding: 20px; 
+    width: 100%;
+    height: 50px;    
+    text-align-center
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+select {
+display: block;
+margin: 0 auto;
+}
 </style>
 </head>
 
@@ -115,193 +145,74 @@ body {
 				<div class="col white-text text-center">Movie Theaters</div>
 			</div>
 			<div class="row">
-				<div class="col white-text">
-					Theater # 1:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal1">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal1" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="col-md-2 white-text text-center">
+					<h6>Movie Id</h6>
 				</div>
-				<div class="col white-text">
-					Theater # 2:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal2">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal2" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="col-md-5 white-text text-center">
+					<h6>Movie Title</h6>
+				</div>
+				<div class="col-md-2 white-text">
+					<h6>Runtime</h6>
+				</div>
+				<div class="col-md-2 white-text">
+					<h6>Times</h6>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col white-text">
-					Theater # 3:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal3">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal3" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="row movieItem">
+				<div class="col-md-2 text-center">
+					<p>12345</p>
 				</div>
-				<div class="col white-text">
-					Theater # 4:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal4">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal4" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="col-md-5 text-center">
+					<p>Wonder Woman</p>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col white-text">
-					Theater # 5:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal5">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal5" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="col-md-2 text-center">
+					<p>151 mins</p>
 				</div>
+				<div class="col-md-2 text-center">
+					<select class="form-control" id="sel1">
+						<option value="volvo disabled">8:00</option>
+						<option value="saab disabled">11:00</option>
+						<option value="opel disabled">14:00</option>
+						<option value="audi disabled">17:00</option>
+						<option value="wick disabled">20:00</option>
+					</select>
+				</div>
+				<div class="col-md-1 text-center">
+					<span class="close">&times;</span>
+				</div>
+			</div> 
+			<div class="row movieItem">
+				<div class="col-md-2 text-center">
+					<p>12345</p>
+				</div>
+				<div class="col-md-5 text-center">
+					<p>DBZ Battle of the Gods</p>
+				</div>
+				<div class="col-md-2 text-center">
+					<p>100 mins</p>
+				</div>
+				<div class="col-md-2 text-center">
+					<select class="form-control" id="sel1">
+						<option value="volvo">8:00</option>
+						<option value="saab">11:00</option>
+						<option value="opel">14:00</option>
+						<option value="audi">17:00</option>
+						<option value="wick">20:00</option>
+					</select>
+				</div>
+				<div class="col-md-1 text-center">
+					<span class="close">&times;</span>
+				</div>
+			</div> 
+			<!-- <div class="row">
 				<div class="col white-text">
-					Theater # 6:
+					Theater # 1: -->
 					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal6">Update
-						Info.</a>
+				<!-- 	<a class="waves-effect waves-light btn btn-primary" href="#modal1">Update
+						Info.</a> -->
 
 					<!-- Modal Structure -->
-					<div id="modal6" class="modal modal-fixed-footer">
+				<!-- 	<div id="modal1" class="modal modal-fixed-footer">
 						<div class="container">
 							<div class="">
 								<div class="form-area">
@@ -327,81 +238,10 @@ body {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
-			<div class="row">
-				<div class="col white-text">
-					Theater # 7:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal7">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal7" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col white-text">
-					Theater # 8:
-					<!-- Modal Trigger -->
-					<a class="waves-effect waves-light btn btn-primary" href="#modal8">Update
-						Info.</a>
-
-					<!-- Modal Structure -->
-					<div id="modal8" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			<h2 class="white-text text-center">Concessions</h2>
 			
 			<div class="row">

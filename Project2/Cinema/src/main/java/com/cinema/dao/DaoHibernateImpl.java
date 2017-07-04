@@ -80,6 +80,7 @@ public class DaoHibernateImpl implements Dao {
 	public User getUserByEmail(String email){
 		Session s = sessionFactory.getCurrentSession();
 		User temp = new User();
+		System.out.println("Temp: " + temp);
 		Criteria cri = s.createCriteria(User.class).add(Restrictions.like("email", email));
 		temp = (User) cri.list().get(0);
 		return temp;

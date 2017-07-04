@@ -1,31 +1,19 @@
 package com.cinema.main;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 import java.util.List;
 
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
 import java.util.List;
 
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
 import java.util.List;
 
->>>>>>> ff4fcc3a2fe57adef9bed64239d80e1fa7b60aed
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cinema.beans.Movie;
 import com.cinema.dao.Dao;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import com.cinema.mail.Mail;
-=======
+
 import java.util.List;
 
 import org.springframework.context.support.AbstractApplicationContext;
@@ -33,13 +21,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cinema.beans.Movie;
 import com.cinema.dao.Dao;
->>>>>>> 9d824d420b0fac122a49296497844e30c48ebfee
-=======
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
->>>>>>> ff4fcc3a2fe57adef9bed64239d80e1fa7b60aed
 
 public class TestMain {
 	public static void main(String[] args) {
@@ -47,38 +28,19 @@ public class TestMain {
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		Dao dao = (Dao) ac.getBean("cinemaRepository");
 		//System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 		User u = new User("Yose@test.com", "Samuel", "Yoohoo", "123", RewardStatus.BRONZE,"6452221234", 74, true);
 		//dao.createUser(u);
 		//User u = dao.getUserByEmail("Yose@test.com");
 		System.out.println(u.getEmail()+"Firstname "+u.getFirstName());
-=======
-=======
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
->>>>>>> ff4fcc3a2fe57adef9bed64239d80e1fa7b60aed
+
 		List<Movie> movies = dao.getMovies();
     	//movies.forEach(m -> System.out.println(m));
 		for(Movie movie : movies) {
 			System.out.println(movie);
 		}
 		//System.out.println("Movies: " + movies.get(0));
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 9d824d420b0fac122a49296497844e30c48ebfee
-=======
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
->>>>>>> ff4fcc3a2fe57adef9bed64239d80e1fa7b60aed
+
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);
@@ -135,26 +97,15 @@ public class TestMain {
 //		m = dao.getMovieByMovieTitle("time");
 //		System.out.println(m.toString());
 //		List<User> u = new ArrayList<User>();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 //		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
 				//"6452221234", 74, false);
->>>>>>> 9d824d420b0fac122a49296497844e30c48ebfee
-=======
 //		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
 				//"6452221234", 74, false);
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
 //		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
 				//"6452221234", 74, false);
->>>>>>> e6c7580f2b47aa042b494c344f15982cf019ef42
-=======
 //		User u = new User("liqunzheng@live.cn", "liqun", "zheng", "123", RewardStatus.BRONZE,
 				//"6452221234", 74, false);
->>>>>>> ff4fcc3a2fe57adef9bed64239d80e1fa7b60aed
 		//dao.createUser(u);
 //		u = dao.getUserByUserId(2);
 //		u.setFirstName("lee");

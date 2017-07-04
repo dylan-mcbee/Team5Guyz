@@ -25,7 +25,7 @@ public class CinemaService {
 			System.out.println("here");
 			return dao.getUserByEmail(user.getEmail());
 		}
-		System.out.println("Login Failedd");
+		System.out.println("Login Failed");
 		return u;
 		//return null;
 //		System.out.println("Email: " + user.getEmail());

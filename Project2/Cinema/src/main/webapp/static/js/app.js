@@ -2,4 +2,4 @@
  * 
  */
 
-var app = angular.module('RESTLogin',[]);
+var app = angular.module('RESTLogin',['ngCookies']);

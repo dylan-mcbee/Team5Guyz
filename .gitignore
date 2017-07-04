@@ -15,7 +15,7 @@
 **/.settings/
 **/.classpath
 **/.recommenders/**
-/Servers
+Servers/
 #IDEA
 **/.idea/
 **/*.iml

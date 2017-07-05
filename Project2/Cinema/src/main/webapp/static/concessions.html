@@ -96,7 +96,7 @@
 				</ul>
 				<button class="btn btn-primary btn-rounded pull-right" id=myDIV
 					data-toggle="modal" data-target="#modalLRForm">Login</button>
-				<a class="navbar-brand" id="welcome" style="display: none"> <strong>Welcome
+				<a class="navbar-brand" id="welcome" style="display: none"> <strong id="named">Welcome
 						{{username}}</strong></a>
 				<button class="btn btn-danger btn-rounded pull-right" id="logout"
 					style="display: none" ng-click="logout()">Logout</button>
@@ -258,16 +258,16 @@
 
 
 	<div id="backW">
-		<div class="container">
+		<div class="">
 			<div class="row">
 				<div class="col">
 					<!--Shopping Cart table-->
 					<div class="table-responsive">
-						<table class="table product-table table-striped">
+						<table class="table product-table table-striped table-bordered table-hover">
 							<!--Table head-->
 							<thead class="thead-inverse">
 								<tr>
-									<th></th>
+									<th>Description</th>
 									<th>Product</th>
 									<th>Price</th>
 								</tr>
@@ -461,6 +461,8 @@
         if(getCookie("user") != ""){
         	
         	console.log("here");
+        	var info = JSON.parse(getCookie("user"));
+        	console.log(info);
         	var login = document.getElementById('myDIV');
         	var welcome = document.getElementById('welcome');
         	var logout = document.getElementById('logout');

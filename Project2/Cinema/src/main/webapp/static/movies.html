@@ -92,10 +92,11 @@
 					<li class="nav-item"><a class="nav-link" href="about.html">About
 					</a></li>
 				</ul>
-				<a class="waves-effect waves-light btn btn-primary" href="#modalLRForm" style="height: 40px; margin-top: 20px">Login</a>
-				<a class="navbar-brand" id="welcome" style="display:none" > <strong>Welcome {{username}}</strong></a>
-				<button class="btn btn-danger btn-rounded pull-right" id="logout" style="display:none;height: 40px;margin-top: 20px;" ng-click="logout()" 
-				>Logout</button>
+				<button class="btn btn-primary btn-rounded pull-right" id=myDIV
+					data-toggle="modal" data-target="#modalLRForm" style="display:none;height: 40px;margin-top: 20px;">Login</button>
+				<a class="navbar-brand" id="welcome" style="display: none"> <strong id="namef"> </strong></a>
+				<button class="btn btn-danger btn-rounded pull-right" id="logout" style="display:none;height: 40px;margin-top: 20px;"
+					style="display: none" ng-click="logout()" >Logout</button>
 			</div>
 		</div>
 	</nav>
@@ -264,7 +265,6 @@
 			<a ng-repeat="movie in movies" class="carousel-item">
 				<img ng-click="getMovie(movie.id)" src="{{ movie.imageUrl }}">
 			</a>
-		</div>
 	</div>
 
 	<div id="backG" style="height: 500px">
@@ -378,11 +378,14 @@
 
         if(getCookie("user") != ""){
         	
-        	console.log("here");
+        	console.log("here4");
+        	var info = JSON.parse(getCookie("user"));
+        	console.log(info.firstName);
         	var login = document.getElementById('myDIV');
         	var welcome = document.getElementById('welcome');
         	var logout = document.getElementById('logout');
-
+        	document.getElementById('namef').innerHTML = 'Welcome' + " " + info.firstName;
+        	
                 login.style.display = 'none';
         	
         		welcome.style.display= 'block';

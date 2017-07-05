@@ -15,28 +15,58 @@
 							<form role="form" class="form-horizontal" action="">
 								<div class="form-group">
 									<label for="email" class="col-sm-2 control-label">
+										Movie Date</label>
+									<div class="col-sm-10">
+										<input type="date" class="datepicker">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-10">
+										<label>Materialize Select</label>
+										<select>
+											<option value="" disabled selected>Choose your time</option>
+											<option value="8am">8:00 AM</option>
+											<option value="9am">9:00 AM</option>
+											<option value="10am">10:00 AM</option>
+											<option value="11am">11:00 AM</option>
+											<option value="12pm">12:00 PM</option>
+											<option value="1pm">1:00 PM</option>
+											<option value="2pm">2:00 PM</option>
+											<option value="3pm">3:00 PM</option>
+											<option value="4pm">4:00 PM</option>
+											<option value="5pm">5:00 PM</option>
+											<option value="6pm">6:00 PM</option>
+											<option value="7pm">7:00 PM</option>
+											<option value="8pm">8:00 PM</option>
+											<option value="9pm">9:00 PM</option>
+											<option value="10pm">10:00 PM</option>
+										</select> 
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="email" class="col-sm-2 control-label">
 										Credit Card</label>
 									<div class="col-sm-10">
 										<input type="number" class="form-control" id="email1"
 											placeholder="Credit Card" />
+
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1"
 										class="col-sm-2 control-label"> Expiration Date</label>
 									<div class="col-sm-5">
-										<input type="month" class="form-control"
-											id="tickNum" placeholder="Ticket Total" />
-										<input type="password" class="form-control"
-											id="tickNum" placeholder="CVV" />
+										<input type="month" class="form-control" id="tickNum"
+											placeholder="Ticket Total" /> <input type="password"
+											class="form-control" id="tickNum" placeholder="CVV" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1"
 										class="col-sm-2 control-label"> Ticket Total</label>
 									<div class="col-sm-10">
-										<input type="number" class="form-control"
-											id="tickNum" placeholder="Ticket Total" />
+										<input type="number" class="form-control" id="tickNum"
+											placeholder="Ticket Total" />
 									</div>
 								</div>
 							</form>
@@ -45,7 +75,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary btn-sm">
-											Submit</button>
+						Submit</button>
 				</div>
 			</div>
 		</div>
@@ -88,6 +118,13 @@
 			    $('#ticket').modal();
 			    $('#modal2').modal();
 			  });
+			 $('.datepicker').pickadate({
+				    selectMonths: true, // Creates a dropdown to control month
+				    selectYears: 15 // Creates a dropdown of 15 years to control year
+				  });
+			 $(document).ready(function() {
+				    $('select').material_select();
+				  });
 			</script>
 		</div>
 	</div>

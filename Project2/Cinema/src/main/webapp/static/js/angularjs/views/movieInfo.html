@@ -59,7 +59,7 @@
 									<label for="email" class="col-sm-2 control-label">
 										Movie Date</label>
 									<div class="col-sm-10">
-										<input type="date" class="datepicker">
+										<input id="date" type="date" class="datepicker">
 									</div>
 								</div>
 								<div class="form-group">
@@ -115,8 +115,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary btn-sm">
+				<div class="modal-footer"> 
+					<button onclick="purchaseTickets()" type="submit" class="btn btn-primary btn-sm">
 						Submit</button>
 				</div>
 			</div>
@@ -223,6 +223,15 @@
 			 $(document).ready(function() {
 				    $('select').material_select();
 				  });
+			 
+			 var purchaseTickets = function() {
+				 console.log('In purchase tickets');
+				 
+				 $.ajax({url: "/Cinema/purchase.do", success: function(){
+				        console.log('Hooray');
+				        $('#ticket').modal('close');
+				 }});
+			 };
 			</script>
 		</div>
 	</div>

@@ -73,4 +73,10 @@ public class MovieController {
     	userService.deleteMovie(Integer.parseInt(id));
     	return true;
     }
+    
+    @PostMapping
+    @RequestMapping("/purchase.do")
+    public @ResponseBody void purchaseTicket() {
+    	System.out.println("In Purchase ticket");
+    }
 }

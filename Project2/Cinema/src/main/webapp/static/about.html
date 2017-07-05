@@ -34,12 +34,14 @@
 
 <!-- Google Sign in API -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
 
 <meta name="google-signin-client_id"
 	content="577871229348-4655007e4a4mbdi6gavveem2jh0u23se.apps.googleusercontent.com">
-	
+
 <style>
 #backW {
 	background-image:
@@ -92,9 +94,12 @@
 						href="about.html">About <span class="sr-only">(current)</span></a>
 					</li>
 				</ul>
-				<button class="btn btn-primary btn-rounded pull-right" id=myDIV data-toggle="modal" data-target="#modalLRForm">Login</button>
-				<a class="navbar-brand" id="welcome" style="display:none" > <strong>Welcome {{username}}</strong></a>
-				<button class="btn btn-danger btn-rounded pull-right" id="logout" style="display:none" ng-click="logout()" >Logout</button>
+				<button class="btn btn-primary btn-rounded pull-right" id=myDIV
+					data-toggle="modal" data-target="#modalLRForm">Login</button>
+				<a class="navbar-brand" id="welcome" style="display: none"> <strong>Welcome
+						{{username}}</strong></a>
+				<button class="btn btn-danger btn-rounded pull-right" id="logout"
+					style="display: none" ng-click="logout()">Logout</button>
 			</div>
 		</div>
 	</nav>
@@ -112,12 +117,13 @@
 
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
-						<li class="nav-item" style="background-color: white"><a class="nav-link active"
-							data-toggle="tab" href="#panel7" role="tab" style="background-color: white"><i
+						<li class="nav-item" style="background-color: white"><a
+							class="nav-link active" data-toggle="tab" href="#panel7"
+							role="tab" style="background-color: white"><i
 								class="fa fa-user mr-1"></i> Login</a></li>
-						<li class="nav-item" style="background-color: white"><a class="nav-link" data-toggle="tab"
-							href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i>
-								Register</a></li>
+						<li class="nav-item" style="background-color: white"><a
+							class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+								class="fa fa-user-plus mr-1"></i> Register</a></li>
 					</ul>
 
 					<!-- Tab panels -->
@@ -129,19 +135,20 @@
 							<!--Body-->
 							<div class="modal-body mb-1">
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input ng-model="credential.email" name="email" type="email" 
-												class="form-control" id="email1"> <label for="form22">Your
+									<i class="fa fa-envelope prefix"></i> <input
+										ng-model="credential.email" name="email" type="email"
+										class="form-control" id="email1"> <label for="form22">Your
 										email</label>
 								</div>
 
 								<div class="md-form form-sm">
-									<i class="fa fa-lock prefix"></i> <input ng-model="credential.password" name="password" type="password" class="form-control"
-													id="exampleInputPassword1" > <label for="form23">Your
-										password</label>
+									<i class="fa fa-lock prefix"></i> <input
+										ng-model="credential.password" name="password" type="password"
+										class="form-control" id="exampleInputPassword1"> <label
+										for="form23">Your password</label>
 								</div>
 								<div class="text-center mt-2">
-									<button class="btn btn-info" ng-click ="login()">
-										Log in
+									<button class="btn btn-info" ng-click="login()">Log in
 									</button>
 								</div>
 							</div>
@@ -155,9 +162,7 @@
 								</div>
 								<button type="button"
 									class="btn btn-outline-info waves-effect ml-auto"
-									data-dismiss="modal">
-									Close
-								</button>
+									data-dismiss="modal">Close</button>
 							</div>
 
 						</div>
@@ -173,19 +178,19 @@
 										id="form24" class="form-control"> <label for="form24">Your
 										email</label>
 								</div>
-								
+
 								<div class="md-form form-sm">
 									<i class="fa fa-user-o prefix"></i> <input type="text"
 										id="form24" class="form-control"> <label for="form24">Your
 										First Name</label>
 								</div>
-								
+
 								<div class="md-form form-sm">
 									<i class="fa fa-user-o prefix"></i> <input type="text"
 										id="form24" class="form-control"> <label for="form24">Your
 										Last Name</label>
 								</div>
-								
+
 								<div class="md-form form-sm">
 									<i class="fa fa-phone prefix"></i> <input type="number"
 										id="form24" class="form-control"> <label for="form24">Your
@@ -205,9 +210,7 @@
 								</div>
 
 								<div class="text-center form-sm mt-2">
-									<button class="btn btn-info">
-										Sign up
-									</button>
+									<button class="btn btn-info">Sign up</button>
 								</div>
 
 							</div>
@@ -216,11 +219,9 @@
 								<div class="options text-center text-md-right mt-1">
 									<div class="g-signin2" data-onsuccess="onSignIn"></div>
 								</div>
-								<button type="button" 
+								<button type="button"
 									class="btn btn-outline-info waves-effect ml-auto"
-									data-dismiss="modal">
-									Close
-								</button>
+									data-dismiss="modal">Close</button>
 							</div>
 						</div>
 						<!--/.Panel 8-->
@@ -255,21 +256,28 @@
 	</div>
 	<!--/.Mask-->
 
-
-	<div id="backW" style="height: 500px">
-		<div class="container">
-			<div class="row">
-				<div class="col">1 of 2</div>
-				<div class="col">1 of 2</div>
-			</div>
-		</div>
-	</div>
-
 	<div id="backG" style="height: 500px">
 		<div class="container">
 			<div class="row">
-				<div class="col">1 of 2</div>
-				<div class="col">1 of 2</div>
+				<div class="col text-center" style="margin-top: 100px">
+					<h4 style="color: white">5G Cinema offers a wide range of amenities from spacious
+						stadium seating to luxury recliners. At our establishment you can
+						enjoy innovative menus and premium offerings like IMAX and Dolby
+						Cinema. Get more bang for you buck by joining 5G’s reward system.
+						You will get great deals and exclusive offers, just by doing what
+						you already enjoy. The more you watch, the more rewards you reap.
+						We reward loyalty with our robust rewards program, each level
+						offering even more savings.</h4>
+						<br>
+					<h4 style="color: white">It is our goal to provide the most enjoyable viewing
+						experience possible, we thrive off of the needs of customers. It
+						is our goal to consistently produce an enhanced viewing experience
+						like no other. It is our mission to consistently exceed
+						expectations and to always put the customer first. We offer a wide
+						range of promotions from Senior discount days to Mega Movie
+						Monday, where all movies are $5.00 (flat rate for all customers).
+					</h4>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -302,7 +310,7 @@
 
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="js/mdb.min.js"></script>
-	
+
 	<!-- AngularJS -->
 	<script src="js/app.js"></script>
 	<script src="js/ajaxFactory.js"></script>

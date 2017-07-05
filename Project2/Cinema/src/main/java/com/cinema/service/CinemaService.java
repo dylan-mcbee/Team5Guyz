@@ -19,17 +19,15 @@ public class CinemaService {
 
 
 	public User login(User user){
-		User u = dao.getUserByEmail(user.getEmail());
-		if(u.getPassword().equals(user.getPassword()))
-		{
-			System.out.println("here");
-			return dao.getUserByEmail(user.getEmail());
-		}
-		System.out.println("Login Failedd");
-		return u;
-		//return null;
-//		System.out.println("Email: " + user.getEmail());
-//		return dao.getUserByEmail(user.getEmail());
+//		User u = dao.getUserByEmail(user.getEmail());
+//		if(u.getPassword()==user.getPassword())
+//		{
+//			return dao.getUserByEmail(user.getEmail());
+//		}
+//		System.out.println("Login Failed");
+//		return new User();
+		System.out.println("Email: " + user.getEmail());
+		return dao.getUserByEmail(user.getEmail());
 		
 	}
 	

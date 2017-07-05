@@ -54,7 +54,7 @@ public class User implements Serializable {
 //	private List<Receipt> receipts;
 	
 	public User(){
-		
+		this.isAdmin = false;
 	}
 
 
@@ -62,12 +62,14 @@ public class User implements Serializable {
 	public User(int id) {
 		super();
 		this.id = id;
+		this.isAdmin = false;
 	}
 
 
 	public User(String email) {
 		super();
 		this.email = email;
+		this.isAdmin = false;
 	}
 
 
@@ -76,6 +78,7 @@ public class User implements Serializable {
 		super();
 		this.email = email;
 		this.password = password;
+		this.isAdmin = false;
 	}
 
 

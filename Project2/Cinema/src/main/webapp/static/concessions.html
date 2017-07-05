@@ -10,10 +10,16 @@
 
 <title>5G Cinema</title>
 
-<link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png" sizes="16x16">
+<link rel="icon" type="image/png"
+	href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png"
+	sizes="16x16">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
 <!-- Bootstrap core CSS -->
-<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Material Design Bootstrap -->
 <link href="css/mdb.min.css" rel="stylesheet">
@@ -28,11 +34,14 @@
 
 <!-- Google Sign in API -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
 
 <meta name="google-signin-client_id"
 	content="577871229348-4655007e4a4mbdi6gavveem2jh0u23se.apps.googleusercontent.com">
+
 <style>
 #backW {
 	background-image:
@@ -85,10 +94,13 @@
 					<li class="nav-item"><a class="nav-link" href="about.html">About
 					</a></li>
 				</ul>
-				<button class="btn btn-primary btn-rounded pull-right" id=myDIV data-toggle="modal" data-target="#modalLRForm">Login</button>
-				<a class="navbar-brand" id="welcome" style="display:none" > <strong>Welcome {{username}}</strong></a>
-				<button class="btn btn-danger btn-rounded pull-right" id="logout" style="display:none" ng-click="logout()" >Logout</button>
-					
+				<button class="btn btn-primary btn-rounded pull-right" id=myDIV
+					data-toggle="modal" data-target="#modalLRForm">Login</button>
+				<a class="navbar-brand" id="welcome" style="display: none"> <strong>Welcome
+						{{username}}</strong></a>
+				<button class="btn btn-danger btn-rounded pull-right" id="logout"
+					style="display: none" ng-click="logout()">Logout</button>
+
 			</div>
 		</div>
 	</nav>
@@ -106,12 +118,13 @@
 
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
-						<li class="nav-item" style="background-color: white"><a class="nav-link active"
-							data-toggle="tab" href="#panel7" role="tab" style="background-color: white"><i
+						<li class="nav-item" style="background-color: white"><a
+							class="nav-link active" data-toggle="tab" href="#panel7"
+							role="tab" style="background-color: white"><i
 								class="fa fa-user mr-1"></i> Login</a></li>
-						<li class="nav-item" style="background-color: white"><a class="nav-link" data-toggle="tab"
-							href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i>
-								Register</a></li>
+						<li class="nav-item" style="background-color: white"><a
+							class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+								class="fa fa-user-plus mr-1"></i> Register</a></li>
 					</ul>
 
 					<!-- Tab panels -->
@@ -123,19 +136,20 @@
 							<!--Body-->
 							<div class="modal-body mb-1">
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input ng-model="credential.email" name="email" type="email" 
-												class="form-control" id="email1"> <label for="form22">Your
+									<i class="fa fa-envelope prefix"></i> <input
+										ng-model="credential.email" name="email" type="email"
+										class="form-control" id="email1"> <label for="form22">Your
 										email</label>
 								</div>
 
 								<div class="md-form form-sm">
-									<i class="fa fa-lock prefix"></i> <input ng-model="credential.password" name="password" type="password" class="form-control"
-													id="exampleInputPassword1" > <label for="form23">Your
-										password</label>
+									<i class="fa fa-lock prefix"></i> <input
+										ng-model="credential.password" name="password" type="password"
+										class="form-control" id="exampleInputPassword1"> <label
+										for="form23">Your password</label>
 								</div>
 								<div class="text-center mt-2">
-									<button class="btn btn-info" ng-click ="login()">
-										Log in
+									<button class="btn btn-info" ng-click="login()">Log in
 									</button>
 								</div>
 							</div>
@@ -149,9 +163,7 @@
 								</div>
 								<button type="button"
 									class="btn btn-outline-info waves-effect ml-auto"
-									data-dismiss="modal">
-									Close
-								</button>
+									data-dismiss="modal">Close</button>
 							</div>
 
 						</div>
@@ -167,21 +179,21 @@
 										id="form24" class="form-control"> <label for="form24">Your
 										email</label>
 								</div>
-								
+
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input type="text"
+									<i class="fa fa-user-o prefix"></i> <input type="text"
 										id="form24" class="form-control"> <label for="form24">Your
 										First Name</label>
 								</div>
-								
+
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input type="text"
+									<i class="fa fa-user-o prefix"></i> <input type="text"
 										id="form24" class="form-control"> <label for="form24">Your
 										Last Name</label>
 								</div>
-								
+
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input type="number"
+									<i class="fa fa-phone prefix"></i> <input type="number"
 										id="form24" class="form-control"> <label for="form24">Your
 										Phone Number</label>
 								</div>
@@ -199,9 +211,7 @@
 								</div>
 
 								<div class="text-center form-sm mt-2">
-									<button class="btn btn-info">
-										Sign up
-									</button>
+									<button class="btn btn-info">Sign up</button>
 								</div>
 
 							</div>
@@ -210,11 +220,9 @@
 								<div class="options text-center text-md-right mt-1">
 									<div class="g-signin2" data-onsuccess="onSignIn"></div>
 								</div>
-								<button type="button" 
+								<button type="button"
 									class="btn btn-outline-info waves-effect ml-auto"
-									data-dismiss="modal">
-									Close
-								</button>
+									data-dismiss="modal">Close</button>
 							</div>
 						</div>
 						<!--/.Panel 8-->
@@ -249,22 +257,144 @@
 	<!--/.Mask-->
 
 
-	<div id="backW" style="height: 500px">
-		<div class="container">
-			<div class="row">
-				<div class="col">1 of 2</div>
-				<div class="col">1 of 2</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="backG" style="height: 500px">
+	<div id="backW">
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div id="my-signin2">here</div>
+					<!--Shopping Cart table-->
+					<div class="table-responsive">
+						<table class="table product-table table-striped">
+							<!--Table head-->
+							<thead class="thead-inverse">
+								<tr>
+									<th></th>
+									<th>Product</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<!--/Table head-->
+
+							<!--Table body-->
+							<tbody>
+
+								<!--First row-->
+								<tr>
+									<th scope="row"><img
+										src="https://nqki340a6g43eofbpz6nu7kk-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/BBB110-Homemade-Microwave-Popcorn-Thumbnail-FINAL-1024x576.jpg"
+										alt="" class="img-fluid" style="width: 300px;height: 200px"></th>
+									<td>
+										<h5>
+											<strong>Gourmet Popcorn</strong>
+										</h5>
+									</td>
+									<td>20 $</td>
+								</tr>
+								<!--/First row-->
+
+								<!--Second row-->
+								<tr>
+									<th scope="row"><img
+										src="http://s.eatthis-cdn.com/media/images/ext/842769986/soda-straw.jpg"
+										alt="" class="img-fluid" style="width: 300px;height: 200px"></th>
+									<td>
+										<h5>
+											<strong>Elegant Soda</strong>
+										</h5>
+									</td>
+									<td>10 $</td>
+								</tr>
+								<!--/Second row-->
+
+								<!--Third row-->
+								<tr>
+									<th scope="row"><img
+										src="https://i.kinja-img.com/gawker-media/image/upload/s--XNpvpjCr--/c_scale,fl_progressive,q_80,w_800/18fsfy70t9rxwjpg.jpg"
+										alt="" class="img-fluid" style="width: 300px;height: 200px"></th>
+									<td>
+										<h5>
+											<strong>Fresh Sparkling Water</strong>
+										</h5>
+									</td>
+									<td>15 $</td>
+								</tr>
+								<!--/Third row-->
+								
+								<!--Third row-->
+								<tr>
+									<th scope="row"><img
+										src="img/jelly.png"
+										alt="" class="img-fluid" style="width: 200px;height: 200px;margin-left: 50px;"></th>
+									<td>
+										<h5>
+											<strong>Mysterious Jelly Bean</strong>
+										</h5>
+									</td>
+									<td>17 $</td>
+								</tr>
+								<!--/Third row-->
+								
+								<!--Third row-->
+								<tr>
+									<th scope="row"><img
+										src="http://www.toptenz.net/wp-content/uploads/2012/11/fun-size-candy-bars.jpg"
+										alt="" class="img-fluid" style="width: 300px;height: 200px"></th>
+									<td>
+										<h5>
+											<strong>Assorted Candy</strong>
+										</h5>
+									</td>
+									<td>5 $</td>
+								</tr>
+								<!--/Third row-->
+								
+								<!--Third row-->
+								<tr>
+									<th scope="row"><img
+										src="img/butter.png"
+										alt="" class="img-fluid" style="width: 200px;height: 200px;margin-left: 50px;"></th>
+									<td>
+										<h5>
+											<strong>Piping Hot Butter Balls</strong>
+										</h5>
+									</td>
+									<td>30 $</td>
+								</tr>
+								<!--/Third row-->
+								
+								<!--Third row-->
+								<tr>
+									<th scope="row"><img
+										src="http://cdn.skim.gs/images/d6bekp2uvd1uikbsnbrm/food-porn-nachos-gloriously-cheesy-nachos"
+										alt="" class="img-fluid" style="width: 300px;height: 200px;"></th>
+									<td>
+										<h5>
+											<strong>Cheesy Nachos</strong>
+										</h5>
+									</td>
+									<td>13 $</td>
+								</tr>
+								<!--/Third row-->
+								
+								<!--Third row-->
+								<tr>
+									<th scope="row"><img
+										src="http://pop.h-cdn.co/assets/15/20/980x490/landscape-1431702498-beer-glasses.jpg"
+										alt="" class="img-fluid" style="width: 300px;height: 200px;"></th>
+									<td>
+										<h5>
+											<strong>Ice Cold Beer</strong>
+										</h5>
+									</td>
+									<td>13 $</td>
+								</tr>
+								<!--/Third row-->
+
+							</tbody>
+							<!--/Table body-->
+						</table>
+					</div>
+					<!--/Shopping Cart table-->
 				</div>
-				<div class="col">1 of 2</div>
 			</div>
 		</div>
 	</div>
@@ -297,7 +427,7 @@
 
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="js/mdb.min.js"></script>
-	
+
 	<!-- AngularJS -->
 	<script src="js/app.js"></script>
 	<script src="js/ajaxFactory.js"></script>

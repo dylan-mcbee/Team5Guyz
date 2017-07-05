@@ -13,6 +13,10 @@
 <link rel="icon" type="image/png"
 	href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png"
 	sizes="16x16">
+	
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
 <!-- Bootstrap core CSS -->
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -22,14 +26,11 @@
 
 <!-- Template styles -->
 <link href="static/css/style.css" rel="stylesheet">
+
 <link href="static/css/user.css" rel="stylesheet">
 
 <!-- JQuery -->
 <script type="text/javascript" src="static/js/jquery-3.1.1.min.js"></script>
-
-<!--Import materialize.css-->
-<!-- <link type="text/css" rel="stylesheet" href="static/css/materialize.css" -->
-<!-- 	media="screen,projection" /> -->
 
 <!-- Google Sign in API -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -183,19 +184,19 @@
 								</div>
 								
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input type="text"
+									<i class="fa fa-user prefix"></i> <input type="text"
 										id="form24" class="form-control"> <label for="form24">Your
 										First Name</label>
 								</div>
 								
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input type="text"
+									<i class="fa fa-user prefix"></i> <input type="text"
 										id="form24" class="form-control"> <label for="form24">Your
 										Last Name</label>
 								</div>
 								
 								<div class="md-form form-sm">
-									<i class="fa fa-envelope prefix"></i> <input type="number"
+									<i class="fa fa-phone prefix"></i> <input type="number"
 										id="form24" class="form-control"> <label for="form24">Your
 										Phone Number</label>
 								</div>
@@ -376,6 +377,7 @@
                 c = c.substring(1);
             }
             if (c.indexOf(name) == 0) {
+                if()
                 return c.substring(name.length, c.length);
             }
         }
@@ -404,12 +406,13 @@
     }
     function onSignIn(googleUser) {
   	  var profile = googleUser.getBasicProfile();
-  	  console.log('ID: ' + profile.getId());
-  	  console.log('Full Name: ' + profile.getName());
-  	  console.log('Given Name: ' + profile.getGivenName());
-  	  console.log('Family Name: ' + profile.getFamilyName());
-  	  console.log('Image URL: ' + profile.getImageUrl());
-  	  console.log('Email: ' + profile.getEmail());
+//   	  console.log('ID: ' + profile.getId());
+//   	  console.log('Full Name: ' + profile.getName());
+//   	  console.log('Given Name: ' + profile.getGivenName());
+//   	  console.log('Family Name: ' + profile.getFamilyName());
+//   	  console.log('Image URL: ' + profile.getImageUrl());
+//   	  console.log('Email: ' + profile.getEmail());
+		return profile.getGivenName();
   	}
     </script>
 

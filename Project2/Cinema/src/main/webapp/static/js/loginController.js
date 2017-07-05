@@ -28,8 +28,13 @@ app.controller('RESTctrl', ['$scope', '$cookies', '$window','ajaxFactory' ,funct
 		ajaxFactory.getUserInfo($scope.credential, '/login.do')
 		.then((successResponse)=>{
 			$cookies.put('user', JSON.stringify(successResponse.data))
-			console.log(successResponse.data);			
-			$window.location.href = '/Cinema/index.html';
+			console.log(successResponse.data);	
+			console.log(successResponse.data.isAdmin);
+			if(successResponse.data.admin){
+				$window.location.href = '/Cinema/static/admin.html';
+			}else{
+				$window.location.href = '/Cinema/static/concessions.html';
+			}
 		})
 	}
 }])

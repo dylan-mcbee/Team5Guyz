@@ -22,7 +22,6 @@ public class LoginController {
     @RequestMapping("/login.do")
     public @ResponseBody User login(@RequestBody User user) {
     	System.out.println("LOGIN CONTROLLER");
-    	System.out.println("Cred: " + user);
     	System.out.println("User: " + userService.login(user));
         return userService.login(user);
     } 

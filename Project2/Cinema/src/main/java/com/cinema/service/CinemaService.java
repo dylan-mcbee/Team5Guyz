@@ -101,5 +101,10 @@ public class CinemaService {
 	public List<Movie> getAllMovies() {
 		return dao.getMovies();
 	}
-
+	
+	public void deleteMovie(int id) {
+		Movie movie = new Movie();
+		movie.setId(id);
+		dao.deleteMovie(movie);
+	}
 }

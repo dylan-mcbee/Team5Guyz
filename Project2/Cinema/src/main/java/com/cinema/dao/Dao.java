@@ -152,5 +152,4 @@ public interface Dao {
 	 * @see com.revature.dao.Dao#getConcessions()
 	 */
 	public List<Showtime> getShowtimes();
-
 }

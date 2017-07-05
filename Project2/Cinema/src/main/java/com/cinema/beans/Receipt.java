@@ -2,7 +2,7 @@ package com.cinema.beans;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -14,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.cinema.converter.LocalDateAttributeConverter;
-import com.cinema.converter.LocalDateTimeAttributeConverter;
 
 @Entity
 @Table(name = "RECEIPT")
@@ -38,9 +37,9 @@ public class Receipt implements Serializable {
 	@Column(name = "MOVIE_TITLE")
 	private String movieTitle;
 	
-	@Convert(converter = LocalDateTimeAttributeConverter.class)
+	//@Convert(converter = StringAttributeConverter.class)
 	@Column(name = "MOVIE_TIME")
-	private LocalDateTime movieTime;
+	private String movieTime;
 	
 	@Column(name = "PHONE_NUMBER")
 	private String phoneNumber;
@@ -57,7 +56,7 @@ public class Receipt implements Serializable {
 	}
 
 	public Receipt(String confirmationNumber, LocalDate purchaseDate, LocalDate showDate, double price,
-			String movieTitle, LocalDateTime movieTime, String phoneNumber, User user) {
+			String movieTitle, String movieTime, String phoneNumber, User user) {
 		super();
 		this.confirmationNumber = confirmationNumber;
 		this.purchaseDate = purchaseDate;
@@ -109,11 +108,11 @@ public class Receipt implements Serializable {
 		this.movieTitle = movieTitle;
 	}
 
-	public LocalDateTime getMovieTime() {
+	public String getMovieTime() {
 		return movieTime;
 	}
 
-	public void setMovieTime(LocalDateTime movieTime) {
+	public void setMovieTime(String movieTime) {
 		this.movieTime = movieTime;
 	}
 

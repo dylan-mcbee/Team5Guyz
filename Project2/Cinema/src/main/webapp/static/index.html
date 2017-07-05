@@ -10,23 +10,29 @@
 
 <title>5G Cinema</title>
 
+<link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png" sizes="16x16">
+
 <!-- Font Awesome -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/static/css/font-awesome.min.css">
 
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Material Design Bootstrap -->
-<link href="css/mdb.min.css" rel="stylesheet">
+<link href="static/css/mdb.min.css" rel="stylesheet">
 
 <!-- Template styles -->
-<link href="css/style.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
 
-<link href="css/user.css" rel="stylesheet">
+<link href="static/css/user.css" rel="stylesheet">
 
 <!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-3.1.1.min.js"></script>
+
+<!-- Google Sign in API -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="577871229348-4655007e4a4mbdi6gavveem2jh0u23se.apps.googleusercontent.com">
 
 <style>
 #backW {
@@ -35,14 +41,12 @@
 	background-size: contain;
 	background-size: cover;
 }
-
 #backG {
 	background-color: #161C27;
 	background-size: contain;
 	background-size: cover;
 	background-size: 100% 100%;
 }
-
 .view {
 	background: no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -51,9 +55,11 @@
 	background-size: cover;
 }
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 </head>
 
-<body>
+<body ng-app="RESTLogin" ng-controller="RESTctrl">
 
 
 	<!--Navbar-->
@@ -68,20 +74,26 @@
 			</button>
 			<a class="navbar-brand" href="#"> <strong>5G Cinema</strong>
 			</a>
-			<div class="collapse navbar-collapse" id="collapseEx2">
+			<div class="collapse navbar-collapse" id="collapseEx2" ng-controller="MovieViewController">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="index.html">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="movies.html">Movies</a>
+					<li class="nav-item"><a class="nav-link" href="static/movies.view">Movies</a>
+					<!-- <li class="nav-item nav-link" ng-click="getMoviesInfo()">Movies</a> -->
+					<!-- <li class="nav-item"><a ng-click="getMoviesInfo()" class="nav-link">Movies</a> -->
 					</li>
 					<li class="nav-item"><a class="nav-link"
-						href="concessions.html">Concessions </a></li>
-					<li class="nav-item"><a class="nav-link" href="about.html">About
+						href="static/concessions.html">Concessions </a></li>
+					<li class="nav-item"><a class="nav-link" href="static/about.html">About
 					</a></li>
 				</ul>
 				<button class="btn btn-primary btn-rounded pull-right"
 					data-toggle="modal" data-target="#myModal">Login</button>
+					<a class="waves-effect waves-light btn" href="#modal1">Login1</a>
+
+  <!-- Modal Structure -->
+  
 			</div>
 		</div>
 	</nav>
@@ -116,7 +128,7 @@
 											<label for="email" class="col-sm-2 control-label">
 												Email</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control" id="email1"
+												<input ng-model="credential.email" name="email" type="email" class="form-control" id="email1"
 													placeholder="Email" />
 											</div>
 										</div>
@@ -124,14 +136,14 @@
 											<label for="exampleInputPassword1"
 												class="col-sm-2 control-label"> Password</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control"
-													id="exampleInputPassword1" placeholder="Email" />
+												<input ng-model="credential.password" name="password" type="password" class="form-control"
+													id="exampleInputPassword1" placeholder="password" />
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-2"></div>
 											<div class="col-sm-10">
-												<button type="submit" class="btn btn-primary btn-sm">
+												<button ng-click ="login()" class="btn btn-primary btn-sm">
 													Submit</button>
 												<a href="javascript:;">Forgot your password?</a>
 											</div>
@@ -277,19 +289,23 @@
 	<!-- SCRIPTS -->
 
 	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="js/tether.min.js"></script>
+	<script type="text/javascript" src="static/js/tether.min.js"></script>
 
 	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 
 	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="js/mdb.min.js"></script>
-
+	<script type="text/javascript" src="static/js/mdb.min.js"></script>
+	
+	<script src="static/js/app.js"></script>
+	<script src="static/js/ajaxFactory.js"></script>
+	<script src="static/js/loginController.js"></script>
+	<script src="static/js/angularjs/controller/MovieViewController.js"></script>
+	
 
 	<!-- Animations init-->
 	<script>
         new WOW().init();
-
         /* #####################################################################
         #
         #   Project       : Modal Login with jQuery Effects

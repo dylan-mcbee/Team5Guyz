@@ -1,11 +1,16 @@
 package com.cinema.main;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cinema.beans.Movie;
+import com.cinema.beans.Showtime;
 import com.cinema.dao.Dao;
 
 public class TestMain {
@@ -14,12 +19,33 @@ public class TestMain {
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		Dao dao = (Dao) ac.getBean("cinemaRepository");
 		//System.out.println(dao.getUserByEmail("liqunzheng@live.cn"));
-		List<Movie> movies = dao.getMovies();
-    	//movies.forEach(m -> System.out.println(m));
-		for(Movie movie : movies) {
-			System.out.println(movie);
-		}
+		//List<Movie> movies = dao.getMovies();
+    	////movies.forEach(m -> System.out.println(m));
+		//for(Movie movie : movies) {
+			//System.out.println(movie);
+		//}
 		//System.out.println("Movies: " + movies.get(0));
+		
+		//System.out.println("Hello");
+		
+		//System.out.println("Hello");
+		
+		Showtime st1 = new Showtime("10:00 AM", LocalDate.now());
+//		Showtime st2 = new Showtime("2:00 PM", LocalDate.now());
+//		Showtime st3 = new Showtime("5:00 PM", LocalDate.now());
+//		
+//		List<Showtime> sts = new ArrayList<Showtime>();
+//		sts.add(st1);
+//		sts.add(st2);
+//		sts.add(st3);
+		
+		//Movie m = new Movie(75780, "Jack Reacher", 130, sts, "https://image.tmdb.org/t/p/w500/38bmEXmuJuInLs9dwfgOGCHmZ7l.jpg");
+		//Movie m2 = new Movie(126963, "Dragon Ball Z: Battle of Gods", 121, sts, "https://image.tmdb.org/t/p/w500/xI5LlCzSkp8iFSbmla0Dh4iT5ie.jpg");
+		//Movie m3 = new Movie(303857, "Dragon Ball Z: Resurrection 'F'", 93, sts, "https://image.tmdb.org/t/p/w500/uYgE4QiNEDNbYTthVH5MJuCIBsX.jpg");
+		
+		//dao.createMovie(m);
+		//dao.createMovie(m2);
+		//dao.createMovie(m3);
 //
 //		List<Concession> con = new ArrayList<Concession>();
 //		Concession con = new Concession("popcorn", 8.50);

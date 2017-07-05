@@ -10,6 +10,9 @@
 
 <title>5G Cinema</title>
 
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
 <link rel="icon" type="image/png"
 	href="https://cdn3.iconfinder.com/data/icons/multimedia/100/play_movie_3-256.png"
 	sizes="16x16">
@@ -29,12 +32,16 @@
 
 <link href="css/user.css" rel="stylesheet">
 
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
 
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet" href="css/materialize.css"
 	media="screen,projection" />
+	
+<!-- AngularJS -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<style>
 
 <style>
 .user-row {
@@ -84,7 +91,7 @@ body {
     background: cyan;
     padding: 20px; 
     width: 100%;
-    height: 50px;    
+    height: 70px;    
     text-align-center
 }
 
@@ -103,15 +110,17 @@ body {
     cursor: pointer;
 }
 
-select {
-display: block;
-margin: 0 auto;
+.addBtn a {
+	text-align: center;
+	margin: auto;
 }
+
 </style>
 </head>
 
-<body>
+<body ng-App="adminApp" ng-controller="AdminController">
 
+<!-- http://localhost:8081/Cinema/static/admin.html -->
 
 	<!--Navbar-->
 	<nav
@@ -158,122 +167,124 @@ margin: 0 auto;
 					<h6>Times</h6>
 				</div>
 			</div>
-			<div class="row movieItem">
+			<div class="row movieItem" ng-repeat="movie in movies">
 				<div class="col-md-2 text-center">
-					<p>12345</p>
+					<p>{{ movie.id }}</p>
 				</div>
 				<div class="col-md-5 text-center">
-					<p>Wonder Woman</p>
+					<p>{{ movie.title }}</p>
 				</div>
 				<div class="col-md-2 text-center">
-					<p>151 mins</p>
+					<p>{{ movie.length }} mins</p>
 				</div>
 				<div class="col-md-2 text-center">
 					<select class="form-control" id="sel1">
-						<option value="volvo disabled">8:00</option>
-						<option value="saab disabled">11:00</option>
-						<option value="opel disabled">14:00</option>
-						<option value="audi disabled">17:00</option>
-						<option value="wick disabled">20:00</option>
+						<option ng-repeat="showtime in movie.showtimes" value="time">{{ showtime.time }}</option>
 					</select>
 				</div>
 				<div class="col-md-1 text-center">
-					<span class="close">&times;</span>
+					<span ng-click="remove($index)" class="close">&times;</span>
 				</div>
 			</div> 
-			<div class="row movieItem">
-				<div class="col-md-2 text-center">
-					<p>12345</p>
-				</div>
-				<div class="col-md-5 text-center">
-					<p>DBZ Battle of the Gods</p>
-				</div>
-				<div class="col-md-2 text-center">
-					<p>100 mins</p>
-				</div>
-				<div class="col-md-2 text-center">
-					<select class="form-control" id="sel1">
-						<option value="volvo">8:00</option>
-						<option value="saab">11:00</option>
-						<option value="opel">14:00</option>
-						<option value="audi">17:00</option>
-						<option value="wick">20:00</option>
-					</select>
-				</div>
-				<div class="col-md-1 text-center">
-					<span class="close">&times;</span>
-				</div>
-			</div> 
-			<!-- <div class="row">
-				<div class="col white-text">
-					Theater # 1: -->
-					<!-- Modal Trigger -->
-				<!-- 	<a class="waves-effect waves-light btn btn-primary" href="#modal1">Update
-						Info.</a> -->
+			
+			<!-- Modal Trigger -->
+			<div class="row addBtn">
+				<a ng-click="getUpcomingMovies()" class="waves-effect waves-light btn btn-primary" href="#modal1">Add Movie</a>
+			</div>
+			
 
-					<!-- Modal Structure -->
-				<!-- 	<div id="modal1" class="modal modal-fixed-footer">
-						<div class="container">
-							<div class="">
-								<div class="form-area">
-									<form role="form">
-										<br style="clear: both">
-										<h3 style="color: black">Theater #1</h3>
-										<div class="form-group">
-											<label for="sel1">Select list:</label> <select
-												class="form-control" id="sel1">
-												<option value="volvo">Wonder Woman</option>
-												<option value="saab">DBZ Resurrection</option>
-												<option value="opel">DBZ Battle of the Gods</option>
-												<option value="audi">Jack Reacher</option>
-												<option value="wick">John Wick 2</option>
-											</select>
-										</div>
-										<div class="form-group"></div>
-										<h3 style="color: black; margin-top: 30px">Room Capacity:
-											80</h3>
-										<button type="button" id="submit" name="submit"
-											class="btn btn-primary pull-right">Submit Form</button>
-									</form>
+			<!-- Modal Structure -->
+			<div id="modal1" class="modal modal-fixed-footer">
+				<div class="container">
+					<div class="">
+						<div class="form-area">
+							<form role="form">
+								<br style="clear: both">
+								<h3 style="color: black">Add a Movie</h3>
+								<div class="form-group">
+									<label for="sel1">Movie list:</label> 
+									<select ng-modal="movieList" class="form-control" id="movieList">
+										<option ng-repeat="movie in upcomingMovies" value="{{ movie.id }}">{{ movie.title }}</option>
+									</select>
 								</div>
-							</div>
+								<div class="row">
+									<p class="col-md-3">
+    									<input type="checkbox" id="time1" name="time" value="8:00 AM"/> 
+    									<label for="time1">8:00 AM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time2" name="time" value="9:00 AM"/> 
+    									<label for="time2">9:00 AM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time3" name="time" value="10:00 AM"/> 
+    									<label for="time3">10:00 AM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time4" name="time" value="11:00 AM"/> 
+    									<label for="time4">11:00 AM</label>
+									</p>
+								</div>
+								<div class="row">
+									<p class="col-md-3">
+    									<input type="checkbox" id="time5" name="time" value="12:00 PM"/> 
+    									<label for="time5">12:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time6" name="time" value="1:00 PM"/> 
+    									<label for="time6">1:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time7" name="time" value="2:00 PM"/> 
+    									<label for="time7">2:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time8" name="time" value="3:00 PM"/> 
+    									<label for="time8">3:00 PM</label>
+									</p>
+								</div>
+								<div class="row">
+									<p class="col-md-3">
+    									<input type="checkbox" id="time9" name="time" value="4:00 PM"/> 
+    									<label for="time9">4:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time10" name="time" value="5:00 PM"/> 
+    									<label for="time10">5:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time11" name="time" value="6:00 PM"/> 
+    									<label for="time11">6:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time12" name="time" value="7:00 PM"/> 
+    									<label for="time12">7:00 PM</label>
+									</p>
+								</div>
+								<div class="row">
+									<p class="col-md-3">
+    									<input type="checkbox" id="time13" name="time" value="8:00 PM"/> 
+    									<label for="time13">8:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time14" name="time" value="9:00 PM"/> 
+    									<label for="time14">9:00 PM</label>
+									</p>
+									<p class="col-md-3">
+    									<input type="checkbox" id="time15" name="time" value="10:00 PM"/> 
+    									<label for="time15">10:00 PM</label>
+									</p>
+								</div>
+									<button ng-click="addMovie()" type="button" id="submit" name="submit"
+										class="btn btn-primary pull-right">Submit Form</button>
+							</form>
 						</div>
-					</div> -->
+					</div>
 				</div>
-			</div>
-			
-			<h2 class="white-text text-center">Concessions</h2>
-			
-			<div class="row">
-				
-				<div class="col white-text">
-					<table>
-						<thead>
-							<tr>
-								<th>Item Name</th>
-								<th>Item Price</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr>
-								<td>Eclair</td>
-								<td>$0.87</td>
-							</tr>
-							<tr>
-								<td>Jellybean</td>
-								<td>$3.76</td>
-							</tr>
-							<tr>
-								<td>Lollipop</td>
-								<td>$7.00</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+			</div> 
 		</div>
 	</div>
+			
 	<!--/ Main container-->
 
 
@@ -309,6 +320,16 @@ margin: 0 auto;
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	<!-- AngularJS -->
+	<!-- Module -->
+	<script src="js/angularjs/adminApp.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/angularjs/controller/AdminController.js"></script>
+	
+	<!-- Services -->
+	<script src="js/angularjs/service/upcomingMovieService.js"></script>
 
 	<!-- Animations init-->
 	<script>

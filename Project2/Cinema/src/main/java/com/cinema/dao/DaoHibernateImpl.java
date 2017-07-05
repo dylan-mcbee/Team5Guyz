@@ -93,7 +93,10 @@ public class DaoHibernateImpl implements Dao {
 	public void createMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		Session s = sessionFactory.getCurrentSession();
-		s.saveOrUpdate(movie.getShowtimes());
+		List<Showtime> times = movie.getShowtimes();
+		for (Showtime time : times)
+			s.saveOrUpdate(time);
+		//s.saveOrUpdate(movie.getShowtimes());
 		s.save(movie);
 	}
 	
@@ -328,5 +331,4 @@ public class DaoHibernateImpl implements Dao {
 		shows = s.createQuery("from Showtime").list();
 		return shows;
 	}
-
 }
